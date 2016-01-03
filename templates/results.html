@@ -1,0 +1,56 @@
+{% include "header.html" %}
+
+  <div class="container">
+    <div class="row toppy">
+      <form action="/search" method="get" class="margin-base-vertical">
+	<div class="col-md-8 col-md-offset-1">
+	  <p class="input-group">
+	    <span class="input-group-addon"><span class="icon-arrow-right"></span></span>
+	    <input type="text" class="form-control input-lg" name="query" value="{{ query }}">
+	  </p>
+	</div>
+	<div class="col-md-2">
+	  <p>
+	    <button type="submit" class="btn btn-success btn-lg">Search!</button>
+	  </p>
+	</div>
+      </form>
+    </div>
+  </div>
+
+  <div class="container">
+    {% if results|length > 0%}
+    {% for result in results %}
+    <div class="row top-space-20">
+      <div class="col-md-10 col-md-offset-1 panel panel-default">
+	<p class="text-justify comment p_result">
+	  <b>Comment preview: </b>{{ "%.256s ...." |format(result.comment) }}
+	</p>
+	<br>
+	<div class="row top-space-10">
+	  <div class="col-md-8">
+	    <b>Link: </b><a href = "{{ result.url }}">{{ result.url }}</a>
+	  </div>
+	  <div class="col-md-4">
+	    <b>Sub-reddit: </b><a href = "http://reddit.com/r/{{ result.subreddit }}">/r/{{ result.subreddit }}</a>
+	  </div>
+	</div>
+      </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <div class="row top-space-20">
+      <div class="col-md-10 col-md-offset-1 panel">
+	<p class="text-justify">
+	  Bummer! No results were found for your search term: <b>{{ query }}</b>.<br>
+	</p>
+	<p class="text-justify"> 
+	  Thank you for trying out Wisdom of reddit! This search engine is a work in progress. We don't, as yet, have many features you take for granted with Google. Please check the spelling of your query or try a different search term. 
+	</p>
+      </div>
+    </div>
+    {% include "more_about.html" %}
+    {% endif %}
+  </div>
+
+{% include "footer.html" %}

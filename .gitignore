@@ -1,0 +1,10 @@
+#Add files you want to ignore
+*.pyc
+
+.DS_Store
+data/
+indexdir/
+old/
+sample_search.py
+venv/
+working_search_app_v3.zip
