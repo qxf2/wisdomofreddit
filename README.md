@@ -15,7 +15,7 @@ d. 'pip install flask'
 
 e. Install Whoosh
 
-g. Install the csv library ('pip install csv'
+g. Install the csv library ('pip install csv')
 
 
 --------------
@@ -46,7 +46,8 @@ FROM [fh-bigquery:reddit_comments.2015_01],
 [fh-bigquery:reddit_comments.2008],
 [fh-bigquery:reddit_comments.2009]
 where score>35 and (length(body) - length(replace(body,' ','')) + 1) > 150
-This query will process 450 GB when run.
+
+NOTE: This query will process 450 GB when run.
 
 c. Export the table to csv format. Since the table is big, you will have multiple csvs
 
