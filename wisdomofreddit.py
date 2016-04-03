@@ -8,7 +8,7 @@ from whoosh.qparser import QueryParser
 from flask import Flask
 from flask import render_template
 from flask import request
-import os,csv,re
+import os,csv,re,random
 
 app = Flask(__name__)
 
@@ -20,27 +20,42 @@ def open_index(index_dir,index_name):
     return ix
 
 
+def get_random_query():
+    "Return a random query"
+    query = "Kasparov"
+    random_query_file = os.path.join(os.path.dirname(__file__),'random_queries.txt')
+    with open(random_query_file,'r') as fp:
+        lines = fp.readlines()
+        query = random.choice(lines)
+        query = query.strip()
+
+    return query
+
+
 def search_comments(query):
     "Ask whoosh to return the top 20 matches"
     all_results = []
     try:
         index_dir = os.path.join(os.path.dirname(__file__),'indexdir')
         ix = open_index(index_dir,index_name='wor')
-        fp = open('/tmp/query.log','a')
-        fp.write(str(query)+"\n")
-        fp.close()
+        if os.path.exists(r'/tmp/'):
+            fp = open('/tmp/query.log','a')
+            fp.write(str(query)+"\n")
+            fp.close()
         with ix.searcher() as searcher:
             parser = QueryParser("comment",ix.schema)
             results = searcher.search(parser.parse(query),limit=25)
             for result in results:
                 all_results.append(result)
-            fp = open('/tmp/results.log','a')
-            fp.write(str(all_results)[:1]+"\n")
-            fp.close()
+            if os.path.exists(r'/tmp/'):
+                fp = open('/tmp/results.log','a')
+                fp.write(str(all_results)[:1]+"\n")
+                fp.close()
     except Exception,e:
-        fp = open('/tmp/error.log','a')
-        fp.write(str(e))
-        fp.close()
+        if os.path.exists(r'/tmp/'):
+            fp = open('/tmp/error.log','a')
+            fp.write(str(e))
+            fp.close()
         
     return all_results
 
@@ -56,10 +71,22 @@ def search():
     "Return relevant comments"
     query = request.args.get('query')
     if query.strip() == "":
-        return render_template('index.html')
+        return return_random_prompt()
     else:
         results = search_comments(query)
         return render_template('results.html', query=query, results=results)
+
+
+@app.route("/random")
+def return_random_prompt():
+    "Return a random comment"
+    query = get_random_query()
+    results = []
+    while results == []:
+        results = search_comments(query)
+
+    return render_template('results.html', query=query, results=results)
+
 
 
 @app.route("/about")
