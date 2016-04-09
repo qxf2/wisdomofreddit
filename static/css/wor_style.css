@@ -99,3 +99,8 @@ img.logo{
     max-height: 100px;
     max-width: 250px;
 }
+
+h2.grey-text {
+    color: #7e7e7e;
+    margin-top: 5px;
+}
