@@ -14,6 +14,11 @@ h1 {
     line-height: 1.0;
 }
 
+h2 {
+    font-family: "Abel", Arial, sans-serif;
+    color: #000000;    
+}
+
 p {
     line-height: 2.0;
 }
@@ -100,7 +105,20 @@ img.logo{
     max-width: 250px;
 }
 
-h2.grey-text {
+grey-text {
     color: #7e7e7e;
     margin-top: 5px;
 }
+
+.toppy-10 {
+    padding-top: 10px;
+}
+
+.toppy-20 {
+    padding-top: 20px;
+}
+
+.toppy-30 {
+    padding-top: 30px;
+}
+
