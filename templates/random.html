@@ -1,0 +1,22 @@
+{% include "header.html" %}
+  <div class="container toppy">
+    {% for result in results %}
+    <div class="row top-space-20">
+      <div class="col-md-10 col-md-offset-1 panel panel-default">
+	<p class="text-justify comment p_result">
+	  <b>Comment preview: </b>{{ "%.256s ...." |format(result.comment) }}
+	</p>
+	<br>
+	<div class="row top-space-10">
+	  <div class="col-md-8">
+	    <b>Link: </b><a href = "{{ result.url }}">{{ result.url }}</a>
+	  </div>
+	  <div class="col-md-4">
+	    <b>Sub-reddit: </b><a href = "http://reddit.com/r/{{ result.subreddit }}">/r/{{ result.subreddit }}</a>
+	  </div>
+	</div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+{% include "footer.html" %}

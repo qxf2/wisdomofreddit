@@ -85,7 +85,7 @@ def return_random_prompt():
     while results == []:
         results = search_comments(query)
 
-    return render_template('results.html', query=query, results=results)
+    return render_template('random.html', results=results)
 
 
 
@@ -93,6 +93,12 @@ def return_random_prompt():
 def about():
     "The about page"
     return render_template('about.html')
+
+
+@app.route("/why")
+def why():
+    "The about page"
+    return render_template('why.html')
 
 
 #---START

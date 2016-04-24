@@ -16,7 +16,10 @@ h1 {
 
 h2 {
     font-family: "Abel", Arial, sans-serif;
-    color: #000000;    
+}
+
+h3 {
+    font-family: "Abel", Arial, sans-serif;
 }
 
 p {
