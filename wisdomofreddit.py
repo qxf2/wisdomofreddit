@@ -88,7 +88,6 @@ def return_random_prompt():
     return render_template('random.html', results=results)
 
 
-
 @app.route("/about")
 def about():
     "The about page"
@@ -97,8 +96,20 @@ def about():
 
 @app.route("/why")
 def why():
-    "The about page"
+    "The why page"
     return render_template('why.html')
+
+
+@app.route("/uses")
+def use_cases():
+    "The uses page"
+    return render_template('uses.html')
+
+
+@app.route("/pro-tips")
+def pro_tips():
+    "The pro-tips page"
+    return render_template('pro-tips.html')
 
 
 #---START

@@ -226,3 +226,6 @@ wheelchair airport
 "same thing happened"
 grocery checkout
 "self driving cars"
+"my bad"
+"I call bullshit"
+"called to investigate murder"
