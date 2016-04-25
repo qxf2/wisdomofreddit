@@ -112,6 +112,12 @@ def pro_tips():
     return render_template('pro-tips.html')
 
 
+@app.route("/examples")
+def examples():
+    "The examples page"
+    return render_template('examples.html')
+
+
 #---START
 if __name__=='__main__':
     app.run(host='0.0.0.0',port=6464)
