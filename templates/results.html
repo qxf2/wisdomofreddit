@@ -39,17 +39,7 @@
     </div>
     {% endfor %}
     {% else %}
-    <div class="row top-space-20">
-      <div class="col-md-10 col-md-offset-1 panel">
-	<p class="text-justify">
-	  Bummer! No results were found for your search term: <b>{{ query }}</b>.<br>
-	</p>
-	<p class="text-justify"> 
-	  Thank you for trying out Wisdom of reddit! This search engine is a work in progress. We don't, as yet, have many features you take for granted with Google. Please check the spelling of your query or try a different search term. 
-	</p>
-      </div>
-    </div>
-    {% include "more_about.html" %}
+    {% include "no_results.html" %}
     {% endif %}
   </div>
 
