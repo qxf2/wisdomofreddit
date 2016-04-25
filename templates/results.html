@@ -1,7 +1,11 @@
 {% include "header.html" %}
-
-  <div class="container">
-    <div class="row toppy">
+  <div class="container toppy">
+    <div class="col-md-10 col-md-offset-1">
+      <blockquote class="blockquote-reverse">
+	Everybody walks past a thousand story ideas every day. The good writers are the ones who see five or six of them. Most people don't see any. <footer>Orson Scott</footer>
+      </blockquote>
+    </div>
+    <div class="row">
       <form action="/search" method="get" class="margin-base-vertical">
 	<div class="col-md-8 col-md-offset-1">
 	  <p class="input-group">
@@ -16,9 +20,6 @@
 	</div>
       </form>
     </div>
-  </div>
-
-  <div class="container">
     {% if results|length > 0%}
     {% for result in results %}
     <div class="row top-space-20">
