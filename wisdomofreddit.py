@@ -118,6 +118,18 @@ def examples():
     return render_template('examples.html')
 
 
+@app.route("/blog")
+def blog():
+    "The blog"
+    return render_template('blog.html')
+
+
+@app.route("/blogposts/real-scary-creepy-paranormal-stories")
+def paranormal():
+    "The blog"
+    return render_template('blogposts/real-scary-creepy-paranormal-stories.html')
+
+
 #---START
 if __name__=='__main__':
     app.run(host='0.0.0.0',port=6464)
