@@ -126,8 +126,14 @@ def blog():
 
 @app.route("/blogposts/real-scary-creepy-paranormal-stories")
 def paranormal():
-    "The blog"
+    "Paranormal stories"
     return render_template('blogposts/real-scary-creepy-paranormal-stories.html')
+
+
+@app.route("/blogposts/mundane-coincidence-stories")
+def mundane_coincidences():
+    "Mundane coincidences"
+    return render_template('blogposts/mundane-coincidence-stories.html')
 
 
 #---START
