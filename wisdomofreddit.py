@@ -8,7 +8,10 @@ from whoosh.qparser import QueryParser
 from flask import Flask
 from flask import render_template
 from flask import request
-import os,csv,re,random
+from flask import redirect, url_for
+from flask import _request_ctx_stack
+import os,csv,re,random,sqlite3
+from ast import literal_eval
 
 app = Flask(__name__)
 
@@ -136,6 +139,30 @@ def mundane_coincidences():
     return render_template('blogposts/mundane-coincidence-stories.html')
 
 
+@app.route('/api-tutorial-main')
+def api_tutorial_main():
+    "Api Tutorial main page- If method is post redirect to api tutorial redirect with name and comments"        
+    return render_template('./api-tutorial-main.html')
+        
+
+@app.route('/api-tutorial-redirect',methods=['GET','POST'])
+def api_tutorial_redirect():
+    "Api Tutorial Redirect page- Saves the name and comments and displays all the name and comments"
+    db_file = os.path.join(os.path.dirname(__file__),'tmp','wisdomofreddit.db') #Create a variabe as db_file to create the DB file in the temp directory
+    connection_obj = sqlite3.connect(db_file) #Connect to the db
+    cursor_obj = connection_obj.cursor()
+    if request.method == 'POST':
+        user_name = request.form['submitname']
+        user_comments = request.form['submitcomments']
+        value = [user_name,user_comments]
+        cursor_obj.execute("INSERT INTO comments VALUES (?,?)",value) #Insert values into the table. FYI comments table has already been created in the DB
+        connection_obj.commit() #Save the changes
+    results = cursor_obj.execute("SELECT * FROM comments") #Hold all the name and comments in a variable
+    
+    return render_template('./api-tutorial-redirect.html', results=results.fetchall())
+    
+
 #---START
 if __name__=='__main__':
-    app.run(host='0.0.0.0',port=6464)
+    app.run(host='127.0.0.1',debug = True,port=5000)
+    #app.run(host='0.0.0.0',port=6464)
