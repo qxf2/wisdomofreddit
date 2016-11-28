@@ -1,0 +1,32 @@
+{% include "header.html"%}
+  <div class="container toppy">
+  <div class="col-md-10 col-md-offset-1">
+    <h1 class="margin-base-vertical">Qxf2 Api Tutorial Redirect Page</h1>
+    <p class="text-justify">
+      This page is created by <a href="http://www.qxf2.com">Qxf2 Services</a> to help practice different API Http Methods like Get, Post, Put and Delete transactions. You can view the latest comments here and also try the delete and put transaction. 
+    </p>
+	  </div>
+
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+	<h1 class="margin-base-vertical text-center">Writers, find what real people say!</h1>
+      </div>
+  <div class="row top-space-20">
+  {% if results|length > 0%}
+    <div class="col-md-10 col-md-offset-1 panel panel-default"> 
+    <b>Comments: </b> 
+          {% for result in results %}
+	         <p class="text-justify comment p_result">
+	         {{ result[0] }}:
+           <br>
+           {{ result[1] }}
+	         </p>
+	         <br>	
+	       {% endfor %}
+  {% endif %}
+    </div>
+  </div>
+	</div>
+{% include "footer.html"%}
+
+
