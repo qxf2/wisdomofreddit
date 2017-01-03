@@ -160,7 +160,21 @@ def api_tutorial_redirect():
     results = cursor_obj.execute("SELECT * FROM comments") #Hold all the name and comments in a variable
     
     return render_template('api-tutorial-redirect.html', results=results.fetchall())
-    
+
+
+@app.route('/trial_page_bug')
+def trial_page_bug():
+    "Trial page for practicing bug reports"
+    return render_template('trial_page_bug')
+
+
+@app.route('/trial_redirect_page_bug')
+def trial_redirect_page_bug():
+    "Trial redirects page specifies there is no validation for login"     
+    return render_template('trial_redirect_page_bug.html')
+
+
+
 
 #---START
 if __name__=='__main__':
