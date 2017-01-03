@@ -174,6 +174,28 @@ def trial_redirect_page_bug():
     return render_template('trial_redirect_page_bug.html')
 
 
+@app.route('/retrive_wrong_data')
+def retrive_wrong_data():
+    "Trial page for practicing bug reports redirect with name and comments"        
+    return render_template('retrive_wrong_data.html')
+        
+
+@app.route('/retrive_wrong_data_redirect_page',methods=['GET','POST'])
+def retrive_wrong_data_redirect_page():
+    "Trial redirects page specifies that retieved username and comments are not correct"
+    db_file = os.path.join(os.path.dirname(__file__),'tmp','wisdomofreddit.db') #Create a variabe as db_file to create the DB file in the temp directory
+    connection_obj = sqlite3.connect(db_file) #Connect to the db
+    cursor_obj = connection_obj.cursor()
+    if request.method == 'POST':
+        user_name = request.form['submitname']
+        user_comments = request.form['submitcomments']
+        value = [user_name,user_comments]
+        cursor_obj.execute("INSERT INTO comments VALUES (?,?)",value) #Insert values into the table. FYI comments table has already been created in the DB
+        connection_obj.commit() #Save the changes
+    results = cursor_obj.execute("SELECT * FROM comments") #Hold all the name and comments in a variable
+    
+    return render_template('retrive_wrong_data_redirect_page', results=results.fetchall())
+
 
 
 #---START
