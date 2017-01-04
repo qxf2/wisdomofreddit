@@ -197,6 +197,20 @@ def retrive_wrong_data_redirect_page():
     return render_template('retrive_wrong_data_redirect_page', results=results.fetchall())
 
 
+@app.route('/no_response')
+def no_response():
+    "Trial page for practicing bug reports of no response"
+    return render_template('no_response.html')
+
+
+@app.route('/no_response_page_bug')
+def no_response_page_bug:
+    "Trial page with no response after clicking the button"
+    return render_template('no_response_page_bug.html')
+
+           
+
+
 
 #---START
 if __name__=='__main__':
