@@ -208,6 +208,12 @@ def no_response_page_bug:
     "Trial page with no response after clicking the button"
     return render_template('no_response_page_bug.html')
 
+
+@app.route('/click_button_bug')
+def click_button_bug:
+    "Trial page specifies no response after clicking the login button"
+    return render_template('click_button_bug.html')
+
            
 
 
