@@ -162,55 +162,49 @@ def api_tutorial_redirect():
     return render_template('api-tutorial-redirect.html', results=results.fetchall())
 
 
-@app.route('/trial_page_bug')
+@app.route('/trial-page-bug')
 def trial_page_bug():
     "Trial page for practicing bug reports"
-    return render_template('trial_page_bug')
+    return render_template('trial_page_bug.html')
 
 
-@app.route('/trial_redirect_page_bug')
+@app.route('/trial-redirect-page-bug',methods=['GET','POST'])
 def trial_redirect_page_bug():
-    "Trial redirects page specifies there is no validation for login"     
+    "Trial redirects page specifies there is no validation for login"
     return render_template('trial_redirect_page_bug.html')
 
 
-@app.route('/retrive_wrong_data')
-def retrive_wrong_data():
+@app.route('/retrieve-wrong-data')
+def retrieve_wrong_data():
     "Trial page for practicing bug reports redirect with name and comments"        
-    return render_template('retrive_wrong_data.html')
+    return render_template('retrieve_wrong_data.html')
         
 
-@app.route('/retrive_wrong_data_redirect_page',methods=['GET','POST'])
-def retrive_wrong_data_redirect_page():
+@app.route('/retrieve-wrong-data-redirect-page',methods=['GET','POST'])
+def retrieve_wrong_data_redirect_page():
     "Trial redirects page specifies that retieved username and comments are not correct"
     db_file = os.path.join(os.path.dirname(__file__),'tmp','wisdomofreddit.db') #Create a variabe as db_file to create the DB file in the temp directory
     connection_obj = sqlite3.connect(db_file) #Connect to the db
     cursor_obj = connection_obj.cursor()
-    if request.method == 'POST':
-        user_name = request.form['submitname']
-        user_comments = request.form['submitcomments']
-        value = [user_name,user_comments]
-        cursor_obj.execute("INSERT INTO comments VALUES (?,?)",value) #Insert values into the table. FYI comments table has already been created in the DB
-        connection_obj.commit() #Save the changes
     results = cursor_obj.execute("SELECT * FROM comments") #Hold all the name and comments in a variable
     
-    return render_template('retrive_wrong_data_redirect_page', results=results.fetchall())
+    return render_template('retrieve_wrong_data_redirect_page.html', results=results.fetchall())
 
 
-@app.route('/no_response')
+@app.route('/no-response')
 def no_response():
     "Trial page for practicing bug reports of no response"
     return render_template('no_response.html')
 
 
-@app.route('/no_response_page_bug')
-def no_response_page_bug:
+@app.route('/no-response-page-bug',methods=['GET','POST'])
+def no_response_page_bug():
     "Trial page with no response after clicking the button"
     return render_template('no_response_page_bug.html')
 
 
-@app.route('/click_button_bug')
-def click_button_bug:
+@app.route('/click-button-bug')
+def click_button_bug():
     "Trial page specifies no response after clicking the login button"
     return render_template('click_button_bug.html')
 
