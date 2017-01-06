@@ -1,0 +1,29 @@
+{% include "header.html" %}
+<div class="container toppy">
+	<div class="col-md-10 col-md-offset-1">
+    <h1 class="margin-base-vertical">Qxf2 Trial Page for Bug Reporting</h1>
+    <p class="text-justify">
+      This page is created by <a href="http://www.qxf2.com">Qxf2 Services</a> to help practice how to report the bug by introducing bugs in the application
+    </p>
+	</div>
+	
+	<div class="row">
+      <div class="col-md-6 col-md-offset-3">
+	<h1 class="margin-base-vertical text-center">Writers, find what real people say!</h1>
+	<form action="/retrieve-wrong-data-redirect-page" method="post" class="margin-base-vertical">
+	  <p class="input-group">
+	    <span class="input-group-addon"><span class="icon-arrow-right"></span></span>
+	    <input type="text" class="form-control input-lg" name="submitname" placeholder="Name">
+	  </p>
+	  <p class="input-group">
+	    <span class="input-group-addon"><span class="icon-arrow-right"></span></span>
+	    <input type="text" class="form-control input-lg" name="submitcomments" placeholder="Comments">
+	  </p>
+	  <p class="text-center top-space-40">
+	    <button type="submit" class="btn btn-success btn-lg">Submit</button>
+	  </p>
+	</form>
+      </div>
+    </div>
+	</div>
+{% include "footer.html" %}

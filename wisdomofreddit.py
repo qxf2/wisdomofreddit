@@ -160,7 +160,57 @@ def api_tutorial_redirect():
     results = cursor_obj.execute("SELECT * FROM comments") #Hold all the name and comments in a variable
     
     return render_template('api-tutorial-redirect.html', results=results.fetchall())
+
+
+@app.route('/trial-page-bug')
+def trial_page_bug():
+    "Trial page for practicing bug reports"
+    return render_template('trial_page_bug.html')
+
+
+@app.route('/trial-redirect-page-bug',methods=['GET','POST'])
+def trial_redirect_page_bug():
+    "Trial redirects page specifies there is no validation for login"
+    return render_template('trial_redirect_page_bug.html')
+
+
+@app.route('/retrieve-wrong-data')
+def retrieve_wrong_data():
+    "Trial page for practicing bug reports redirect with name and comments"        
+    return render_template('retrieve_wrong_data.html')
+        
+
+@app.route('/retrieve-wrong-data-redirect-page',methods=['GET','POST'])
+def retrieve_wrong_data_redirect_page():
+    "Trial redirects page specifies that retieved username and comments are not correct"
+    db_file = os.path.join(os.path.dirname(__file__),'tmp','wisdomofreddit.db') #Create a variabe as db_file to create the DB file in the temp directory
+    connection_obj = sqlite3.connect(db_file) #Connect to the db
+    cursor_obj = connection_obj.cursor()
+    results = cursor_obj.execute("SELECT * FROM comments") #Hold all the name and comments in a variable
     
+    return render_template('retrieve_wrong_data_redirect_page.html', results=results.fetchall())
+
+
+@app.route('/no-response')
+def no_response():
+    "Trial page for practicing bug reports of no response"
+    return render_template('no_response.html')
+
+
+@app.route('/no-response-page-bug',methods=['GET','POST'])
+def no_response_page_bug():
+    "Trial page with no response after clicking the button"
+    return render_template('no_response_page_bug.html')
+
+
+@app.route('/click-button-bug')
+def click_button_bug():
+    "Trial page specifies no response after clicking the login button"
+    return render_template('click_button_bug.html')
+
+           
+
+
 
 #---START
 if __name__=='__main__':
