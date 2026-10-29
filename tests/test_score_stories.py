@@ -81,6 +81,11 @@ class TestScoreStories(unittest.TestCase):
         score_stories.score_comments(FakeClient(), self.db_path, limit=2)
         self.assertEqual(len(self.get_scores()), 2)
 
+    def test_is_story_needs_both_thresholds(self):
+        self.assertTrue(score_stories.is_story(0.5, 2.0))
+        self.assertFalse(score_stories.is_story(0.49, 3.0))
+        self.assertFalse(score_stories.is_story(0.9, 1.9))
+
     def test_report_runs(self):
         score_stories.score_comments(FakeClient(), self.db_path)
         score_stories.report(self.db_path)

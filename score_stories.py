@@ -6,7 +6,8 @@ a) p_story: probability that the comment tells a real-life story or experience
 b) vividness: how concrete and vivid that story is (0 to 3)
 
 Scores go into the story_scores table next to the comments table.
-Comments are never deleted, so the threshold can change without calling Jev again.
+A comment counts as a story when p_story >= 0.5 and vividness >= 2.
+Comments are never deleted, so the thresholds can change without calling Jev again.
 
 Needs TYPESAFE_API_KEY in the environment or in a .env file.
 
@@ -27,6 +28,7 @@ from typesafe_sdk import Noul, Score, TypeSafeClient
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_DB = os.path.join(CURRENT_DIR, 'data', 'comments.db')
 STORY_THRESHOLD = 0.5
+MIN_VIVIDNESS = 2
 COMMIT_EVERY = 100
 
 QUESTIONS = {
@@ -127,13 +129,19 @@ def clip(text, length=230):
     return text if len(text) <= length else text[:length] + '...'
 
 
-def report(db_path=DEFAULT_DB, threshold=STORY_THRESHOLD, size=10):
+def is_story(p_story, vividness, threshold=STORY_THRESHOLD, min_vividness=MIN_VIVIDNESS):
+    "Does a scored comment count as a story?"
+    return p_story >= threshold and vividness >= min_vividness
+
+
+def report(db_path=DEFAULT_DB, threshold=STORY_THRESHOLD, min_vividness=MIN_VIVIDNESS, size=10):
     "Print the story split, token usage and examples for a human to check"
     connection = get_connection(db_path)
     total, stories, input_tokens, output_tokens = connection.execute(
-        'SELECT COUNT(*), SUM(p_story >= ?), SUM(input_tokens), SUM(output_tokens) FROM story_scores',
-        (threshold,)).fetchone()
-    print('%d of %d scored comments are stories (threshold %.2f)' % (stories or 0, total, threshold))
+        'SELECT COUNT(*), SUM(p_story >= ? AND vividness >= ?), SUM(input_tokens), SUM(output_tokens) '
+        'FROM story_scores', (threshold, min_vividness)).fetchone()
+    print('%d of %d scored comments are stories (p_story >= %.2f and vividness >= %.1f)'
+          % (stories or 0, total, threshold, min_vividness))
     print('Tokens used: %s input, %s output\n' % (input_tokens, output_tokens))
     select = 'SELECT s.p_story, s.vividness, c.body FROM story_scores s JOIN comments c ON c.id = s.id '
     groups = [('TOP STORIES', select + 'ORDER BY s.p_story DESC, s.vividness DESC LIMIT ?', (size,)),
@@ -142,7 +150,7 @@ def report(db_path=DEFAULT_DB, threshold=STORY_THRESHOLD, size=10):
     for name, query, params in groups:
         print('=== %s ===' % name)
         for p_story, vividness, body in connection.execute(query, params):
-            label = 'STORY' if p_story >= threshold else 'not story'
+            label = 'STORY' if is_story(p_story, vividness, threshold, min_vividness) else 'not story'
             print('[%-9s] P=%.2f vivid=%.1f | %s' % (label, p_story, vividness, clip(body)))
         print()
     connection.close()
@@ -159,6 +167,8 @@ if __name__ == '__main__':
     report_parser = subparsers.add_parser('report', help='Show the story split and examples')
     report_parser.add_argument('-t', '--threshold', type=float, default=STORY_THRESHOLD,
                                help='Minimum p_story to count as a story')
+    report_parser.add_argument('-v', '--vividness', type=float, default=MIN_VIVIDNESS,
+                               help='Minimum vividness (0 to 3) to count as a story')
     args = parser.parse_args()
 
     start_time = time.time()
@@ -167,5 +177,5 @@ if __name__ == '__main__':
         with TypeSafeClient() as client:
             score_comments(client, args.db, args.limit, args.workers)
     else:
-        report(args.db, args.threshold)
+        report(args.db, args.threshold, args.vividness)
     print('Duration: %d seconds' % int(time.time() - start_time))
