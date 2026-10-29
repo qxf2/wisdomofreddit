@@ -82,6 +82,13 @@ e. Make a small random sample db for testers:
 
 f. Run the tests: python -m unittest discover tests
 
+g. Score comments for story potential with Jev (TypeSafe). Put your key in a .env file in the repo root
+   (TYPESAFE_API_KEY=...). .env is git ignored. Jev only sees the comment text:
+   python score_stories.py -d data/comments.db score
+
+h. See how many comments are stories, the tokens used, and examples to check by hand:
+   python score_stories.py -d data/comments.db report -t 0.5
+
 -------
 3. RUN
 -------
