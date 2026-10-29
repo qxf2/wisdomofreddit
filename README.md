@@ -59,6 +59,29 @@ e. NOTE: -c True should be used only if you want to create the index from scratc
 
 f. If things go well, you should see a ./indexdir created with a bunch of wor_*.seg files
 
+-----------------------------------
+2b. NEW DATA SETUP (2025 onwards)
+-----------------------------------
+
+The BigQuery dataset above stopped updating. Newer comments come from the
+monthly reddit dumps (RC_YYYY-MM.zst) published by Arctic Shift on Academic Torrents.
+Links to each month: https://github.com/ArthurHeitmann/arctic_shift/blob/master/download_links.md
+
+a. Use Python 3 and install the requirements: 'pip install -r requirements-data.txt'
+
+b. Download one month's comments file. Each monthly torrent also has a submissions file. Only download the comments file:
+   aria2c --select-file=1 --seed-time=0 --max-overall-upload-limit=1K -d <download dir> <month>.torrent
+
+c. Filter it into ./data/comments.db (same rules as before: score > 35 and more than 150 words):
+   python fetch_comments.py filter -f <download dir>/reddit/comments/RC_2025-12.zst -m 2025-12
+
+d. Delete the .zst file. Repeat for the previous month.
+
+e. Make a small random sample db for testers:
+   python fetch_comments.py sample -o data/sample_comments.db -n 2000
+
+f. Run the tests: python -m unittest discover tests
+
 -------
 3. RUN
 -------
