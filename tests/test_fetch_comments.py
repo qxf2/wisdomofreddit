@@ -50,6 +50,11 @@ class TestFilter(unittest.TestCase):
     def test_missing_fields(self):
         self.assertFalse(fetch_comments.is_good_comment({}))
 
+    def test_parse_skips_short_and_malformed_lines(self):
+        self.assertIsNone(fetch_comments.parse_comment(json.dumps(make_comment('a', words=20))))
+        self.assertIsNone(fetch_comments.parse_comment('not json ' * 200))
+        self.assertEqual(fetch_comments.parse_comment(json.dumps(make_comment('a')))['id'], 'a')
+
 
 class TestDump(unittest.TestCase):
     "Test filtering a small dump into a db"
@@ -82,7 +87,7 @@ class TestDump(unittest.TestCase):
         done = connection.execute('SELECT month, lines_read, comments_kept FROM months_done').fetchall()
         gilded = connection.execute('SELECT gilded FROM comments').fetchall()
         connection.close()
-        self.assertEqual(done, [('2025-12', 4, 2)])
+        self.assertEqual(done, [('2025-12', 5, 2)])
         self.assertEqual(gilded, [(0,), (0,)])
 
     def test_month_is_not_filtered_twice(self):

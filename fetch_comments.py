@@ -91,15 +91,25 @@ def get_row(comment, month):
 
 
 def read_dump(zst_file):
-    "Yield one comment (dict) at a time from a zst dump"
+    "Yield one line (a JSON comment) at a time from a zst dump"
     with open(zst_file, 'rb') as fp:
         # Pushshift dumps need a larger window than the zstd default
         reader = zstandard.ZstdDecompressor(max_window_size=2**31).stream_reader(fp)
         for line in io.TextIOWrapper(reader, encoding='utf-8', errors='replace'):
-            try:
-                yield json.loads(line)
-            except ValueError:
-                print('Skipping malformed line: %s' % line[:100])
+            yield line
+
+
+def parse_comment(line):
+    "Return the comment as a dict, or None if it cannot pass the filter or is malformed"
+    # A comment with more than 150 words has more than 150 spaces in its line.
+    # Checking this first skips the slow JSON parse for most comments.
+    if line.count(' ') < MIN_WORDS:
+        return None
+    try:
+        return json.loads(line)
+    except ValueError:
+        print('Skipping malformed line: %s' % line[:100])
+        return None
 
 
 def insert_rows(connection, rows):
@@ -119,9 +129,10 @@ def filter_dump(zst_file, month, db_path=DEFAULT_DB):
     lines_read = 0
     comments_kept = 0
     rows = []
-    for comment in read_dump(zst_file):
+    for line in read_dump(zst_file):
         lines_read += 1
-        if is_good_comment(comment):
+        comment = parse_comment(line)
+        if comment is not None and is_good_comment(comment):
             rows.append(get_row(comment, month))
             comments_kept += 1
         if len(rows) >= BATCH_SIZE:
