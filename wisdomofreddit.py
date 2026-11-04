@@ -49,7 +49,7 @@ def search_comments(query):
             parser = QueryParser("comment",ix.schema)
             results = searcher.search(parser.parse(query),limit=25)
             for result in results:
-                all_results.append(result)
+                all_results.append(result.fields())
             if os.path.exists(r'/tmp/'):
                 fp = open('/tmp/results.log','a')
                 fp.write(str(all_results)[:1]+"\n")
