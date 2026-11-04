@@ -60,12 +60,11 @@ def pre_process_csv(csvfile):
     #b. remove non ASCII character
     #c. remove empty lines
     #d. remove header line
-    print "Pre-processing csv file ..."
+    print("Pre-processing csv file ...")
     header_row = ['link_id','id','score','body','name','created_utc','subreddit','parent_id','gilded']
     clean_lines = []
-    fp = open(csvfile,'rb')
-    lines = fp.read().splitlines()
-    fp.close()
+    with open(csvfile,'r',encoding='utf-8',errors='ignore') as fp:
+        lines = fp.read().splitlines()
     current_line = ''
     for line in lines:
         if line.strip() == '':
@@ -89,14 +88,15 @@ def pre_process_csv(csvfile):
     return clean_lines
 
 
-def update_index(csvfile,index_name=None,new_index_flag='false'):
+def update_index(csvfile,index_name=None,new_index_flag='false',index_dir=None):
     "Create or update an index with the data in the csvfile"
     csvfile = os.path.abspath(csvfile)
     csvfile_exists = os.path.exists(csvfile)
     if csvfile_exists:
         line_count = 0
         schema = get_schema()
-        index_dir = os.path.join(os.path.dirname(__file__),'indexdir')
+        if index_dir is None:
+            index_dir = os.path.join(os.path.dirname(__file__),'indexdir')
         if not os.path.exists(index_dir):
             os.mkdir(index_dir)
         ix = get_index(index_dir,schema,index_name,new_index_flag)
@@ -104,39 +104,38 @@ def update_index(csvfile,index_name=None,new_index_flag='false'):
         my_csv = pre_process_csv(csvfile)
         line_count += 1
         my_reader = csv.reader(my_csv,delimiter=',',quotechar='"')
-        print 'About to index the file'
+        print('About to index the file')
         for row in my_reader:
             line_count += 1
             if len(row) != 9:
-                print 'Error in file. Row is malformed'
-                print 'Offending row:',row
+                print('Error in file. Row is malformed')
+                print('Offending row:',row)
                 continue
-            #print 'About to process: ',row[0],row[1],row[2],row[3][0:140]
+            #print('About to process: ',row[0],row[1],row[2],row[3][0:140])
             #1. URL
             url = 'http://www.reddit.com/comments/%s/x/%s'%(row[0].split('t3_')[-1],row[1])
-            url = unicode(url,errors='ignore')
             #2. Comment
-            comment = unicode(row[3],errors='ignore')
+            comment = row[3]
             #3. Score
             try:
                 score = int(row[2])
-            except Exception,e:
-                print 'Unable to process score: ',row[2]
+            except Exception as e:
+                print('Unable to process score: ',row[2])
                 score = 35
             #4. Created
-            created = unicode(row[5])
+            created = row[5]
             #5. Subreddit
-            subreddit = unicode(row[6])
+            subreddit = row[6]
             #6. Parent
-            parent = unicode(row[7].split('_')[-1])
+            parent = row[7].split('_')[-1]
             #7. Gilded
             try:
                 gilded = int(row[8])
-            except Exception,e:
-                print 'Unable to process gilded: ',row[8]
+            except Exception as e:
+                print('Unable to process gilded: ',row[8])
                 gilded = 0
             #8. Name
-            name = unicode(row[4])
+            name = row[4]
             writer.add_document(url=url,
                                 comment=comment,
                                 score=score,
@@ -146,16 +145,16 @@ def update_index(csvfile,index_name=None,new_index_flag='false'):
                                 gilded=gilded,
                                 name=name)
             if line_count%200 == 0:
-                print '.',
+                print('.',end='',flush=True)
         writer.commit()
     else:
-        print 'Unable to locate the csv file: ',csvfile
+        print('Unable to locate the csv file: ',csvfile)
 
 
 #---START OF SCRIPT
 if __name__=='__main__':
     start_time = time.time()
-    print "Script start"
+    print("Script start")
     usage = "\n----\n%prog -f csv file to be indexed -n <OPTIONAL: Index name> -c <OPTIONAL: Create new index> \n----\nE.g.: %prog -n wor -c True \n---"
     parser = OptionParser(usage=usage)
     
@@ -178,7 +177,7 @@ if __name__=='__main__':
         for my_file in os.listdir(os.path.abspath(options.csv_dir)):
             my_file = os.path.abspath(options.csv_dir) + os.sep + my_file
             if os.path.isfile(my_file) is True:
-                print 'About to index file: ',my_file.split(os.sep)[-1]
+                print('About to index file: ',my_file.split(os.sep)[-1])
                 update_index(my_file,
                              index_name=options.index_name,
                              new_index_flag=options.new_index_flag)
@@ -188,4 +187,4 @@ if __name__=='__main__':
                      index_name=options.index_name,
                      new_index_flag=options.new_index_flag)
     duration = int(time.time()-start_time)
-    print 'Duration: %d'%duration
+    print('Duration: %d'%duration)

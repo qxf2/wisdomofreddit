@@ -9,7 +9,6 @@ from flask import Flask
 from flask import render_template
 from flask import request
 from flask import redirect, url_for
-from flask import _request_ctx_stack
 import os,csv,re,random,sqlite3
 from ast import literal_eval
 
@@ -49,12 +48,12 @@ def search_comments(query):
             parser = QueryParser("comment",ix.schema)
             results = searcher.search(parser.parse(query),limit=25)
             for result in results:
-                all_results.append(result)
+                all_results.append(result.fields())
             if os.path.exists(r'/tmp/'):
                 fp = open('/tmp/results.log','a')
                 fp.write(str(all_results)[:1]+"\n")
                 fp.close()
-    except Exception,e:
+    except Exception as e:
         if os.path.exists(r'/tmp/'):
             fp = open('/tmp/error.log','a')
             fp.write(str(e))
@@ -83,10 +82,11 @@ def search():
 @app.route("/random")
 def return_random_prompt():
     "Return a random comment"
-    query = get_random_query()
     results = []
-    while results == []:
-        results = search_comments(query)
+    for _ in range(10):
+        results = search_comments(get_random_query())
+        if results:
+            break
 
     return render_template('random.html', results=results)
 
