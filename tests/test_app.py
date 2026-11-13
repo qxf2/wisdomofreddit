@@ -82,6 +82,13 @@ class AppTest(unittest.TestCase):
             response = self.client.get('/random')
         self.assertEqual(response.status_code, 200)
 
+    def test_sample_data_indexes_every_row(self):
+        sample = os.path.join(os.path.dirname(__file__), '..', 'sample_data', 'sample_comments.csv')
+        sample_dir = os.path.join(self.tmp, 'sample_index')
+        index_comments.update_index(sample, index_name='wor', new_index_flag='true',
+                                    index_dir=sample_dir)
+        self.assertEqual(index.open_dir(sample_dir, indexname='wor').doc_count(), 200)
+
     def test_static_pages_load(self):
         pages = ['/', '/about', '/why', '/uses', '/pro-tips', '/examples', '/blog',
                  '/blogposts/real-scary-creepy-paranormal-stories',
