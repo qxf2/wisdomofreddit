@@ -5,17 +5,14 @@ Code to get Wisdom of reddit up and running locally
 1. PYTHON SETUP
 ----------------
 
-a. Install Python 2.x
+a. Install Python 3.12 or newer
 
-b. Add to your PATH environment variable
+b. Create a virtual environment and install the requirements:
+   python3 -m venv venv
+   source venv/bin/activate   (on Windows: venv\Scripts\activate)
+   pip install -r requirements.txt
 
-c. If you do not have it already, get pip 
-
-d. 'pip install flask'
-
-e. Install Whoosh
-
-g. Install the csv library ('pip install csv')
+c. Run the tests: python -m unittest discover tests
 
 
 --------------
@@ -67,7 +64,7 @@ The BigQuery dataset above stopped updating. Newer comments come from the
 monthly reddit dumps (RC_YYYY-MM.zst) published by Arctic Shift on Academic Torrents.
 Links to each month: https://github.com/ArthurHeitmann/arctic_shift/blob/master/download_links.md
 
-a. Use Python 3 and install the requirements: 'pip install -r requirements-data.txt'
+a. Use the virtual environment from step 1
 
 b. Download one month's comments file. Each monthly torrent also has a submissions file. Only download the comments file:
    aria2c --select-file=1 --seed-time=0 --max-overall-upload-limit=1K -d <download dir> <month>.torrent
