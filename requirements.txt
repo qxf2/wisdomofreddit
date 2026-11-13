@@ -3,3 +3,5 @@ Whoosh==2.7.4
 zstandard==0.25.0
 python-dotenv==1.2.4
 typesafe-sdk==0.7.5
+scikit-learn==1.9.1
+joblib==1.6.0
