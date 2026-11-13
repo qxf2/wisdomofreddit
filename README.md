@@ -72,7 +72,7 @@ Testers can ask for `sample_comments.db` and `sample_scored.db` on Drive (see [#
    comments whose model probability is inside the band would go to Jev, and the table shows the share sent and the projected Jev cost of the backfill.
 8. Testers: label `sample_scored.db` with the model and compare with Jev (ask for the model file `models/story_clf.joblib` on Drive):
    ```bash
-   python train_classifier.py predict -d data/sample_scored.db
+   python train_classifier.py -d data/sample_scored.db predict
    ```
    The model's labels go into the `model_scores` table.
 

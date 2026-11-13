@@ -16,7 +16,7 @@ so testers get a fair comparison on sample_scored.db.
 Usage:
     python train_classifier.py train
     python train_classifier.py evaluate
-    python train_classifier.py predict -d data/sample_scored.db
+    python train_classifier.py -d data/sample_scored.db predict
 """
 
 import argparse
