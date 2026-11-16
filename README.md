@@ -62,6 +62,19 @@ Testers can ask for `sample_comments.db` and `sample_scored.db` on Drive (see [#
    python score_stories.py -d data/comments.db report -t 0.5 -v 2
    ```
    A comment counts as a story when `p_story >= 0.5` and `vividness >= 2`.
+7. Train a cheap local classifier on Jev's labels (TF-IDF plus logistic regression, [#26](https://github.com/qxf2/wisdomofreddit/issues/26)).
+   The comments in `sample_comments.db` are left out, and 20% of the rest is held back for testing:
+   ```bash
+   python train_classifier.py train
+   python train_classifier.py evaluate
+   ```
+   `evaluate` shows how often the model agrees with Jev, plus a table of "unsure bands":
+   comments whose model probability is inside the band would go to Jev, and the table shows the share sent and the projected Jev cost of the backfill.
+8. Testers: label `sample_scored.db` with the model and compare with Jev (ask for the model file `models/story_clf.joblib` on Drive):
+   ```bash
+   python train_classifier.py -d data/sample_scored.db predict
+   ```
+   The model's labels go into the `model_scores` table.
 
 The site doesn't search `comments.db` directly yet. Building the index from it is [#29](https://github.com/qxf2/wisdomofreddit/issues/29).
 
