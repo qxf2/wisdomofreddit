@@ -14,6 +14,15 @@ pip install -r requirements.txt
 python -m unittest discover tests
 ```
 
+**Cloned onto an external drive (exFAT or FAT32)?** These file systems don't store Unix permissions, so `git status` shows every file as modified (`old mode 100644` / `new mode 100755`) even though nothing changed.
+Tell git to ignore file modes in your clone:
+
+```bash
+git config core.fileMode false
+```
+
+This is a per-clone setting, so you need to run it in each clone on such a drive.
+
 ## 2. Quick start with the sample data
 
 `sample_data/sample_comments.csv` has 200 story comments from December 2025.
