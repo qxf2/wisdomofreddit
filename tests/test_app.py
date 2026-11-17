@@ -6,6 +6,8 @@ Run from the repo root:
     python -m unittest discover tests
 """
 
+import io
+import logging
 import os
 import shutil
 import tempfile
@@ -13,6 +15,9 @@ import unittest
 from unittest import mock
 
 from whoosh import index
+
+# Keep test runs out of the real log file. Set before the app is imported.
+os.environ['WOR_LOG_FILE'] = os.path.join(tempfile.mkdtemp(), 'test.log')
 
 import index_comments
 import wisdomofreddit
@@ -100,6 +105,61 @@ class AppTest(unittest.TestCase):
         for page in pages:
             with self.subTest(page=page):
                 self.assertEqual(self.client.get(page).status_code, 200)
+
+
+class LoggingTest(unittest.TestCase):
+
+    def setUp(self):
+        self.tmp = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, self.tmp)
+        self.log_file = os.path.join(self.tmp, 'nested', 'app.log')
+        wisdomofreddit.setup_logging(self.log_file)
+        self.addCleanup(wisdomofreddit.setup_logging)
+
+    def read_log(self):
+        for handler in wisdomofreddit.logger.handlers:
+            handler.flush()
+        with open(self.log_file, encoding='utf-8') as fp:
+            return fp.read()
+
+    def test_search_logs_one_info_line_with_query_and_count(self):
+        csvfile = os.path.join(self.tmp, 'comments.csv')
+        with open(csvfile, 'w', encoding='utf-8') as fp:
+            fp.write(HEADER + '\n' + '\n'.join(ROWS) + '\n')
+        index_dir = os.path.join(self.tmp, 'indexdir')
+        index_comments.update_index(csvfile, index_name='wor', new_index_flag='true',
+                                    index_dir=index_dir)
+        with mock.patch.object(wisdomofreddit, 'open_index',
+                               lambda d, index_name: index.open_dir(index_dir, indexname=index_name)):
+            wisdomofreddit.search_comments('chess')
+        lines = self.read_log().splitlines()
+        self.assertEqual(len(lines), 1)
+        self.assertIn(' INFO ', lines[0])
+        self.assertIn("query='chess' results=1", lines[0])
+
+    def test_missing_index_logs_error_with_stack_trace(self):
+        missing = os.path.join(self.tmp, 'no_such_index')
+        with mock.patch.object(wisdomofreddit, 'open_index',
+                               lambda d, index_name: index.open_dir(missing, indexname=index_name)):
+            self.assertEqual(wisdomofreddit.search_comments('chess'), [])
+        log = self.read_log()
+        self.assertIn(" ERROR wisdomofreddit: Search failed for query='chess'", log)
+        self.assertIn('Traceback (most recent call last)', log)
+
+    def test_log_file_comes_from_env_var(self):
+        env_file = os.path.join(self.tmp, 'from_env.log')
+        with mock.patch.dict(os.environ, {'WOR_LOG_FILE': env_file}):
+            self.assertEqual(wisdomofreddit.setup_logging(), env_file)
+        self.assertEqual(wisdomofreddit.logger.handlers[0].baseFilename, env_file)
+
+    def test_unwritable_log_file_falls_back_to_stderr(self):
+        blocker = os.path.join(self.tmp, 'a_file')
+        open(blocker, 'w').close()
+        with mock.patch('sys.stderr', new_callable=io.StringIO) as stderr:
+            wisdomofreddit.setup_logging(os.path.join(blocker, 'app.log'))
+        self.assertEqual(len(wisdomofreddit.logger.handlers), 1)
+        self.assertNotIsInstance(wisdomofreddit.logger.handlers[0], logging.FileHandler)
+        self.assertIn('WARNING wisdomofreddit: Could not open log file', stderr.getvalue())
 
 
 if __name__ == '__main__':

@@ -12,3 +12,4 @@ output.txt
 scratch_examples.py
 .env
 models/
+logs/

@@ -31,6 +31,9 @@ The second starts the site at http://localhost:6464. Try searching for `dad`, `"
 `-c True` creates a new index and replaces any index already in `./indexdir`.
 Leave it out to add comments to the existing index.
 
+Each search is logged (query and number of results) to `logs/wisdomofreddit.log`, and search errors are logged with a stack trace.
+To log somewhere else, set `WOR_LOG_FILE`, for example `WOR_LOG_FILE=/var/log/wor/app.log python wisdomofreddit.py`.
+
 ## 3. Getting new comments (2025 onwards)
 
 Newer comments come from the monthly reddit dumps (`RC_YYYY-MM.zst`) that Arctic Shift publishes on Academic Torrents.

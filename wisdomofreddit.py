@@ -10,8 +10,40 @@ from flask import render_template
 from flask import request
 from flask import redirect, url_for
 import os,csv,re,random,sqlite3
+import logging
+from logging.handlers import RotatingFileHandler
 from ast import literal_eval
 
+DEFAULT_LOG_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)),'logs','wisdomofreddit.log')
+LOG_FORMAT = '%(asctime)s %(levelname)s %(name)s: %(message)s'
+
+logger = logging.getLogger('wisdomofreddit')
+
+
+def setup_logging(log_file=None):
+    "Send the app's logs to a file. WOR_LOG_FILE overrides the default logs/wisdomofreddit.log"
+    log_file = log_file or os.environ.get('WOR_LOG_FILE') or DEFAULT_LOG_FILE
+    for handler in list(logger.handlers):
+        logger.removeHandler(handler)
+        handler.close()
+    try:
+        log_dir = os.path.dirname(os.path.abspath(log_file))
+        os.makedirs(log_dir,exist_ok=True)
+        handler = RotatingFileHandler(log_file,maxBytes=5*1024*1024,backupCount=3,encoding='utf-8')
+    except OSError as e:
+        handler = logging.StreamHandler()
+        handler.setFormatter(logging.Formatter(LOG_FORMAT))
+        logger.addHandler(handler)
+        logger.warning("Could not open log file %s (%s), logging to stderr instead",log_file,e)
+    else:
+        handler.setFormatter(logging.Formatter(LOG_FORMAT))
+        logger.addHandler(handler)
+    logger.setLevel(logging.INFO)
+
+    return log_file
+
+
+setup_logging()
 app = Flask(__name__)
 
 
@@ -40,25 +72,15 @@ def search_comments(query):
     try:
         index_dir = os.path.join(os.path.dirname(__file__),'indexdir')
         ix = open_index(index_dir,index_name='wor')
-        if os.path.exists(r'/tmp/'):
-            fp = open('/tmp/query.log','a')
-            fp.write(str(query)+"\n")
-            fp.close()
         with ix.searcher() as searcher:
             parser = QueryParser("comment",ix.schema)
             results = searcher.search(parser.parse(query),limit=25)
             for result in results:
                 all_results.append(result.fields())
-            if os.path.exists(r'/tmp/'):
-                fp = open('/tmp/results.log','a')
-                fp.write(str(all_results)[:1]+"\n")
-                fp.close()
-    except Exception as e:
-        if os.path.exists(r'/tmp/'):
-            fp = open('/tmp/error.log','a')
-            fp.write(str(e))
-            fp.close()
-        
+        logger.info("Search query=%r results=%d",query,len(all_results))
+    except Exception:
+        logger.exception("Search failed for query=%r",query)
+
     return all_results
 
 
