@@ -1,0 +1,18 @@
+query                                                  fts5       jammi_bm25     jammi_vector     jammi_hybrid  fts5+vector_rrf
+"dentist here"                                2/10 (2 hits)   8/10 (10 hits)   8/10 (10 hits)   9/10 (10 hits)   9/10 (10 hits)
+"best prank"                                  1/10 (1 hits)   3/10 (10 hits)   7/10 (10 hits)   8/10 (10 hits)   7/10 (10 hits)
+"harry potter"                               4/10 (10 hits)   5/10 (10 hits)   9/10 (10 hits)   6/10 (10 hits)   6/10 (10 hits)
+"holocaust survivor"                          3/10 (6 hits)   4/10 (10 hits)   6/10 (10 hits)   4/10 (10 hits)   6/10 (10 hits)
+"in soviet russia"                            0/10 (0 hits)   2/10 (10 hits)   2/10 (10 hits)   2/10 (10 hits)   2/10 (10 hits)
+frustrating day at the DMV                    0/10 (0 hits)   6/10 (10 hits)   5/10 (10 hits)   7/10 (10 hits)   5/10 (10 hits)
+what a night shift nurse sees                 1/10 (4 hits)   4/10 (10 hits)   4/10 (10 hits)   3/10 (10 hits)   4/10 (10 hits)
+worst job interview ever                      2/10 (3 hits)   2/10 (10 hits)   7/10 (10 hits)   6/10 (10 hits)   6/10 (10 hits)
+getting lost in a foreign country             0/10 (1 hits)   0/10 (10 hits)   0/10 (10 hits)   0/10 (10 hits)   0/10 (10 hits)
+the moment I knew my marriage was over        0/10 (4 hits)   3/10 (10 hits)   5/10 (10 hits)   6/10 (10 hits)   4/10 (10 hits)
+
+relevant in top 10, summed (max 50 per group):
+  fts5             keyword=10/50  writer= 3/50
+  jammi_bm25       keyword=22/50  writer=15/50
+  jammi_vector     keyword=32/50  writer=21/50
+  jammi_hybrid     keyword=29/50  writer=22/50
+  fts5+vector_rrf  keyword=30/50  writer=19/50

@@ -1,0 +1,8 @@
+[build-system]
+requires = ["maturin>=1.9,<2"]
+build-backend = "maturin"
+
+[project]
+name = "wor-search"
+version = "0.1.0"
+requires-python = ">=3.12"
