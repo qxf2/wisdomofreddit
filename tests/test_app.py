@@ -1,6 +1,7 @@
 """
-Tests for index_comments.py and wisdomofreddit.py. They build a tiny Whoosh
-index in a temp folder, so no real data is needed.
+Tests for index_comments.py (the old Whoosh indexer) and wisdomofreddit.py.
+The app tests build a tiny story search index (story_search.py) in a temp
+folder, so no real data is needed.
 
 Run from the repo root:
     python -m unittest discover tests
@@ -15,7 +16,9 @@ from unittest import mock
 from whoosh import index
 
 import index_comments
+import story_search
 import wisdomofreddit
+from test_story_search import make_comments_db
 
 HEADER = 'link_id,id,score,body,name,created_utc,subreddit,parent_id,gilded'
 ROWS = [
@@ -26,7 +29,8 @@ ROWS = [
 ]
 
 
-class AppTest(unittest.TestCase):
+class IndexCommentsTest(unittest.TestCase):
+    "The old Whoosh indexer for the 2007 to 2015 CSV files"
 
     def setUp(self):
         self.tmp = tempfile.mkdtemp()
@@ -36,12 +40,6 @@ class AppTest(unittest.TestCase):
         self.index_dir = os.path.join(self.tmp, 'indexdir')
         index_comments.update_index(self.csvfile, index_name='wor',
                                     new_index_flag='true', index_dir=self.index_dir)
-        patcher = mock.patch.object(
-            wisdomofreddit, 'open_index',
-            lambda index_dir, index_name: index.open_dir(self.index_dir, indexname=index_name))
-        patcher.start()
-        self.addCleanup(patcher.stop)
-        self.client = wisdomofreddit.app.test_client()
 
     def tearDown(self):
         shutil.rmtree(self.tmp)
@@ -61,7 +59,30 @@ class AppTest(unittest.TestCase):
         self.assertEqual(docs[0]['parent'], 'p1')
         self.assertEqual(docs[1]['score'], 35)  # bad score falls back to 35
 
-    def test_search_returns_fields_after_searcher_closes(self):
+    def test_sample_data_indexes_every_row(self):
+        sample = os.path.join(os.path.dirname(__file__), '..', 'sample_data', 'sample_comments.csv')
+        sample_dir = os.path.join(self.tmp, 'sample_index')
+        index_comments.update_index(sample, index_name='wor', new_index_flag='true',
+                                    index_dir=sample_dir)
+        self.assertEqual(index.open_dir(sample_dir, indexname='wor').doc_count(), 200)
+
+
+class AppTest(unittest.TestCase):
+
+    def setUp(self):
+        self.tmp = tempfile.mkdtemp()
+        comments_db = make_comments_db(os.path.join(self.tmp, 'comments.db'))
+        search_dir = os.path.join(self.tmp, 'search')
+        story_search.add_stories(story_search.connect(search_dir), comments_db)
+        patcher = mock.patch.object(wisdomofreddit, 'SEARCH_DIR', search_dir)
+        patcher.start()
+        self.addCleanup(patcher.stop)
+        self.client = wisdomofreddit.app.test_client()
+
+    def tearDown(self):
+        shutil.rmtree(self.tmp)
+
+    def test_search_returns_fields(self):
         results = wisdomofreddit.search_comments('chess')
         self.assertEqual(len(results), 1)
         self.assertEqual(results[0]['subreddit'], 'chess')
@@ -81,13 +102,6 @@ class AppTest(unittest.TestCase):
         with mock.patch.object(wisdomofreddit, 'get_random_query', return_value='zzzz'):
             response = self.client.get('/random')
         self.assertEqual(response.status_code, 200)
-
-    def test_sample_data_indexes_every_row(self):
-        sample = os.path.join(os.path.dirname(__file__), '..', 'sample_data', 'sample_comments.csv')
-        sample_dir = os.path.join(self.tmp, 'sample_index')
-        index_comments.update_index(sample, index_name='wor', new_index_flag='true',
-                                    index_dir=sample_dir)
-        self.assertEqual(index.open_dir(sample_dir, indexname='wor').doc_count(), 200)
 
     def test_static_pages_load(self):
         pages = ['/', '/about', '/why', '/uses', '/pro-tips', '/examples', '/blog',

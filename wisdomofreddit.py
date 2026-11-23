@@ -2,9 +2,6 @@
 wisdomofreddit is a search app for high quality reddit comments
 """
 
-from whoosh import index
-from whoosh import scoring
-from whoosh.qparser import QueryParser
 from flask import Flask
 from flask import render_template
 from flask import request
@@ -12,14 +9,10 @@ from flask import redirect, url_for
 import os,csv,re,random,sqlite3
 from ast import literal_eval
 
+import story_search
+
 app = Flask(__name__)
-
-
-def open_index(index_dir,index_name):
-    "Open a given index"
-    ix = index.open_dir(index_dir,indexname=index_name)
-
-    return ix
+SEARCH_DIR = os.environ.get('WOR_SEARCH_DIR', story_search.DEFAULT_DIR)
 
 
 def get_random_query():
@@ -35,30 +28,20 @@ def get_random_query():
 
 
 def search_comments(query):
-    "Ask whoosh to return the top 20 matches"
+    "Return the top 25 stories: FTS5 keyword search fused with Jammi vector search"
     all_results = []
     try:
-        index_dir = os.path.join(os.path.dirname(__file__),'indexdir')
-        ix = open_index(index_dir,index_name='wor')
         if os.path.exists(r'/tmp/'):
             fp = open('/tmp/query.log','a')
             fp.write(str(query)+"\n")
             fp.close()
-        with ix.searcher() as searcher:
-            parser = QueryParser("comment",ix.schema)
-            results = searcher.search(parser.parse(query),limit=25)
-            for result in results:
-                all_results.append(result.fields())
-            if os.path.exists(r'/tmp/'):
-                fp = open('/tmp/results.log','a')
-                fp.write(str(all_results)[:1]+"\n")
-                fp.close()
+        all_results = story_search.search(query, limit=25, search_dir=SEARCH_DIR)
     except Exception as e:
         if os.path.exists(r'/tmp/'):
             fp = open('/tmp/error.log','a')
             fp.write(str(e))
             fp.close()
-        
+
     return all_results
 
 
