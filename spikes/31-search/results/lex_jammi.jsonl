@@ -1,0 +1,232 @@
+{"engine": "jammi", "first_query_s": 11.300566911697388}
+{"q": "\"Chess player here\"", "ms": 167.65069961547852, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"cricket player here\"", "ms": 184.92889404296875, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"engineer here\"", "ms": 181.86116218566895, "n": 25, "err": null, "phrase_hits": 3}
+{"q": "\"worlds best\"", "ms": 208.44101905822754, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"holocaust survivor\"", "ms": 159.69109535217285, "n": 25, "err": null, "phrase_hits": 4}
+{"q": "ex-cia", "ms": 190.99807739257812, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"funniest line\"", "ms": 187.16120719909668, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"best prank\"", "ms": 190.4010772705078, "n": 25, "err": null, "phrase_hits": 1}
+{"q": "\"dentist here\"", "ms": 180.2690029144287, "n": 25, "err": null, "phrase_hits": 1}
+{"q": "\"harry potter\"", "ms": 199.48983192443848, "n": 25, "err": null, "phrase_hits": 24}
+{"q": "\"worst writer\"", "ms": 173.28405380249023, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"writers block\"", "ms": 187.1170997619629, "n": 25, "err": null, "phrase_hits": 1}
+{"q": "\"russian here\"", "ms": 213.4261131286621, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"in soviet russia\"", "ms": 165.95697402954102, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"american politics\"", "ms": 201.707124710083, "n": 25, "err": null, "phrase_hits": 4}
+{"q": "\"bill clinton\"", "ms": 171.5080738067627, "n": 25, "err": null, "phrase_hits": 5}
+{"q": "\"barack obama\"", "ms": 198.24910163879395, "n": 25, "err": null, "phrase_hits": 6}
+{"q": "\"president obama\"", "ms": 214.3380641937256, "n": 25, "err": null, "phrase_hits": 1}
+{"q": "\"popular conspiracy\"", "ms": 204.82420921325684, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"biggest fail\"", "ms": 191.63274765014648, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"worst enemy\"", "ms": 213.17791938781738, "n": 25, "err": null, "phrase_hits": 14}
+{"q": "ex-boyfriend", "ms": 207.65280723571777, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"relationship problems\"", "ms": 198.84490966796875, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"divorcee here\"", "ms": 183.90679359436035, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"happily remarried\"", "ms": 184.84091758728027, "n": 25, "err": null, "phrase_hits": 2}
+{"q": "\"hardest puzzle\"", "ms": 170.11284828186035, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"best trek\"", "ms": 169.24524307250977, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"running advice\"", "ms": 208.06503295898438, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "depression", "ms": 215.12699127197266, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"benefits of meditation\"", "ms": 208.2669734954834, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "akido", "ms": 7.963895797729492, "n": 0, "err": "KeyError('Field \"body\" does not exist in schema')", "phrase_hits": null}
+{"q": "mma training", "ms": 197.3869800567627, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"weight loss\"", "ms": 188.0629062652588, "n": 25, "err": null, "phrase_hits": 22}
+{"q": "\"boxing champion\"", "ms": 177.79874801635742, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"worlds best pizza\"", "ms": 179.25715446472168, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "yummy food", "ms": 200.07991790771484, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"dumped my girlfriend\"", "ms": 172.29986190795898, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"deliberate practice\"", "ms": 206.90584182739258, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"most embarrassing\"", "ms": 176.0849952697754, "n": 25, "err": null, "phrase_hits": 2}
+{"q": "\"I lied through my teeth\"", "ms": 179.08811569213867, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"remarkable story\"", "ms": 198.20022583007812, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "running marathon", "ms": 181.87689781188965, "n": 25, "err": null, "phrase_hits": null}
+{"q": "best dragon", "ms": 181.2741756439209, "n": 25, "err": null, "phrase_hits": null}
+{"q": "scary dinosaur", "ms": 162.7058982849121, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"I've been sober for\"", "ms": 176.18799209594727, "n": 25, "err": null, "phrase_hits": 1}
+{"q": "\"I messed up\"", "ms": 172.78099060058594, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"amazing discovery\"", "ms": 180.87124824523926, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"epic story\"", "ms": 158.62083435058594, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"brilliant story\"", "ms": 177.4299144744873, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "archery practice", "ms": 183.45880508422852, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"great hobby\"", "ms": 168.2291030883789, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "circlejerk", "ms": 211.27700805664062, "n": 2, "err": null, "phrase_hits": null}
+{"q": "academia cheating", "ms": 189.4216537475586, "n": 25, "err": null, "phrase_hits": null}
+{"q": "doublethink", "ms": 209.15484428405762, "n": 1, "err": null, "phrase_hits": null}
+{"q": "north korea", "ms": 183.95113945007324, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"fled north korea\"", "ms": 193.8159465789795, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"fled china\"", "ms": 202.94189453125, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"wall street\"", "ms": 167.3409938812256, "n": 25, "err": null, "phrase_hits": 8}
+{"q": "raj rajaratnam", "ms": 162.59193420410156, "n": 2, "err": null, "phrase_hits": null}
+{"q": "singing sensation", "ms": 175.44102668762207, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"forest for the trees\"", "ms": 188.9176368713379, "n": 25, "err": null, "phrase_hits": 2}
+{"q": "\"tournament poker\"", "ms": 200.272798538208, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"Why do people\"", "ms": 185.73284149169922, "n": 25, "err": null, "phrase_hits": 2}
+{"q": "bernie madoff", "ms": 191.79487228393555, "n": 8, "err": null, "phrase_hits": null}
+{"q": "ellen pao", "ms": 169.3258285522461, "n": 23, "err": null, "phrase_hits": null}
+{"q": "\"single greatest\"", "ms": 172.20592498779297, "n": 25, "err": null, "phrase_hits": 1}
+{"q": "\"single greatest invention\"", "ms": 178.50494384765625, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "depression  advice", "ms": 191.2229061126709, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"bugging me\"", "ms": 163.66219520568848, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "biggest scam", "ms": 177.3848533630371, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"steep learning curve\"", "ms": 199.30386543273926, "n": 25, "err": null, "phrase_hits": 5}
+{"q": "fired negligence", "ms": 186.16795539855957, "n": 25, "err": null, "phrase_hits": null}
+{"q": "weird court case", "ms": 203.9172649383545, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"weird neighbour\"", "ms": 211.3327980041504, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "cuttlefish", "ms": 9.421825408935547, "n": 0, "err": "KeyError('Field \"body\" does not exist in schema')", "phrase_hits": null}
+{"q": "\"late to the party\"", "ms": 212.6028537750244, "n": 25, "err": null, "phrase_hits": 1}
+{"q": "Delicatessen counter", "ms": 166.0747528076172, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"best deli in\"", "ms": 199.35989379882812, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "obamacare ELI5", "ms": 189.4679069519043, "n": 5, "err": null, "phrase_hits": null}
+{"q": "\"Senate staffer\"", "ms": 193.55201721191406, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"I'm a lawyer\"", "ms": 164.8550033569336, "n": 25, "err": null, "phrase_hits": 2}
+{"q": "\"questioned by police\"", "ms": 187.90817260742188, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "talking to a taxi driver", "ms": 183.03489685058594, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"Went to school with\"", "ms": 187.49308586120605, "n": 25, "err": null, "phrase_hits": 2}
+{"q": "\"Liver Transplant\"", "ms": 191.56312942504883, "n": 25, "err": null, "phrase_hits": 4}
+{"q": "luckiest sob", "ms": 201.0498046875, "n": 25, "err": null, "phrase_hits": null}
+{"q": "tl;dr", "ms": 201.99203491210938, "n": 25, "err": null, "phrase_hits": null}
+{"q": "idi amin", "ms": 203.3247947692871, "n": 17, "err": null, "phrase_hits": null}
+{"q": "escaped pol pot", "ms": 203.05299758911133, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"holocaust of Cambodia\"", "ms": 171.91290855407715, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "narrow escape", "ms": 179.06785011291504, "n": 25, "err": null, "phrase_hits": null}
+{"q": "iranian revolution", "ms": 180.83620071411133, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"I love stories like this\"", "ms": 179.63624000549316, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "wonderful story", "ms": 193.55511665344238, "n": 25, "err": null, "phrase_hits": null}
+{"q": "ordinary galaxy", "ms": 181.52499198913574, "n": 25, "err": null, "phrase_hits": null}
+{"q": "invest stock market", "ms": 193.59612464904785, "n": 25, "err": null, "phrase_hits": null}
+{"q": "legendary coach", "ms": 198.62985610961914, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"Board of Trustees\"", "ms": 180.49216270446777, "n": 25, "err": null, "phrase_hits": 3}
+{"q": "Torgeson story", "ms": 173.51198196411133, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"Bat biologist here\"", "ms": 175.96697807312012, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "mammals tough", "ms": 197.44300842285156, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"written several papers on the subject\"", "ms": 175.33278465270996, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "villa in Dubai", "ms": 200.70409774780273, "n": 25, "err": null, "phrase_hits": null}
+{"q": "Seychelles", "ms": 9.138107299804688, "n": 0, "err": "KeyError('Field \"body\" does not exist in schema')", "phrase_hits": null}
+{"q": "\"how to launder money\"", "ms": 201.7052173614502, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "enron scandal", "ms": 200.2420425415039, "n": 25, "err": null, "phrase_hits": null}
+{"q": "perfect crime", "ms": 201.84707641601562, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"the cabal\"", "ms": 203.02700996398926, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "reddit drama", "ms": 205.0790786743164, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"explosive speed\"", "ms": 204.02002334594727, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "banana olive", "ms": 203.27997207641602, "n": 25, "err": null, "phrase_hits": null}
+{"q": "hungover", "ms": 183.08496475219727, "n": 25, "err": null, "phrase_hits": null}
+{"q": "coworker passive", "ms": 167.67001152038574, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"direct patient care\"", "ms": 205.8258056640625, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"nearly died\"", "ms": 202.28099822998047, "n": 25, "err": null, "phrase_hits": 6}
+{"q": "\"Jehovah's Witness family\"", "ms": 201.90882682800293, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "blood transfusion", "ms": 207.47709274291992, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"oil Sheikh\"", "ms": 200.16169548034668, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"marketing professional\"", "ms": 183.32576751708984, "n": 25, "err": null, "phrase_hits": 1}
+{"q": "\"middle of nowhere\"", "ms": 202.4381160736084, "n": 25, "err": null, "phrase_hits": 20}
+{"q": "wind turbine", "ms": 205.83081245422363, "n": 25, "err": null, "phrase_hits": null}
+{"q": "wedding DJ", "ms": 210.2818489074707, "n": 25, "err": null, "phrase_hits": null}
+{"q": "footprint blood", "ms": 175.3098964691162, "n": 25, "err": null, "phrase_hits": null}
+{"q": "coroner", "ms": 195.9359645843506, "n": 20, "err": null, "phrase_hits": null}
+{"q": "\"off the Golden Gate Bridge\"", "ms": 199.06210899353027, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"survivor of suicide\"", "ms": 196.38895988464355, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"lesson of life\"", "ms": 203.38201522827148, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"reign of terror\"", "ms": 185.81008911132812, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"was a slave\"", "ms": 200.653076171875, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "ancient greece", "ms": 176.43189430236816, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"fall from grace\"", "ms": 201.8420696258545, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "past prime", "ms": 204.3130397796631, "n": 25, "err": null, "phrase_hits": null}
+{"q": "time travel", "ms": 172.79410362243652, "n": 25, "err": null, "phrase_hits": null}
+{"q": "time dilation", "ms": 170.1681613922119, "n": 25, "err": null, "phrase_hits": null}
+{"q": "kissing movies", "ms": 185.64915657043457, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"my first kiss\"", "ms": 170.18890380859375, "n": 25, "err": null, "phrase_hits": 3}
+{"q": "overestimating chances", "ms": 208.44697952270508, "n": 25, "err": null, "phrase_hits": null}
+{"q": "drunk adventure", "ms": 192.25597381591797, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"Stationed in afghanistan\"", "ms": 204.09703254699707, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "ptsd ied", "ms": 198.35591316223145, "n": 25, "err": null, "phrase_hits": null}
+{"q": "work emergency room", "ms": 200.47807693481445, "n": 25, "err": null, "phrase_hits": null}
+{"q": "NYPD bronx", "ms": 203.13382148742676, "n": 21, "err": null, "phrase_hits": null}
+{"q": "broken elevator", "ms": 187.03293800354004, "n": 25, "err": null, "phrase_hits": null}
+{"q": "broken hand", "ms": 173.1278896331787, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"morning routine\"", "ms": 204.4820785522461, "n": 25, "err": null, "phrase_hits": 6}
+{"q": "\"trip to london\"", "ms": 201.05504989624023, "n": 25, "err": null, "phrase_hits": 2}
+{"q": "receptionist boss", "ms": 200.58417320251465, "n": 25, "err": null, "phrase_hits": null}
+{"q": "craigslist true story", "ms": 206.72607421875, "n": 25, "err": null, "phrase_hits": null}
+{"q": "animal research dog", "ms": 199.41210746765137, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"couple of dates\"", "ms": 174.02386665344238, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"story of betrayal\"", "ms": 202.32701301574707, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"hiding in the basement\"", "ms": 210.02697944641113, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"grew up in pakistan\"", "ms": 173.13480377197266, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "tofu", "ms": 189.96500968933105, "n": 19, "err": null, "phrase_hits": null}
+{"q": "sushi", "ms": 168.11203956604004, "n": 25, "err": null, "phrase_hits": null}
+{"q": "entire life dedicated", "ms": 164.53027725219727, "n": 25, "err": null, "phrase_hits": null}
+{"q": "mathlete", "ms": 7.245779037475586, "n": 0, "err": "KeyError('Field \"body\" does not exist in schema')", "phrase_hits": null}
+{"q": "greatest lawyer", "ms": 169.65198516845703, "n": 25, "err": null, "phrase_hits": null}
+{"q": "graduation faux", "ms": 167.01221466064453, "n": 25, "err": null, "phrase_hits": null}
+{"q": "greatest exit", "ms": 162.89305686950684, "n": 25, "err": null, "phrase_hits": null}
+{"q": "infamous incident", "ms": 163.527250289917, "n": 25, "err": null, "phrase_hits": null}
+{"q": "arsonist", "ms": 169.64125633239746, "n": 1, "err": null, "phrase_hits": null}
+{"q": "neighbor arrested", "ms": 171.07295989990234, "n": 25, "err": null, "phrase_hits": null}
+{"q": "corporate bullshit", "ms": 166.63789749145508, "n": 25, "err": null, "phrase_hits": null}
+{"q": "bill gates", "ms": 166.35918617248535, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"I told you so\"", "ms": 175.54783821105957, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "plagarism", "ms": 7.086992263793945, "n": 0, "err": "KeyError('Field \"body\" does not exist in schema')", "phrase_hits": null}
+{"q": "\"hate mail\"", "ms": 165.88211059570312, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"fashion show\"", "ms": 150.91395378112793, "n": 25, "err": null, "phrase_hits": 5}
+{"q": "\"poet here\"", "ms": 163.10501098632812, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "anarchy office", "ms": 162.80508041381836, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"anonymous call\"", "ms": 167.02890396118164, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"shaving in the morning\"", "ms": 165.5597686767578, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"attention to detail\"", "ms": 168.565034866333, "n": 25, "err": null, "phrase_hits": 7}
+{"q": "journalist scoop", "ms": 195.80698013305664, "n": 25, "err": null, "phrase_hits": null}
+{"q": "prodigy parent", "ms": 171.0681915283203, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"overbearing parents\"", "ms": 167.19484329223633, "n": 25, "err": null, "phrase_hits": 2}
+{"q": "brilliant insight", "ms": 167.42515563964844, "n": 25, "err": null, "phrase_hits": null}
+{"q": "big pharma", "ms": 167.3269271850586, "n": 25, "err": null, "phrase_hits": null}
+{"q": "big oil", "ms": 176.64527893066406, "n": 25, "err": null, "phrase_hits": null}
+{"q": "cancer cure", "ms": 181.62894248962402, "n": 25, "err": null, "phrase_hits": null}
+{"q": "golden goose", "ms": 178.06196212768555, "n": 25, "err": null, "phrase_hits": null}
+{"q": "googler here", "ms": 180.89675903320312, "n": 25, "err": null, "phrase_hits": null}
+{"q": "impostor real-life", "ms": 178.9250373840332, "n": 25, "err": null, "phrase_hits": null}
+{"q": "writer soap", "ms": 235.36276817321777, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"as a writer\"", "ms": 195.36590576171875, "n": 25, "err": null, "phrase_hits": 2}
+{"q": "love learn", "ms": 165.42911529541016, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"death bed\"", "ms": 163.61403465270996, "n": 25, "err": null, "phrase_hits": 5}
+{"q": "revenge petty", "ms": 170.35603523254395, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"biggest misconception\"", "ms": 162.6608371734619, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"horrible habit\"", "ms": 162.39285469055176, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"I said no\"", "ms": 170.08614540100098, "n": 25, "err": null, "phrase_hits": 9}
+{"q": "\"aa meetings\"", "ms": 165.5888557434082, "n": 25, "err": null, "phrase_hits": 5}
+{"q": "\"missing person\"", "ms": 163.9230251312256, "n": 25, "err": null, "phrase_hits": 2}
+{"q": "\"kidnapped me\"", "ms": 174.51906204223633, "n": 25, "err": null, "phrase_hits": 2}
+{"q": "\"lost my mind\"", "ms": 165.0679111480713, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"secret code\"", "ms": 163.59806060791016, "n": 25, "err": null, "phrase_hits": 2}
+{"q": "summer treehouse", "ms": 162.7178192138672, "n": 25, "err": null, "phrase_hits": null}
+{"q": "Election cycle", "ms": 162.2629165649414, "n": 25, "err": null, "phrase_hits": null}
+{"q": "coup staged", "ms": 164.79110717773438, "n": 25, "err": null, "phrase_hits": null}
+{"q": "brutal romania", "ms": 165.46320915222168, "n": 25, "err": null, "phrase_hits": null}
+{"q": "TIL mexico", "ms": 168.1828498840332, "n": 25, "err": null, "phrase_hits": null}
+{"q": "dosa", "ms": 6.742000579833984, "n": 0, "err": "KeyError('Field \"body\" does not exist in schema')", "phrase_hits": null}
+{"q": "sick fever", "ms": 168.72501373291016, "n": 25, "err": null, "phrase_hits": null}
+{"q": "dog catch", "ms": 162.95790672302246, "n": 25, "err": null, "phrase_hits": null}
+{"q": "liberty attack", "ms": 162.322998046875, "n": 25, "err": null, "phrase_hits": null}
+{"q": "shooting survivor", "ms": 163.1479263305664, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"weight loss journey\"", "ms": 166.093111038208, "n": 25, "err": null, "phrase_hits": 3}
+{"q": "diet fell down", "ms": 163.57898712158203, "n": 25, "err": null, "phrase_hits": null}
+{"q": "apartment sound", "ms": 164.107084274292, "n": 25, "err": null, "phrase_hits": null}
+{"q": "speeding ticket", "ms": 164.36386108398438, "n": 25, "err": null, "phrase_hits": null}
+{"q": "obscure fact", "ms": 161.10897064208984, "n": 25, "err": null, "phrase_hits": null}
+{"q": "crossword puzzles", "ms": 164.2458438873291, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"reply all\"", "ms": 167.50216484069824, "n": 25, "err": null, "phrase_hits": 1}
+{"q": "\"minor brain damage\"", "ms": 163.48981857299805, "n": 25, "err": null, "phrase_hits": 1}
+{"q": "dishwashing hobby", "ms": 163.10811042785645, "n": 25, "err": null, "phrase_hits": null}
+{"q": "wheelchair airport", "ms": 164.21103477478027, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"crazy small world\"", "ms": 169.07596588134766, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"massage therapist\"  funny", "ms": 168.56098175048828, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"early internet\"", "ms": 187.50429153442383, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"family run business\"", "ms": 168.72096061706543, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"worked at an auction house\"", "ms": 164.03508186340332, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"family run business\"", "ms": 165.65203666687012, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"worst thing to ever happen to me\"", "ms": 166.65172576904297, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"I was the employee\"", "ms": 168.83611679077148, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"same thing happened\"", "ms": 164.14713859558105, "n": 25, "err": null, "phrase_hits": 6}
+{"q": "grocery checkout", "ms": 166.01181030273438, "n": 25, "err": null, "phrase_hits": null}
+{"q": "\"self driving cars\"", "ms": 163.64574432373047, "n": 25, "err": null, "phrase_hits": 1}
+{"q": "\"my bad\"", "ms": 165.3158664703369, "n": 25, "err": null, "phrase_hits": 2}
+{"q": "\"I call bullshit\"", "ms": 162.72902488708496, "n": 25, "err": null, "phrase_hits": 0}
+{"q": "\"called to investigate murder\"", "ms": 166.12887382507324, "n": 25, "err": null, "phrase_hits": 0}

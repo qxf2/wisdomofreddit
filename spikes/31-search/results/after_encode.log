@@ -1,0 +1,20 @@
+== import real vectors
+{"rows": 34608, "import_s": 27.696898221969604, "first_query_s": 0.21865010261535645, "query_ms": [12, 8, 7, 7, 6], "disk_mb": 104.1}
+== lexical bench (uncontended)
+fts5 done
+whoosh done
+jammi done
+fts5    first=469ms median=53.5ms p95=276.3ms errors=4 zero=96 quoted_q=62 phrase_precision=0.87 total_hits=1269
+   err: ex-cia OperationalError('no such column: cia')
+   err: ex-boyfriend OperationalError('no such column: boyfriend')
+   err: tl;dr OperationalError('fts5: syntax error near ";"')
+whoosh  first=266ms median=3.0ms p95=38.7ms errors=0 zero=93 quoted_q=67 phrase_precision=0.65 total_hits=1369
+jammi   first=8131ms median=158.3ms p95=166.1ms errors=6 zero=0 quoted_q=120 phrase_precision=0.07 total_hits=5469
+   err: akido KeyError('Field "body" does not exist in schema')
+   err: cuttlefish KeyError('Field "body" does not exist in schema')
+   err: Seychelles KeyError('Field "body" does not exist in schema')
+== vector bench
+{"first_query_s": 4.111241340637207, "encode_ms_median": 11.745691299438477, "encode_ms_p95": 12.5579833984375, "search_ms_median": 6.807088851928711, "search_ms_p95": 7.116079330444336}
+== quality
+unique docs to judge: 208
+ALL_DONE

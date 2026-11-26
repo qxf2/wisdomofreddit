@@ -1,0 +1,15 @@
+[package]
+name = "wor_search"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.94"
+
+[lib]
+name = "wor_search"
+crate-type = ["cdylib"]
+
+[dependencies]
+# Jammi is pre-1.0: pin exactly.
+jammi-ai = { version = "=0.54.0" }   # default feature "local" holds index + query
+jammi-db = { version = "=0.54.0", default-features = false }
+pyo3 = { version = "0.28", features = ["extension-module", "abi3-py312"] }
