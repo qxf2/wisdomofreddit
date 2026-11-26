@@ -24,9 +24,13 @@ MAX_TOKENS = 512        # Jammi's encoder window; sentence-transformers must mat
 SOURCE = 'stories'
 P_STORY_MIN = 0.5       # same as score_stories.STORY_THRESHOLD and MIN_VIVIDNESS;
 VIVIDNESS_MIN = 2       # not imported so the app does not need typesafe_sdk
-CANDIDATES = 50         # hits taken from each engine before fusing
+CANDIDATES = 25         # hits taken from each engine before fusing (15 to 40 scored the
+                        # same on the #45 eval; 50 scored lower, see #47)
 RRF_K = 60
 FILTER_FACTOR = 4      # extra vector hits to fetch when some will be filtered out
+MIN_KEYWORD_HITS = 10   # below this many AND hits, add OR hits (#47)
+MAX_OR_WORDS = 10       # no OR fallback for longer queries (pastes): it costs ~40 ms
+                        # and vector search carries them anyway
 
 DEFAULT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'search')
 
@@ -236,13 +240,22 @@ def _all_matches(con, match):
 
 
 def keyword_ids(con, parsed, k=CANDIDATES):
-    """Story rowids from FTS5, best first. With a phrase plus words, stories that
-    have the phrase and all the words come first, then ones with just the phrase."""
+    """Story rowids from FTS5, best first. Stop words are dropped outside quotes
+    (#47). Stories with every word come first. If there are fewer than
+    MIN_KEYWORD_HITS, stories with any of the words follow, ranked by bm25
+    (up to MAX_OR_WORDS words).
+    With a phrase, stories with the phrase and every word come first, then
+    stories with just the phrase."""
+    parsed = parsed.without_stop_words()
     ids = _match(con, parsed.fts(), k)
-    if parsed.has_phrase and parsed.words and len(ids) < k:
-        seen = set(ids)
-        ids += [i for i in _match(con, parsed.fts_required(), k) if i not in seen][:k - len(ids)]
-    return ids
+    more = []
+    if parsed.has_phrase:
+        if parsed.words and len(ids) < k:
+            more = _match(con, parsed.fts_required(), k)
+    elif len(ids) < MIN_KEYWORD_HITS and 1 < len(parsed.clauses) <= MAX_OR_WORDS:
+        more = _match(con, parsed.fts_any(), k)
+    seen = set(ids)
+    return ids + [i for i in more if i not in seen][:k - len(ids)]
 
 
 _stores = {}
