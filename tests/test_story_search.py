@@ -62,7 +62,7 @@ class FtsQueryTest(unittest.TestCase):
     def test_operators(self):
         self.assertEqual(story_search.fts_query('NOT cats OR'), '')
         self.assertEqual(story_search.fts_query('cats OR dogs'), '("cats" OR "dogs")')
-        self.assertEqual(story_search.fts_query('cats -dogs'), '("cats") NOT ("dogs")')
+        self.assertEqual(story_search.fts_query('cats -dogs'), '"cats" NOT ("dogs")')
 
     def test_rrf_rewards_items_in_both_lists(self):
         self.assertEqual(story_search.rrf([1, 2, 3], [3, 4]), [3, 1, 2, 4])
@@ -186,7 +186,32 @@ class SearchTest(unittest.TestCase):
     def test_or_groups(self):
         with mock.patch.object(story_search, 'vector_ids', return_value=[]):
             self.assertEqual(sorted(self.names(self.search('chess OR lighthouse'))), ['t1_c1', 't1_c2'])
-            self.assertEqual(self.search('chess lighthouse'), [])
+            # no story has both, so the keyword side falls back to either (#47)
+            self.assertEqual(sorted(self.names(self.search('chess lighthouse'))), ['t1_c1', 't1_c2'])
+
+    def test_stop_words_are_dropped_on_the_keyword_side(self):
+        with mock.patch.object(story_search, 'vector_ids', return_value=[]) as vector_ids:
+            # "my" and "was" are not in c2, but they are stop words
+            self.assertEqual(self.names(self.search('my lighthouse keeper was storm')), ['t1_c2'])
+            self.assertEqual(vector_ids.call_args[0][2], 'my lighthouse keeper was storm')
+            # inside quotes they are kept, so this phrase is not in c2
+            results = self.search('"the storm of 1987" keeper')
+            self.assertEqual(self.names(results), ['t1_c2'])
+            self.assertEqual(self.search('"the storm in 1987"'), [])
+
+    def test_keyword_side_falls_back_to_or_when_and_finds_too_few(self):
+        p = story_search.parse_query
+        self.assertEqual(len(story_search.keyword_ids(self.con, p('grandfather lighthouse'))), 2)
+        with mock.patch.object(story_search, 'MIN_KEYWORD_HITS', 1):
+            self.assertEqual(len(story_search.keyword_ids(self.con, p('grandfather chess'))), 1)
+        with mock.patch.object(story_search, 'MAX_OR_WORDS', 1):
+            self.assertEqual(story_search.keyword_ids(self.con, p('grandfather lighthouse')), [])
+        # all-AND hits come before OR-only hits
+        make_comments_db(self.comments, [('c8', 't3_stu', 70, 'My grandfather kept a lighthouse.',
+                                          'AskReddit', 't3_stu', 1764547800, 0.9, 3)])
+        story_search.add_stories(self.con, self.comments)
+        rowid = self.rowids()
+        self.assertEqual(story_search.keyword_ids(self.con, p('grandfather lighthouse'))[0], rowid['c8'])
 
     def test_vector_failure_falls_back_to_keywords(self):
         with mock.patch.object(story_search, 'vector_ids', side_effect=RuntimeError('boom')):

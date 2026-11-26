@@ -17,6 +17,23 @@ are ignored. A query that is only operators or punctuation parses as empty.
 import re
 from dataclasses import dataclass, field
 
+# Dropped from the keyword (FTS5) side of a query, never from inside a quoted
+# phrase or from the text sent to vector search (#47). Common English function
+# words plus filler people type when they describe a story.
+STOP_WORDS = frozenset("""
+a about above after again against all am an and any are as at be because been
+before being below between both but by can could did do does doing down during
+each few for from further had has have having he her here hers herself him
+himself his how i i'd i'll i'm i've if in into is it it's its itself just me
+more most my myself no nor not of off on once only or other our ours ourselves
+out over own same she should so some such than that that's the their theirs
+them themselves then there these they this those through to too under until up
+very was we were what when where which while who whom why will with would you
+your yours yourself yourselves
+ever really thing things stuff like story stories time times got get getting
+someone something somebody anyone one ones also even still
+""".split())
+
 _TOKEN = re.compile(r'(-?)"([^"]*)("?)|([^\s"]+)')
 _OPERATORS = {'AND', 'OR', 'NOT'}
 
@@ -63,6 +80,25 @@ class Query:
         "The clauses with a quoted phrase: every result must match these"
         return [c for c in self.clauses if any(t.quoted for t in c)]
 
+    def without_stop_words(self):
+        """The query for the keyword side: unquoted stop words dropped, phrases
+        and exclusions kept. Returns the query unchanged if nothing would be left."""
+        clauses = []
+        for clause in self.clauses:
+            kept = [t for t in clause if t.quoted or t.text.lower() not in STOP_WORDS]
+            if kept:
+                clauses.append(kept)
+        if not clauses or len(clauses) == len(self.clauses) and all(
+                len(a) == len(b) for a, b in zip(clauses, self.clauses)):
+            return self
+        return Query(clauses=clauses, excluded=list(self.excluded), text=self.text,
+                     operators=self.operators)
+
+    def fts_any(self):
+        "FTS5 query matching any searched term, minus the exclusions"
+        terms = [t for clause in self.clauses for t in clause]
+        return self.fts([terms]) if terms else ''
+
     def fts(self, clauses=None):
         """FTS5 query for the given clauses (default all) minus the exclusions.
         Empty string when there is nothing to match."""
@@ -77,7 +113,9 @@ class Query:
                 parts.append('(%s)' % ' OR '.join(t.fts() for t in clause))
         match = ' AND '.join(parts)
         if self.excluded:
-            match = '(%s) NOT (%s)' % (match, self.fts_excluded())
+            if len(parts) > 1:
+                match = '(%s)' % match
+            match = '%s NOT (%s)' % (match, self.fts_excluded())
         return match
 
     def fts_required(self):

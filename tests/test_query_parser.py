@@ -63,7 +63,7 @@ class SyntaxTest(unittest.TestCase):
         self.assertEqual(parse_query('"first job" boss -retail').fts(),
                          '("first job" AND "boss") NOT ("retail")')
         self.assertEqual(parse_query('"first job" boss -retail').fts_required(),
-                         '("first job") NOT ("retail")')
+                         '"first job" NOT ("retail")')
         self.assertEqual(parse_query('dog OR cat rescue').fts(), '("dog" OR "cat") AND "rescue"')
         self.assertEqual(parse_query('a -b -"c d"').fts_excluded(), '"b" OR "c d"')
 
@@ -72,6 +72,42 @@ class SyntaxTest(unittest.TestCase):
         self.assertEqual(parse_query('🐶 my dog').vector_text(), '🐶 my dog')
         self.assertEqual(parse_query('"night shift" nurse -kids').vector_text(), 'night shift nurse')
         self.assertEqual(parse_query('dog OR cat').vector_text(), 'dog cat')
+
+
+class StopWordTest(unittest.TestCase):
+
+    def keyword_shape(self, text):
+        q = parse_query(text).without_stop_words()
+        return [[('"%s"' % t.text) if t.quoted else t.text for t in c] for c in q.clauses]
+
+    def test_dropped_outside_quotes(self):
+        self.assertEqual(self.keyword_shape('the moment I knew my marriage was over'),
+                         [['moment'], ['knew'], ['marriage']])
+        self.assertEqual(self.keyword_shape('"in soviet russia" what a joke'),
+                         [['"in soviet russia"'], ['joke']])
+
+    def test_names_and_terms_are_kept(self):
+        self.assertEqual(self.keyword_shape('harry potter'), [['harry'], ['potter']])
+        self.assertEqual(self.keyword_shape('kasparov'), [['kasparov']])
+
+    def test_case_insensitive_and_inside_or_groups(self):
+        self.assertEqual(self.keyword_shape('The dog OR Cat'), [['dog', 'Cat']])
+        self.assertEqual(self.keyword_shape('dog OR the rescue'), [['dog'], ['rescue']])
+
+    def test_all_stop_words_keeps_the_query(self):
+        q = parse_query('what a')
+        self.assertIs(q.without_stop_words(), q)
+        q = parse_query('worst job')
+        self.assertIs(q.without_stop_words(), q)
+
+    def test_exclusions_and_vector_text_are_untouched(self):
+        q = parse_query('the dog -the').without_stop_words()
+        self.assertEqual([t.text for t in q.excluded], ['the'])
+        self.assertEqual(parse_query('the moment I knew').vector_text(), 'the moment I knew')
+
+    def test_fts_any(self):
+        self.assertEqual(parse_query('dog cat -kids').fts_any(), '("dog" OR "cat") NOT ("kids")')
+        self.assertEqual(parse_query('').fts_any(), '')
 
 
 class AwkwardInputTest(unittest.TestCase):
