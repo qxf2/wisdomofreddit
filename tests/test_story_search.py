@@ -52,18 +52,17 @@ def make_comments_db(path, rows=STORIES):
 class FtsQueryTest(unittest.TestCase):
 
     def test_words_and_phrases_are_quoted(self):
-        self.assertEqual(story_search.fts_query('"dentist here" chess'), '"dentist here" "chess"')
+        self.assertEqual(story_search.fts_query('"dentist here" chess'), '"dentist here" AND "chess"')
 
     def test_punctuation_cannot_break_the_syntax(self):
-        self.assertEqual(story_search.fts_query('ex-cia tl;dr'), '"ex-cia" "tl;dr"')
-        self.assertEqual(story_search.fts_query('"unbalanced quote'), '"unbalanced" "quote"')
+        self.assertEqual(story_search.fts_query('ex-cia tl;dr'), '"ex-cia" AND "tl;dr"')
+        self.assertEqual(story_search.fts_query('"unbalanced quote'), '"unbalanced" AND "quote"')
         self.assertEqual(story_search.fts_query(';;; *'), '')
 
-    def test_operators_are_kept_but_not_at_the_ends(self):
-        self.assertEqual(story_search.fts_query('NOT cats OR'), '"cats"')
-        self.assertEqual(story_search.fts_query('cats OR dogs'), '"cats" OR "dogs"')
-        self.assertEqual(story_search.fts_query('cats OR dogs', operators=False),
-                         '"cats" "OR" "dogs"')
+    def test_operators(self):
+        self.assertEqual(story_search.fts_query('NOT cats OR'), '')
+        self.assertEqual(story_search.fts_query('cats OR dogs'), '("cats" OR "dogs")')
+        self.assertEqual(story_search.fts_query('cats -dogs'), '("cats") NOT ("dogs")')
 
     def test_rrf_rewards_items_in_both_lists(self):
         self.assertEqual(story_search.rrf([1, 2, 3], [3, 4]), [3, 1, 2, 4])
@@ -125,12 +124,69 @@ class SearchTest(unittest.TestCase):
         self.assertEqual(story_search.add_stories(con, db), 200)
         con.close()
 
+    def rowids(self):
+        return dict(self.con.execute('SELECT id, rowid FROM stories'))
+
+    def names(self, results):
+        return [r['name'] for r in results]
+
     def test_unquoted_queries_fuse_vector_hits(self):
-        rowid = dict(self.con.execute('SELECT id, rowid FROM stories'))
+        rowid = self.rowids()
         with mock.patch.object(story_search, 'vector_ids', return_value=[rowid['c2'], rowid['c1']]):
-            self.assertEqual([r['name'] for r in self.search('chess')], ['t1_c1', 't1_c2'])
-            self.assertEqual([r['name'] for r in self.search('a sad sailor')], ['t1_c2', 't1_c1'])
-            self.assertEqual(self.search('"a sad sailor"'), [])   # quoted: FTS5 only
+            self.assertEqual(self.names(self.search('chess')), ['t1_c1', 't1_c2'])
+            self.assertEqual(self.names(self.search('a sad sailor')), ['t1_c2', 't1_c1'])
+
+    def test_plain_queries_are_embedded_as_typed(self):
+        with mock.patch.object(story_search, 'vector_ids', return_value=[]) as vector_ids:
+            self.search('🐶 my dog saved me')
+            self.assertEqual(vector_ids.call_args[0][2], '🐶 my dog saved me')
+            self.search('"dentist here" chess -kids')
+            self.assertEqual(vector_ids.call_args[0][2], 'dentist here chess')
+
+    def test_phrases_stay_exact_but_use_vector_ranking(self):
+        rowid = self.rowids()
+        # c1 has no "dentist here", so the vector hit is dropped
+        with mock.patch.object(story_search, 'vector_ids', return_value=[rowid['c1'], rowid['c3']]):
+            results = self.search('"dentist here"')
+            self.assertEqual(self.names(results), ['t1_c3'])
+            self.assertFalse(results.related)
+            # phrase + word: c3 has the phrase but not "lighthouse"; it still counts
+            self.assertEqual(self.names(self.search('"dentist here" lighthouse')), ['t1_c3'])
+
+    def test_phrase_plus_word_ranks_stories_with_both_first(self):
+        make_comments_db(self.comments, [('c7', 't3_xyz', 70, 'Dentist here, and my weird patient was a lighthouse keeper.',
+                                          'AskReddit', 't3_xyz', 1764547700, 0.9, 3)])
+        story_search.add_stories(self.con, self.comments)
+        with mock.patch.object(story_search, 'vector_ids', return_value=[]):
+            self.assertEqual(self.names(self.search('"dentist here" lighthouse')), ['t1_c7', 't1_c3'])
+
+    def test_no_exact_match_shows_related_stories(self):
+        rowid = self.rowids()
+        with mock.patch.object(story_search, 'vector_ids', return_value=[rowid['c2'], rowid['c1']]):
+            results = self.search('"a sad sailor"')
+            self.assertEqual(self.names(results), ['t1_c2', 't1_c1'])
+            self.assertTrue(results.related)
+            results = self.search('"a sad sailor" -lighthouse')
+            self.assertEqual(self.names(results), ['t1_c1'])
+            self.assertTrue(results.related)
+        with mock.patch.object(story_search, 'vector_ids', return_value=[]):
+            results = self.search('"a sad sailor"')
+            self.assertEqual(results, [])
+            self.assertFalse(results.related)
+
+    def test_exclusions_apply_to_both_lists(self):
+        rowid = self.rowids()
+        with mock.patch.object(story_search, 'vector_ids', return_value=[rowid['c2'], rowid['c3']]):
+            self.assertEqual(self.names(self.search('chess')), ['t1_c1', 't1_c2', 't1_c3'])
+            self.assertEqual(self.names(self.search('chess -lighthouse')), ['t1_c1', 't1_c3'])
+            self.assertEqual(self.names(self.search('chess NOT "dentist here"')), ['t1_c1', 't1_c2'])
+            self.assertEqual(self.names(self.search('chess -grandfather')), ['t1_c2', 't1_c3'])
+            self.assertEqual(self.search('-chess'), [])      # nothing left to search for
+
+    def test_or_groups(self):
+        with mock.patch.object(story_search, 'vector_ids', return_value=[]):
+            self.assertEqual(sorted(self.names(self.search('chess OR lighthouse'))), ['t1_c1', 't1_c2'])
+            self.assertEqual(self.search('chess lighthouse'), [])
 
     def test_vector_failure_falls_back_to_keywords(self):
         with mock.patch.object(story_search, 'vector_ids', side_effect=RuntimeError('boom')):

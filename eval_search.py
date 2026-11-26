@@ -4,6 +4,10 @@ and report, per query type, how many of the top 10 results are relevant,
 queries with no results, errors, quoted-phrase and exclusion checks, and
 latency.
 
+A quoted query with no exact match may get related stories instead
+(story_search.Results.related, #46). Those are counted under "related", not
+"zero", and are not checked for the phrase.
+
 Relevance comes from labels saved in tests/search_eval/labels.jsonl, one
 judgment per line:
     {"query": "...", "id": "<story id>", "judge": "jev", "relevant": true, "p": 0.91}
@@ -143,19 +147,20 @@ def run_queries(queries, search_dir, repeat=1, top=TOP):
                 pass
         runs = []
         for kind, query in queries:
-            times, ids, error = [], [], None
+            times, ids, related, error = [], [], False, None
             before = counter.count
             for _ in range(max(repeat, 1)):
                 start = time.perf_counter()
                 try:
                     results = story_search.search(query, limit=top, search_dir=search_dir)
                     ids = [story_id(r) for r in results]
+                    related = bool(getattr(results, 'related', False))
                 except Exception as exc:
                     error = '%s: %s' % (type(exc).__name__, exc)
                 times.append((time.perf_counter() - start) * 1000)
             if error is None and counter.count > before:
                 error = 'logged %d error(s)' % (counter.count - before)
-            runs.append({'type': kind, 'query': query, 'ids': ids, 'error': error,
+            runs.append({'type': kind, 'query': query, 'ids': ids, 'related': related, 'error': error,
                          'ms': statistics.median(times)})
         return runs
     finally:
@@ -172,6 +177,8 @@ def check_runs(runs, search_dir, labels, judges):
             run['relevant'] = sum(v is True for v in verdicts)
             run['judged'] = sum(v is not None for v in verdicts)
             run['unjudged'] = [i for i, v in zip(run['ids'], verdicts) if v is None]
+            if run.get('related'):
+                phrases = []    # related stories are shown as not exact on purpose
             run['phrase_misses'] = sum(1 for i in run['ids']
                                        if not all(matches(con, i, p) for p in phrases))
             run['excluded_hits'] = sum(1 for i in run['ids']
@@ -205,6 +212,7 @@ def summarize(runs, top=TOP):
             'precision': relevant / judged if judged else None,
             'unjudged': sum(len(r['unjudged']) for r in group),
             'zero': sum(1 for r in group if not r['ids'] and not r['error']),
+            'related': sum(1 for r in group if r.get('related')),
             'errors': sum(1 for r in group if r['error']),
             'phrase_misses': sum(r['phrase_misses'] for r in group),
             'excluded_hits': sum(r['excluded_hits'] for r in group),
@@ -217,14 +225,14 @@ def summarize(runs, top=TOP):
 # ---------------------------------------------------------------- output
 
 COLUMNS = [('type', 8), ('queries', 7), ('rel@10', 9), ('prec', 5), ('unjudged', 8),
-           ('zero', 4), ('errors', 6), ('phr.miss', 8), ('excl.hit', 8),
+           ('zero', 4), ('related', 7), ('errors', 6), ('phr.miss', 8), ('excl.hit', 8),
            ('med ms', 7), ('p95 ms', 7)]
 
 
 def format_row(kind, row):
     precision = '-' if row['precision'] is None else '%.2f' % row['precision']
     cells = [kind, row['queries'], '%d/%d' % (row['relevant'], row['max']), precision,
-             row['unjudged'], row['zero'], row['errors'], row['phrase_misses'],
+             row['unjudged'], row['zero'], row['related'], row['errors'], row['phrase_misses'],
              row['excluded_hits'], '%.1f' % row['median_ms'], '%.1f' % row['p95_ms']]
     return '  '.join(str(c).rjust(w) if i else str(c).ljust(w)
                      for i, (c, (_, w)) in enumerate(zip(cells, COLUMNS)))
@@ -244,10 +252,11 @@ def format_compare(summary, before):
         old = before['summary'].get(kind)
         if not old:
             continue
-        lines.append('  %-8s rel@10 %+d (%d -> %d)  zero %+d  errors %+d  phr.miss %+d  '
-                     'excl.hit %+d  p95 %+.1f ms'
+        lines.append('  %-8s rel@10 %+d (%d -> %d)  zero %+d  related %+d  errors %+d  '
+                     'phr.miss %+d  excl.hit %+d  p95 %+.1f ms'
                      % (kind, row['relevant'] - old['relevant'], old['relevant'],
                         row['relevant'], row['zero'] - old['zero'],
+                        row['related'] - old.get('related', 0),
                         row['errors'] - old['errors'],
                         row['phrase_misses'] - old['phrase_misses'],
                         row['excluded_hits'] - old['excluded_hits'],
@@ -258,7 +267,7 @@ def format_compare(summary, before):
 def format_per_query(runs):
     lines = []
     for r in runs:
-        status = r['error'] or ('%d results' % len(r['ids']))
+        status = r['error'] or ('%d %s' % (len(r['ids']), 'related' if r.get('related') else 'results'))
         lines.append('%-8s %3d/%-3d %7.1f ms  %-12s %s'
                      % (r['type'], r['relevant'], r['judged'], r['ms'], status, r['query']))
     return '\n'.join(lines)

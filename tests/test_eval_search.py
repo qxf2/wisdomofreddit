@@ -101,11 +101,11 @@ class EvaluateTest(unittest.TestCase):
         self.assertEqual(summary['keyword']['judged'], 1)
         self.assertEqual(summary['phrase']['unjudged'], 1)       # c3 for "dentist here"
         self.assertEqual(summary['phrase']['zero'], 1)
-        self.assertEqual(summary['mixed']['excluded_hits'], 1)   # "-storm" is searched as a word today
+        self.assertEqual(summary['mixed']['excluded_hits'], 0)   # c2 has "storm", so it is left out
+        self.assertEqual(summary['mixed']['zero'], 1)
         self.assertEqual(summary['all']['queries'], 5)
         self.assertEqual(summary['all']['errors'], 0)
-        self.assertEqual(eval_search.unjudged_pairs(runs), [('"dentist here"', 'c3'),
-                                                            ('lighthouse -storm', 'c2')])
+        self.assertEqual(eval_search.unjudged_pairs(runs), [('"dentist here"', 'c3')])
         table = eval_search.format_table(summary)
         self.assertIn('keyword', table)
         self.assertIn('1/10', table)
@@ -115,6 +115,21 @@ class EvaluateTest(unittest.TestCase):
                 {'url': 'https://www.reddit.com/comments/abc/x/c1'}]):
             runs, summary, _ = eval_search.evaluate(self.dir, self.queries, self.labels, repeat=1)
         self.assertEqual(summary['phrase']['phrase_misses'], 2)
+
+    def test_excluded_hits_are_counted(self):
+        with mock.patch.object(story_search, 'search', return_value=[
+                {'url': 'https://www.reddit.com/comments/def/x/c2'}]):
+            _, summary, _ = eval_search.evaluate(self.dir, self.queries, self.labels, repeat=1)
+        self.assertEqual(summary['mixed']['excluded_hits'], 1)
+
+    def test_related_results_are_not_phrase_misses(self):
+        related = story_search.Results([{'url': 'https://www.reddit.com/comments/abc/x/c1'}])
+        related.related = True
+        with mock.patch.object(story_search, 'search', return_value=related):
+            _, summary, _ = eval_search.evaluate(self.dir, self.queries, self.labels, repeat=1)
+        self.assertEqual(summary['phrase']['phrase_misses'], 0)
+        self.assertEqual(summary['phrase']['related'], 2)
+        self.assertEqual(summary['phrase']['zero'], 0)
 
     def test_errors_are_counted_not_raised(self):
         with mock.patch.object(story_search, 'search', side_effect=RuntimeError('boom')):
@@ -127,7 +142,7 @@ class EvaluateTest(unittest.TestCase):
                 self.assertLogs(story_search.logger, 'ERROR'):
             _, summary, _ = eval_search.evaluate(self.dir, self.queries, self.labels, repeat=1)
         self.assertEqual(summary['keyword']['errors'], 1)
-        self.assertEqual(summary['phrase']['errors'], 0)          # quoted: no vector search
+        self.assertEqual(summary['phrase']['errors'], 2)          # phrases use vectors too (#46)
 
     def test_jev_labels_are_saved(self):
         def fake(pairs, search_dir, labels, workers=16):
@@ -138,8 +153,8 @@ class EvaluateTest(unittest.TestCase):
         with mock.patch.object(eval_search, 'label_with_jev', side_effect=fake):
             _, summary, _ = self.evaluate(label_jev=True)
         self.assertEqual(summary['all']['unjudged'], 0)
-        self.assertEqual(summary['all']['relevant'], 3)
-        self.assertEqual(len(eval_search.read_labels(self.labels)), 3)
+        self.assertEqual(summary['all']['relevant'], 2)
+        self.assertEqual(len(eval_search.read_labels(self.labels)), 2)
 
     def test_compare(self):
         _, summary, _ = self.evaluate()

@@ -12,10 +12,11 @@ Build or update it with build_search_index.py. The app calls search().
 
 import logging
 import os
-import re
 import shutil
 import sqlite3
 import threading
+
+from query_parser import parse_query
 
 MODEL = 'sentence-transformers/all-MiniLM-L6-v2'
 DIMENSIONS = 384
@@ -25,6 +26,7 @@ P_STORY_MIN = 0.5       # same as score_stories.STORY_THRESHOLD and MIN_VIVIDNES
 VIVIDNESS_MIN = 2       # not imported so the app does not need typesafe_sdk
 CANDIDATES = 50         # hits taken from each engine before fusing
 RRF_K = 60
+FILTER_FACTOR = 4      # extra vector hits to fetch when some will be filtered out
 
 DEFAULT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'search')
 
@@ -200,42 +202,47 @@ def build_vector_store(search_dir):
 
 # ---------------------------------------------------------------- searching
 
-_PART = re.compile(r'"([^"]*)"|(\S+)')
-_OPERATORS = {'AND', 'OR', 'NOT'}
+def fts_query(query):
+    """Turn user input into a safe FTS5 query (see query_parser). Every word and
+    "quoted phrase" is wrapped in double quotes, so punctuation like ex-cia or
+    tl;dr can't break the syntax."""
+    return parse_query(query).fts()
 
 
-def fts_query(query, operators=True):
-    """Turn user input into a safe FTS5 query. Words and "quoted phrases" are
-    each wrapped in double quotes, so punctuation like ex-cia or tl;dr can't
-    break the syntax. Upper-case AND/OR/NOT are kept as operators."""
-    parts = []
-    for phrase, word in _PART.findall(query):
-        if operators and word in _OPERATORS:
-            parts.append(word)
-            continue
-        text = (phrase or word).replace('"', '')
-        if re.search(r'\w', text):
-            parts.append('"%s"' % text)
-    while parts and parts[0] in _OPERATORS:
-        parts.pop(0)
-    while parts and parts[-1] in _OPERATORS:
-        parts.pop()
-    return ' '.join(parts)
+def _match(con, match, k):
+    "Story rowids for an FTS5 query, best first"
+    if not match:
+        return []
+    try:
+        return [r[0] for r in con.execute(
+            'SELECT rowid FROM stories_fts WHERE stories_fts MATCH ? '
+            'ORDER BY bm25(stories_fts) LIMIT ?', (match, k))]
+    except sqlite3.OperationalError:
+        logger.warning('FTS5 rejected %r', match)
+        return []
 
 
-def keyword_ids(con, query, k=CANDIDATES):
-    "Story rowids from FTS5, best first"
-    sql = ('SELECT rowid FROM stories_fts WHERE stories_fts MATCH ? '
-           'ORDER BY bm25(stories_fts) LIMIT ?')
-    for operators in (True, False):
-        match = fts_query(query, operators)
-        if not match:
-            return []
-        try:
-            return [r[0] for r in con.execute(sql, (match, k))]
-        except sqlite3.OperationalError:
-            continue   # e.g. "cats NOT OR dogs": retry with the operators as words
-    return []
+def _all_matches(con, match):
+    """Every rowid that matches an FTS5 query, as a set. One query for the whole
+    set is much faster than testing candidates one by one with rowid IN (...)."""
+    if not match:
+        return set()
+    try:
+        return {r[0] for r in con.execute(
+            'SELECT rowid FROM stories_fts WHERE stories_fts MATCH ?', (match,))}
+    except sqlite3.OperationalError:
+        logger.warning('FTS5 rejected %r', match)
+        return set()
+
+
+def keyword_ids(con, parsed, k=CANDIDATES):
+    """Story rowids from FTS5, best first. With a phrase plus words, stories that
+    have the phrase and all the words come first, then ones with just the phrase."""
+    ids = _match(con, parsed.fts(), k)
+    if parsed.has_phrase and parsed.words and len(ids) < k:
+        seen = set(ids)
+        ids += [i for i in _match(con, parsed.fts_required(), k) if i not in seen][:k - len(ids)]
+    return ids
 
 
 _stores = {}
@@ -258,12 +265,12 @@ def _vector_db(search_dir):
         return _stores[search_dir]
 
 
-def vector_ids(con, search_dir, query, k=CANDIDATES):
-    "Story rowids from Jammi vector search, best first"
+def vector_ids(con, search_dir, text, k=CANDIDATES):
+    "Story rowids from Jammi vector search for some text, best first"
     db = _vector_db(search_dir)
-    if db is None:
+    if db is None or not text:
         return []
-    vector = db.encode_query(model=MODEL, query=query)
+    vector = db.encode_query(model=MODEL, query=text)
     table = db.search(SOURCE, query=vector, k=k, select=['id'])
     ids = table.column('id').to_pylist() if table.num_rows else []
     if not ids:
@@ -271,6 +278,26 @@ def vector_ids(con, search_dir, query, k=CANDIDATES):
     rowid = dict(con.execute('SELECT id, rowid FROM stories WHERE id IN (%s)'
                              % ','.join('?' * len(ids)), ids))
     return [rowid[i] for i in ids if i in rowid]
+
+
+def semantic_ids(con, search_dir, parsed, k=CANDIDATES):
+    """Vector hits for the whole query, as (exact, related) rowid lists. Both
+    leave out stories with an excluded word; exact also keeps only stories with
+    every quoted phrase. Both are [] if vector search fails."""
+    filtered = parsed.excluded or parsed.has_phrase
+    try:
+        ids = vector_ids(con, search_dir, parsed.vector_text(), k * FILTER_FACTOR if filtered else k)
+    except Exception:
+        logger.exception('vector search failed; using keyword results only')
+        return [], []
+    if parsed.excluded:
+        excluded = _all_matches(con, parsed.fts_excluded())
+        ids = [i for i in ids if i not in excluded]
+    related = ids
+    if parsed.has_phrase:
+        required = _all_matches(con, parsed.fts_required())
+        ids = [i for i in ids if i in required]
+    return ids[:k], related[:k]
 
 
 def rrf(*ranked_lists):
@@ -295,31 +322,36 @@ def to_result(row):
             'name': name}
 
 
+class Results(list):
+    """Search results. related is True when nothing matched a quoted phrase
+    exactly and these are related stories from vector search instead."""
+    related = False
+
+
 def search(query, limit=25, search_dir=DEFAULT_DIR):
-    """Quoted queries use FTS5 only, so phrases stay exact. Other queries fuse
-    FTS5 with vector search."""
-    query = (query or '').strip()
-    if not re.search(r'\w', query) or not os.path.exists(os.path.join(search_dir, 'search.db')):
-        return []
+    """Parse the query (query_parser), then fuse FTS5 with vector search. Quoted
+    phrases stay exact: vector hits without them are dropped. Excluded words are
+    dropped from both lists. When a phrase matches nothing, return related
+    stories with Results.related set."""
+    parsed = parse_query(query)
+    results = Results()
+    if parsed.empty or not os.path.exists(os.path.join(search_dir, 'search.db')):
+        return results
     con = sqlite3.connect(os.path.join(search_dir, 'search.db'))
     try:
-        keyword = keyword_ids(con, query)
-        if '"' in query:
-            ranked = keyword
-        else:
-            try:
-                semantic = vector_ids(con, search_dir, query)
-            except Exception:
-                logger.exception('vector search failed; using keyword results only')
-                semantic = []
-            ranked = rrf(keyword, semantic)
+        exact, related = semantic_ids(con, search_dir, parsed)
+        ranked = rrf(keyword_ids(con, parsed), exact)
+        if not ranked and parsed.has_phrase:
+            ranked = related
+            results.related = bool(ranked)
         ranked = ranked[:limit]
         if not ranked:
-            return []
+            return results
         rows = con.execute(
             'SELECT rowid, id, link_id, score, body, name, created_utc, subreddit, parent_id, gilded '
             'FROM stories WHERE rowid IN (%s)' % ','.join('?' * len(ranked)), ranked).fetchall()
         by_rowid = {r[0]: to_result(r[1:]) for r in rows}
-        return [by_rowid[r] for r in ranked if r in by_rowid]
+        results.extend(by_rowid[r] for r in ranked if r in by_rowid)
+        return results
     finally:
         con.close()

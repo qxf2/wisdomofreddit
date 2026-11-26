@@ -97,6 +97,24 @@ class AppTest(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertIn(b'/r/AskReddit', response.data)
 
+    def test_related_stories_get_a_note(self):
+        related = story_search.Results([{'comment': 'A sad sailor story', 'url': 'u',
+                                          'subreddit': 'AskReddit'}])
+        related.related = True
+        with mock.patch.object(story_search, 'search', return_value=related):
+            response = self.client.get('/search?query=%22a+sad+sailor%22')
+        self.assertIn(b'No exact matches for', response.data)
+        self.assertIn(b'Related stories', response.data)
+        response = self.client.get('/search?query=lighthouse')
+        self.assertNotIn(b'No exact matches', response.data)
+
+    def test_pro_tips_cover_the_query_syntax(self):
+        page = self.client.get('/pro-tips').data
+        self.assertNotIn(b"Don't use sentences", page)
+        for example in [b'dentist -kids', b'chess NOT tournament', b'dog OR cat rescue',
+                        b'"night shift" nurse']:
+            self.assertIn(example, page)
+
     def test_random_page_shows_result(self):
         with mock.patch.object(wisdomofreddit, 'get_random_query', return_value='chess'):
             response = self.client.get('/random')
