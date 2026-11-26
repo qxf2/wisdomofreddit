@@ -1,0 +1,669 @@
+{"id": "nsf7tdy", "judge": "jev", "model": "jev-1.14.0", "p": 0.5, "query": "\"I'm a lawyer\"", "relevant": true}
+{"id": "nsgzjrh", "judge": "jev", "model": "jev-1.14.0", "p": 0.6, "query": "\"I'm a lawyer\"", "relevant": true}
+{"id": "nsteh44", "judge": "jev", "model": "jev-1.14.0", "p": 0.65, "query": "\"I'm a lawyer\"", "relevant": true}
+{"id": "nt82hvo", "judge": "jev", "model": "jev-1.14.0", "p": 0.5, "query": "\"I'm a lawyer\"", "relevant": true}
+{"id": "ntxnnku", "judge": "jev", "model": "jev-1.14.0", "p": 0.35, "query": "\"I'm a lawyer\"", "relevant": false}
+{"id": "nu5j39m", "judge": "jev", "model": "jev-1.14.0", "p": 0.57, "query": "\"I'm a lawyer\"", "relevant": true}
+{"id": "nvkjet0", "judge": "jev", "model": "jev-1.14.0", "p": 0.54, "query": "\"I'm a lawyer\"", "relevant": true}
+{"id": "nwaf5sy", "judge": "jev", "model": "jev-1.14.0", "p": 0.19, "query": "\"I'm a lawyer\"", "relevant": false}
+{"id": "nrn6sql", "judge": "claude", "query": "\"best prank\"", "relevant": false, "source": "#31"}
+{"id": "nrn6sql", "judge": "jev", "model": "jev-1.14.0", "p": 0.48, "query": "\"best prank\"", "relevant": false}
+{"id": "ns986q3", "judge": "claude", "query": "\"best prank\"", "relevant": false, "source": "#31"}
+{"id": "ns986q3", "judge": "jev", "model": "jev-1.14.0", "p": 0.44, "query": "\"best prank\"", "relevant": false}
+{"id": "nsi5xb2", "judge": "claude", "query": "\"best prank\"", "relevant": true, "source": "#31"}
+{"id": "nsi5xb2", "judge": "jev", "model": "jev-1.14.0", "p": 0.8, "query": "\"best prank\"", "relevant": true}
+{"id": "nsybq9v", "judge": "claude", "query": "\"best prank\"", "relevant": false, "source": "#31"}
+{"id": "nsybq9v", "judge": "jev", "model": "jev-1.14.0", "p": 0.31, "query": "\"best prank\"", "relevant": false}
+{"id": "nszfdmb", "judge": "claude", "query": "\"best prank\"", "relevant": false, "source": "#31"}
+{"id": "nszfdmb", "judge": "jev", "model": "jev-1.14.0", "p": 0.65, "query": "\"best prank\"", "relevant": true}
+{"id": "nt6gex3", "judge": "claude", "query": "\"best prank\"", "relevant": false, "source": "#31"}
+{"id": "nt6gex3", "judge": "jev", "model": "jev-1.14.0", "p": 0.37, "query": "\"best prank\"", "relevant": false}
+{"id": "ntb9j4m", "judge": "claude", "query": "\"best prank\"", "relevant": false, "source": "#31"}
+{"id": "ntb9j4m", "judge": "jev", "model": "jev-1.14.0", "p": 0.18, "query": "\"best prank\"", "relevant": false}
+{"id": "nuetfxa", "judge": "claude", "query": "\"best prank\"", "relevant": true, "source": "#31"}
+{"id": "nuetfxa", "judge": "jev", "model": "jev-1.14.0", "p": 0.82, "query": "\"best prank\"", "relevant": true}
+{"id": "nv2bza7", "judge": "claude", "query": "\"best prank\"", "relevant": true, "source": "#31"}
+{"id": "nv2bza7", "judge": "jev", "model": "jev-1.14.0", "p": 0.49, "query": "\"best prank\"", "relevant": false}
+{"id": "nv4r2ol", "judge": "claude", "query": "\"best prank\"", "relevant": false, "source": "#31"}
+{"id": "nv4r2ol", "judge": "jev", "model": "jev-1.14.0", "p": 0.11, "query": "\"best prank\"", "relevant": false}
+{"id": "nvocx54", "judge": "claude", "query": "\"best prank\"", "relevant": true, "source": "#31"}
+{"id": "nvocx54", "judge": "jev", "model": "jev-1.14.0", "p": 0.74, "query": "\"best prank\"", "relevant": true}
+{"id": "nw1c2zp", "judge": "claude", "query": "\"best prank\"", "relevant": true, "source": "#31"}
+{"id": "nw1c2zp", "judge": "jev", "model": "jev-1.14.0", "p": 0.61, "query": "\"best prank\"", "relevant": true}
+{"id": "nw8m2qw", "judge": "claude", "query": "\"best prank\"", "relevant": false, "source": "#31"}
+{"id": "nw8m2qw", "judge": "jev", "model": "jev-1.14.0", "p": 0.47, "query": "\"best prank\"", "relevant": false}
+{"id": "nwq5utd", "judge": "claude", "query": "\"best prank\"", "relevant": true, "source": "#31"}
+{"id": "nwq5utd", "judge": "jev", "model": "jev-1.14.0", "p": 0.82, "query": "\"best prank\"", "relevant": true}
+{"id": "nwqhwy2", "judge": "claude", "query": "\"best prank\"", "relevant": true, "source": "#31"}
+{"id": "nwqhwy2", "judge": "jev", "model": "jev-1.14.0", "p": 0.85, "query": "\"best prank\"", "relevant": true}
+{"id": "nwqwnin", "judge": "claude", "query": "\"best prank\"", "relevant": true, "source": "#31"}
+{"id": "nwqwnin", "judge": "jev", "model": "jev-1.14.0", "p": 0.89, "query": "\"best prank\"", "relevant": true}
+{"id": "nwrnymm", "judge": "claude", "query": "\"best prank\"", "relevant": false, "source": "#31"}
+{"id": "nwrnymm", "judge": "jev", "model": "jev-1.14.0", "p": 0.4, "query": "\"best prank\"", "relevant": false}
+{"id": "nwtzpu7", "judge": "claude", "query": "\"best prank\"", "relevant": true, "source": "#31"}
+{"id": "nwtzpu7", "judge": "jev", "model": "jev-1.14.0", "p": 0.84, "query": "\"best prank\"", "relevant": true}
+{"id": "ns0vtmf", "judge": "claude", "query": "\"dentist here\"", "relevant": true, "source": "#31"}
+{"id": "ns0vtmf", "judge": "jev", "model": "jev-1.14.0", "p": 0.5, "query": "\"dentist here\"", "relevant": true}
+{"id": "ns79il0", "judge": "claude", "query": "\"dentist here\"", "relevant": true, "source": "#31"}
+{"id": "ns79il0", "judge": "jev", "model": "jev-1.14.0", "p": 0.74, "query": "\"dentist here\"", "relevant": true}
+{"id": "nshvhj0", "judge": "claude", "query": "\"dentist here\"", "relevant": true, "source": "#31"}
+{"id": "nshvhj0", "judge": "jev", "model": "jev-1.14.0", "p": 0.41, "query": "\"dentist here\"", "relevant": false}
+{"id": "nsjzlki", "judge": "claude", "query": "\"dentist here\"", "relevant": true, "source": "#31"}
+{"id": "nsjzlki", "judge": "jev", "model": "jev-1.14.0", "p": 0.66, "query": "\"dentist here\"", "relevant": true}
+{"id": "nsr2k1h", "judge": "claude", "query": "\"dentist here\"", "relevant": true, "source": "#31"}
+{"id": "nsr2k1h", "judge": "jev", "model": "jev-1.14.0", "p": 0.63, "query": "\"dentist here\"", "relevant": true}
+{"id": "nsrbzk2", "judge": "claude", "query": "\"dentist here\"", "relevant": true, "source": "#31"}
+{"id": "nsrbzk2", "judge": "jev", "model": "jev-1.14.0", "p": 0.52, "query": "\"dentist here\"", "relevant": true}
+{"id": "nt6ozv1", "judge": "claude", "query": "\"dentist here\"", "relevant": true, "source": "#31"}
+{"id": "nt6ozv1", "judge": "jev", "model": "jev-1.14.0", "p": 0.36, "query": "\"dentist here\"", "relevant": false}
+{"id": "nt73u0w", "judge": "claude", "query": "\"dentist here\"", "relevant": true, "source": "#31"}
+{"id": "nt73u0w", "judge": "jev", "model": "jev-1.14.0", "p": 0.57, "query": "\"dentist here\"", "relevant": true}
+{"id": "ntcx9hy", "judge": "claude", "query": "\"dentist here\"", "relevant": true, "source": "#31"}
+{"id": "ntcx9hy", "judge": "jev", "model": "jev-1.14.0", "p": 0.57, "query": "\"dentist here\"", "relevant": true}
+{"id": "ntlk2we", "judge": "claude", "query": "\"dentist here\"", "relevant": true, "source": "#31"}
+{"id": "ntlk2we", "judge": "jev", "model": "jev-1.14.0", "p": 0.63, "query": "\"dentist here\"", "relevant": true}
+{"id": "ntximcz", "judge": "claude", "query": "\"dentist here\"", "relevant": true, "source": "#31"}
+{"id": "ntximcz", "judge": "jev", "model": "jev-1.14.0", "p": 0.65, "query": "\"dentist here\"", "relevant": true}
+{"id": "nu9pwgp", "judge": "claude", "query": "\"dentist here\"", "relevant": false, "source": "#31"}
+{"id": "nu9pwgp", "judge": "jev", "model": "jev-1.14.0", "p": 0.34, "query": "\"dentist here\"", "relevant": false}
+{"id": "nuxvkga", "judge": "claude", "query": "\"dentist here\"", "relevant": false, "source": "#31"}
+{"id": "nuxvkga", "judge": "jev", "model": "jev-1.14.0", "p": 0.48, "query": "\"dentist here\"", "relevant": false}
+{"id": "nvi7gm0", "judge": "claude", "query": "\"dentist here\"", "relevant": false, "source": "#31"}
+{"id": "nvi7gm0", "judge": "jev", "model": "jev-1.14.0", "p": 0.34, "query": "\"dentist here\"", "relevant": false}
+{"id": "nvn8gtt", "judge": "claude", "query": "\"dentist here\"", "relevant": true, "source": "#31"}
+{"id": "nvn8gtt", "judge": "jev", "model": "jev-1.14.0", "p": 0.61, "query": "\"dentist here\"", "relevant": true}
+{"id": "nvtzjoy", "judge": "claude", "query": "\"dentist here\"", "relevant": true, "source": "#31"}
+{"id": "nvtzjoy", "judge": "jev", "model": "jev-1.14.0", "p": 0.46, "query": "\"dentist here\"", "relevant": false}
+{"id": "nw3n0qc", "judge": "claude", "query": "\"dentist here\"", "relevant": true, "source": "#31"}
+{"id": "nw3n0qc", "judge": "jev", "model": "jev-1.14.0", "p": 0.62, "query": "\"dentist here\"", "relevant": true}
+{"id": "nwb0hoa", "judge": "claude", "query": "\"dentist here\"", "relevant": true, "source": "#31"}
+{"id": "nwb0hoa", "judge": "jev", "model": "jev-1.14.0", "p": 0.64, "query": "\"dentist here\"", "relevant": true}
+{"id": "nwhxp5o", "judge": "claude", "query": "\"dentist here\"", "relevant": true, "source": "#31"}
+{"id": "nwhxp5o", "judge": "jev", "model": "jev-1.14.0", "p": 0.53, "query": "\"dentist here\"", "relevant": true}
+{"id": "nwvbs0z", "judge": "claude", "query": "\"dentist here\"", "relevant": false, "source": "#31"}
+{"id": "nwvbs0z", "judge": "jev", "model": "jev-1.14.0", "p": 0.42, "query": "\"dentist here\"", "relevant": false}
+{"id": "nrsb528", "judge": "claude", "query": "\"harry potter\"", "relevant": true, "source": "#31"}
+{"id": "nrsb528", "judge": "jev", "model": "jev-1.14.0", "p": 0.57, "query": "\"harry potter\"", "relevant": true}
+{"id": "ntedo6m", "judge": "claude", "query": "\"harry potter\"", "relevant": false, "source": "#31"}
+{"id": "ntedo6m", "judge": "jev", "model": "jev-1.14.0", "p": 0.19, "query": "\"harry potter\"", "relevant": false}
+{"id": "nti199x", "judge": "claude", "query": "\"harry potter\"", "relevant": false, "source": "#31"}
+{"id": "nti199x", "judge": "jev", "model": "jev-1.14.0", "p": 0.68, "query": "\"harry potter\"", "relevant": true}
+{"id": "ntizrzr", "judge": "claude", "query": "\"harry potter\"", "relevant": true, "source": "#31"}
+{"id": "ntizrzr", "judge": "jev", "model": "jev-1.14.0", "p": 0.76, "query": "\"harry potter\"", "relevant": true}
+{"id": "ntq6ewv", "judge": "claude", "query": "\"harry potter\"", "relevant": true, "source": "#31"}
+{"id": "ntq6ewv", "judge": "jev", "model": "jev-1.14.0", "p": 0.68, "query": "\"harry potter\"", "relevant": true}
+{"id": "nu0v089", "judge": "claude", "query": "\"harry potter\"", "relevant": false, "source": "#31"}
+{"id": "nu0v089", "judge": "jev", "model": "jev-1.14.0", "p": 0.32, "query": "\"harry potter\"", "relevant": false}
+{"id": "nu16o5m", "judge": "claude", "query": "\"harry potter\"", "relevant": false, "source": "#31"}
+{"id": "nu16o5m", "judge": "jev", "model": "jev-1.14.0", "p": 0.66, "query": "\"harry potter\"", "relevant": true}
+{"id": "nu1of6r", "judge": "claude", "query": "\"harry potter\"", "relevant": true, "source": "#31"}
+{"id": "nu1of6r", "judge": "jev", "model": "jev-1.14.0", "p": 0.74, "query": "\"harry potter\"", "relevant": true}
+{"id": "nu9poe5", "judge": "claude", "query": "\"harry potter\"", "relevant": true, "source": "#31"}
+{"id": "nu9poe5", "judge": "jev", "model": "jev-1.14.0", "p": 0.72, "query": "\"harry potter\"", "relevant": true}
+{"id": "nuv9y0m", "judge": "claude", "query": "\"harry potter\"", "relevant": false, "source": "#31"}
+{"id": "nuv9y0m", "judge": "jev", "model": "jev-1.14.0", "p": 0.23, "query": "\"harry potter\"", "relevant": false}
+{"id": "nv5kf17", "judge": "claude", "query": "\"harry potter\"", "relevant": true, "source": "#31"}
+{"id": "nv5kf17", "judge": "jev", "model": "jev-1.14.0", "p": 0.36, "query": "\"harry potter\"", "relevant": false}
+{"id": "nvmlsve", "judge": "claude", "query": "\"harry potter\"", "relevant": true, "source": "#31"}
+{"id": "nvmlsve", "judge": "jev", "model": "jev-1.14.0", "p": 0.23, "query": "\"harry potter\"", "relevant": false}
+{"id": "nvz9vad", "judge": "claude", "query": "\"harry potter\"", "relevant": false, "source": "#31"}
+{"id": "nvz9vad", "judge": "jev", "model": "jev-1.14.0", "p": 0.1, "query": "\"harry potter\"", "relevant": false}
+{"id": "nw3tvg8", "judge": "claude", "query": "\"harry potter\"", "relevant": true, "source": "#31"}
+{"id": "nw3tvg8", "judge": "jev", "model": "jev-1.14.0", "p": 0.71, "query": "\"harry potter\"", "relevant": true}
+{"id": "nwt56s9", "judge": "claude", "query": "\"harry potter\"", "relevant": true, "source": "#31"}
+{"id": "nwt56s9", "judge": "jev", "model": "jev-1.14.0", "p": 0.84, "query": "\"harry potter\"", "relevant": true}
+{"id": "ntizrzr", "judge": "jev", "model": "jev-1.14.0", "p": 0.68, "query": "\"harry potter\" wand", "relevant": true}
+{"id": "nrui2t0", "judge": "claude", "query": "\"holocaust survivor\"", "relevant": true, "source": "#31"}
+{"id": "nrui2t0", "judge": "jev", "model": "jev-1.14.0", "p": 0.4, "query": "\"holocaust survivor\"", "relevant": false}
+{"id": "ns388rz", "judge": "claude", "query": "\"holocaust survivor\"", "relevant": false, "source": "#31"}
+{"id": "ns388rz", "judge": "jev", "model": "jev-1.14.0", "p": 0.1, "query": "\"holocaust survivor\"", "relevant": false}
+{"id": "ns4ntak", "judge": "claude", "query": "\"holocaust survivor\"", "relevant": false, "source": "#31"}
+{"id": "ns4ntak", "judge": "jev", "model": "jev-1.14.0", "p": 0.16, "query": "\"holocaust survivor\"", "relevant": false}
+{"id": "ns7gqpm", "judge": "claude", "query": "\"holocaust survivor\"", "relevant": true, "source": "#31"}
+{"id": "ns7gqpm", "judge": "jev", "model": "jev-1.14.0", "p": 0.24, "query": "\"holocaust survivor\"", "relevant": false}
+{"id": "nsbl3rf", "judge": "claude", "query": "\"holocaust survivor\"", "relevant": false, "source": "#31"}
+{"id": "nsbl3rf", "judge": "jev", "model": "jev-1.14.0", "p": 0.09, "query": "\"holocaust survivor\"", "relevant": false}
+{"id": "nsco53c", "judge": "claude", "query": "\"holocaust survivor\"", "relevant": false, "source": "#31"}
+{"id": "nsco53c", "judge": "jev", "model": "jev-1.14.0", "p": 0.11, "query": "\"holocaust survivor\"", "relevant": false}
+{"id": "nsdry17", "judge": "claude", "query": "\"holocaust survivor\"", "relevant": true, "source": "#31"}
+{"id": "nsdry17", "judge": "jev", "model": "jev-1.14.0", "p": 0.85, "query": "\"holocaust survivor\"", "relevant": true}
+{"id": "nsydeiw", "judge": "claude", "query": "\"holocaust survivor\"", "relevant": false, "source": "#31"}
+{"id": "nsydeiw", "judge": "jev", "model": "jev-1.14.0", "p": 0.13, "query": "\"holocaust survivor\"", "relevant": false}
+{"id": "nszba7i", "judge": "claude", "query": "\"holocaust survivor\"", "relevant": true, "source": "#31"}
+{"id": "nszba7i", "judge": "jev", "model": "jev-1.14.0", "p": 0.37, "query": "\"holocaust survivor\"", "relevant": false}
+{"id": "nu2eljy", "judge": "claude", "query": "\"holocaust survivor\"", "relevant": false, "source": "#31"}
+{"id": "nu2eljy", "judge": "jev", "model": "jev-1.14.0", "p": 0.2, "query": "\"holocaust survivor\"", "relevant": false}
+{"id": "nu5yvcf", "judge": "claude", "query": "\"holocaust survivor\"", "relevant": false, "source": "#31"}
+{"id": "nu5yvcf", "judge": "jev", "model": "jev-1.14.0", "p": 0.1, "query": "\"holocaust survivor\"", "relevant": false}
+{"id": "nu63puk", "judge": "claude", "query": "\"holocaust survivor\"", "relevant": true, "source": "#31"}
+{"id": "nu63puk", "judge": "jev", "model": "jev-1.14.0", "p": 0.44, "query": "\"holocaust survivor\"", "relevant": false}
+{"id": "nusv0b7", "judge": "claude", "query": "\"holocaust survivor\"", "relevant": false, "source": "#31"}
+{"id": "nusv0b7", "judge": "jev", "model": "jev-1.14.0", "p": 0.23, "query": "\"holocaust survivor\"", "relevant": false}
+{"id": "nv41i3v", "judge": "claude", "query": "\"holocaust survivor\"", "relevant": false, "source": "#31"}
+{"id": "nv41i3v", "judge": "jev", "model": "jev-1.14.0", "p": 0.12, "query": "\"holocaust survivor\"", "relevant": false}
+{"id": "nvg4jor", "judge": "claude", "query": "\"holocaust survivor\"", "relevant": true, "source": "#31"}
+{"id": "nvg4jor", "judge": "jev", "model": "jev-1.14.0", "p": 0.48, "query": "\"holocaust survivor\"", "relevant": false}
+{"id": "nvhh6nq", "judge": "claude", "query": "\"holocaust survivor\"", "relevant": false, "source": "#31"}
+{"id": "nvhh6nq", "judge": "jev", "model": "jev-1.14.0", "p": 0.44, "query": "\"holocaust survivor\"", "relevant": false}
+{"id": "nvlsnif", "judge": "claude", "query": "\"holocaust survivor\"", "relevant": true, "source": "#31"}
+{"id": "nvlsnif", "judge": "jev", "model": "jev-1.14.0", "p": 0.78, "query": "\"holocaust survivor\"", "relevant": true}
+{"id": "nwtbcpj", "judge": "claude", "query": "\"holocaust survivor\"", "relevant": false, "source": "#31"}
+{"id": "nwtbcpj", "judge": "jev", "model": "jev-1.14.0", "p": 0.16, "query": "\"holocaust survivor\"", "relevant": false}
+{"id": "nrtxbpb", "judge": "claude", "query": "\"in soviet russia\"", "relevant": false, "source": "#31"}
+{"id": "nrtxbpb", "judge": "jev", "model": "jev-1.14.0", "p": 0.37, "query": "\"in soviet russia\"", "relevant": false}
+{"id": "ns4e4jq", "judge": "claude", "query": "\"in soviet russia\"", "relevant": false, "source": "#31"}
+{"id": "ns4e4jq", "judge": "jev", "model": "jev-1.14.0", "p": 0.47, "query": "\"in soviet russia\"", "relevant": false}
+{"id": "nseuo8v", "judge": "claude", "query": "\"in soviet russia\"", "relevant": true, "source": "#31"}
+{"id": "nseuo8v", "judge": "jev", "model": "jev-1.14.0", "p": 0.5, "query": "\"in soviet russia\"", "relevant": true}
+{"id": "nsm9u4f", "judge": "claude", "query": "\"in soviet russia\"", "relevant": false, "source": "#31"}
+{"id": "nsm9u4f", "judge": "jev", "model": "jev-1.14.0", "p": 0.3, "query": "\"in soviet russia\"", "relevant": false}
+{"id": "nsxrh8v", "judge": "claude", "query": "\"in soviet russia\"", "relevant": false, "source": "#31"}
+{"id": "nsxrh8v", "judge": "jev", "model": "jev-1.14.0", "p": 0.24, "query": "\"in soviet russia\"", "relevant": false}
+{"id": "nsy4tko", "judge": "claude", "query": "\"in soviet russia\"", "relevant": false, "source": "#31"}
+{"id": "nsy4tko", "judge": "jev", "model": "jev-1.14.0", "p": 0.1, "query": "\"in soviet russia\"", "relevant": false}
+{"id": "nt6f3rr", "judge": "claude", "query": "\"in soviet russia\"", "relevant": false, "source": "#31"}
+{"id": "nt6f3rr", "judge": "jev", "model": "jev-1.14.0", "p": 0.31, "query": "\"in soviet russia\"", "relevant": false}
+{"id": "ntnam19", "judge": "claude", "query": "\"in soviet russia\"", "relevant": true, "source": "#31"}
+{"id": "ntnam19", "judge": "jev", "model": "jev-1.14.0", "p": 0.58, "query": "\"in soviet russia\"", "relevant": true}
+{"id": "ntnebqr", "judge": "claude", "query": "\"in soviet russia\"", "relevant": true, "source": "#31"}
+{"id": "ntnebqr", "judge": "jev", "model": "jev-1.14.0", "p": 0.64, "query": "\"in soviet russia\"", "relevant": true}
+{"id": "nu9hx2f", "judge": "claude", "query": "\"in soviet russia\"", "relevant": false, "source": "#31"}
+{"id": "nu9hx2f", "judge": "jev", "model": "jev-1.14.0", "p": 0.27, "query": "\"in soviet russia\"", "relevant": false}
+{"id": "nuezgyh", "judge": "claude", "query": "\"in soviet russia\"", "relevant": true, "source": "#31"}
+{"id": "nuezgyh", "judge": "jev", "model": "jev-1.14.0", "p": 0.46, "query": "\"in soviet russia\"", "relevant": false}
+{"id": "nuhpl6q", "judge": "claude", "query": "\"in soviet russia\"", "relevant": false, "source": "#31"}
+{"id": "nuhpl6q", "judge": "jev", "model": "jev-1.14.0", "p": 0.19, "query": "\"in soviet russia\"", "relevant": false}
+{"id": "nuj9r0v", "judge": "claude", "query": "\"in soviet russia\"", "relevant": false, "source": "#31"}
+{"id": "nuj9r0v", "judge": "jev", "model": "jev-1.14.0", "p": 0.23, "query": "\"in soviet russia\"", "relevant": false}
+{"id": "nuuq4hx", "judge": "claude", "query": "\"in soviet russia\"", "relevant": false, "source": "#31"}
+{"id": "nuuq4hx", "judge": "jev", "model": "jev-1.14.0", "p": 0.32, "query": "\"in soviet russia\"", "relevant": false}
+{"id": "nv6qr5q", "judge": "claude", "query": "\"in soviet russia\"", "relevant": true, "source": "#31"}
+{"id": "nv6qr5q", "judge": "jev", "model": "jev-1.14.0", "p": 0.69, "query": "\"in soviet russia\"", "relevant": true}
+{"id": "nvgn1mo", "judge": "claude", "query": "\"in soviet russia\"", "relevant": false, "source": "#31"}
+{"id": "nvgn1mo", "judge": "jev", "model": "jev-1.14.0", "p": 0.28, "query": "\"in soviet russia\"", "relevant": false}
+{"id": "nvihcot", "judge": "claude", "query": "\"in soviet russia\"", "relevant": false, "source": "#31"}
+{"id": "nvihcot", "judge": "jev", "model": "jev-1.14.0", "p": 0.49, "query": "\"in soviet russia\"", "relevant": false}
+{"id": "nvlhtv4", "judge": "claude", "query": "\"in soviet russia\"", "relevant": false, "source": "#31"}
+{"id": "nvlhtv4", "judge": "jev", "model": "jev-1.14.0", "p": 0.22, "query": "\"in soviet russia\"", "relevant": false}
+{"id": "nvs94zf", "judge": "claude", "query": "\"in soviet russia\"", "relevant": false, "source": "#31"}
+{"id": "nvs94zf", "judge": "jev", "model": "jev-1.14.0", "p": 0.18, "query": "\"in soviet russia\"", "relevant": false}
+{"id": "nwn17lk", "judge": "claude", "query": "\"in soviet russia\"", "relevant": false, "source": "#31"}
+{"id": "nwn17lk", "judge": "jev", "model": "jev-1.14.0", "p": 0.45, "query": "\"in soviet russia\"", "relevant": false}
+{"id": "nwwbbvv", "judge": "claude", "query": "\"in soviet russia\"", "relevant": false, "source": "#31"}
+{"id": "nwwbbvv", "judge": "jev", "model": "jev-1.14.0", "p": 0.43, "query": "\"in soviet russia\"", "relevant": false}
+{"id": "nwwk2o3", "judge": "claude", "query": "\"in soviet russia\"", "relevant": false, "source": "#31"}
+{"id": "nwwk2o3", "judge": "jev", "model": "jev-1.14.0", "p": 0.17, "query": "\"in soviet russia\"", "relevant": false}
+{"id": "ns13fks", "judge": "jev", "model": "jev-1.14.0", "p": 0.68, "query": "\"missing person\"", "relevant": true}
+{"id": "ns2f7ug", "judge": "jev", "model": "jev-1.14.0", "p": 0.83, "query": "\"missing person\"", "relevant": true}
+{"id": "ns5xe5f", "judge": "jev", "model": "jev-1.14.0", "p": 0.45, "query": "\"missing person\"", "relevant": false}
+{"id": "nufe6t7", "judge": "jev", "model": "jev-1.14.0", "p": 0.32, "query": "\"missing person\"", "relevant": false}
+{"id": "num2cyu", "judge": "jev", "model": "jev-1.14.0", "p": 0.88, "query": "\"missing person\"", "relevant": true}
+{"id": "nut2s7j", "judge": "jev", "model": "jev-1.14.0", "p": 0.27, "query": "\"missing person\"", "relevant": false}
+{"id": "nv1in3l", "judge": "jev", "model": "jev-1.14.0", "p": 0.76, "query": "\"missing person\"", "relevant": true}
+{"id": "nwgvk2y", "judge": "jev", "model": "jev-1.14.0", "p": 0.89, "query": "\"missing person\"", "relevant": true}
+{"id": "nrultxd", "judge": "jev", "model": "jev-1.14.0", "p": 0.91, "query": "\"my first kiss\"", "relevant": true}
+{"id": "nsbp4lk", "judge": "jev", "model": "jev-1.14.0", "p": 0.79, "query": "\"my first kiss\"", "relevant": true}
+{"id": "nv4e9vz", "judge": "jev", "model": "jev-1.14.0", "p": 0.58, "query": "\"my first kiss\"", "relevant": true}
+{"id": "nve5fvz", "judge": "jev", "model": "jev-1.14.0", "p": 0.88, "query": "\"my first kiss\"", "relevant": true}
+{"id": "nwwc4nl", "judge": "jev", "model": "jev-1.14.0", "p": 0.31, "query": "\"my first kiss\"", "relevant": false}
+{"id": "ns27y3m", "judge": "jev", "model": "jev-1.14.0", "p": 0.9, "query": "\"nearly died\"", "relevant": true}
+{"id": "nsfexwh", "judge": "jev", "model": "jev-1.14.0", "p": 0.89, "query": "\"nearly died\"", "relevant": true}
+{"id": "nsosb1f", "judge": "jev", "model": "jev-1.14.0", "p": 0.34, "query": "\"nearly died\"", "relevant": false}
+{"id": "nt7ubvg", "judge": "jev", "model": "jev-1.14.0", "p": 0.84, "query": "\"nearly died\"", "relevant": true}
+{"id": "nt8jjce", "judge": "jev", "model": "jev-1.14.0", "p": 0.58, "query": "\"nearly died\"", "relevant": true}
+{"id": "nttl3v0", "judge": "jev", "model": "jev-1.14.0", "p": 0.27, "query": "\"nearly died\"", "relevant": false}
+{"id": "nty2h4z", "judge": "jev", "model": "jev-1.14.0", "p": 0.82, "query": "\"nearly died\"", "relevant": true}
+{"id": "nvartlj", "judge": "jev", "model": "jev-1.14.0", "p": 0.75, "query": "\"nearly died\"", "relevant": true}
+{"id": "nw40j7a", "judge": "jev", "model": "jev-1.14.0", "p": 0.81, "query": "\"nearly died\"", "relevant": true}
+{"id": "nwtqjn5", "judge": "jev", "model": "jev-1.14.0", "p": 0.84, "query": "\"nearly died\"", "relevant": true}
+{"id": "ns1hr6m", "judge": "jev", "model": "jev-1.14.0", "p": 0.56, "query": "\"night shift\" nurse", "relevant": true}
+{"id": "nshv7fu", "judge": "jev", "model": "jev-1.14.0", "p": 0.59, "query": "\"night shift\" nurse", "relevant": true}
+{"id": "nsxpfq5", "judge": "jev", "model": "jev-1.14.0", "p": 0.38, "query": "\"night shift\" nurse", "relevant": false}
+{"id": "nt1844t", "judge": "jev", "model": "jev-1.14.0", "p": 0.73, "query": "\"night shift\" nurse", "relevant": true}
+{"id": "nuhdmde", "judge": "jev", "model": "jev-1.14.0", "p": 0.79, "query": "\"night shift\" nurse", "relevant": true}
+{"id": "nwf1g8q", "judge": "jev", "model": "jev-1.14.0", "p": 0.66, "query": "\"night shift\" nurse", "relevant": true}
+{"id": "nsstzlr", "judge": "jev", "model": "jev-1.14.0", "p": 0.24, "query": "\"unbalanced quote", "relevant": false}
+{"id": "nrxbfce", "judge": "jev", "model": "jev-1.14.0", "p": 0.1, "query": "AND OR", "relevant": false}
+{"id": "nrya5n9", "judge": "jev", "model": "jev-1.14.0", "p": 0.4, "query": "AND OR", "relevant": false}
+{"id": "nsb244y", "judge": "jev", "model": "jev-1.14.0", "p": 0.15, "query": "AND OR", "relevant": false}
+{"id": "nsiyxbc", "judge": "jev", "model": "jev-1.14.0", "p": 0.21, "query": "AND OR", "relevant": false}
+{"id": "nslj2vq", "judge": "jev", "model": "jev-1.14.0", "p": 0.08, "query": "AND OR", "relevant": false}
+{"id": "nsy3jpd", "judge": "jev", "model": "jev-1.14.0", "p": 0.24, "query": "AND OR", "relevant": false}
+{"id": "ntk22ag", "judge": "jev", "model": "jev-1.14.0", "p": 0.13, "query": "AND OR", "relevant": false}
+{"id": "nu8opfv", "judge": "jev", "model": "jev-1.14.0", "p": 0.07, "query": "AND OR", "relevant": false}
+{"id": "nu974h0", "judge": "jev", "model": "jev-1.14.0", "p": 0.13, "query": "AND OR", "relevant": false}
+{"id": "nwl6nty", "judge": "jev", "model": "jev-1.14.0", "p": 0.09, "query": "AND OR", "relevant": false}
+{"id": "nrsrnez", "judge": "jev", "model": "jev-1.14.0", "p": 0.24, "query": "C++ programmer", "relevant": false}
+{"id": "ns0uhp1", "judge": "jev", "model": "jev-1.14.0", "p": 0.28, "query": "C++ programmer", "relevant": false}
+{"id": "ntfaloa", "judge": "jev", "model": "jev-1.14.0", "p": 0.46, "query": "C++ programmer", "relevant": false}
+{"id": "ntk8yfw", "judge": "jev", "model": "jev-1.14.0", "p": 0.65, "query": "C++ programmer", "relevant": true}
+{"id": "ntpqpas", "judge": "jev", "model": "jev-1.14.0", "p": 0.88, "query": "C++ programmer", "relevant": true}
+{"id": "nu50i30", "judge": "jev", "model": "jev-1.14.0", "p": 0.77, "query": "C++ programmer", "relevant": true}
+{"id": "nunot4j", "judge": "jev", "model": "jev-1.14.0", "p": 0.11, "query": "C++ programmer", "relevant": false}
+{"id": "nvju8sq", "judge": "jev", "model": "jev-1.14.0", "p": 0.61, "query": "C++ programmer", "relevant": true}
+{"id": "nvkk44f", "judge": "jev", "model": "jev-1.14.0", "p": 0.54, "query": "C++ programmer", "relevant": true}
+{"id": "nwyhomh", "judge": "jev", "model": "jev-1.14.0", "p": 0.55, "query": "C++ programmer", "relevant": true}
+{"id": "nsa4kxf", "judge": "jev", "model": "jev-1.14.0", "p": 0.12, "query": "NOT", "relevant": false}
+{"id": "nsg2ek0", "judge": "jev", "model": "jev-1.14.0", "p": 0.11, "query": "NOT", "relevant": false}
+{"id": "nsi51jh", "judge": "jev", "model": "jev-1.14.0", "p": 0.15, "query": "NOT", "relevant": false}
+{"id": "nsql8rv", "judge": "jev", "model": "jev-1.14.0", "p": 0.18, "query": "NOT", "relevant": false}
+{"id": "nt0j18p", "judge": "jev", "model": "jev-1.14.0", "p": 0.16, "query": "NOT", "relevant": false}
+{"id": "ntpiwrl", "judge": "jev", "model": "jev-1.14.0", "p": 0.13, "query": "NOT", "relevant": false}
+{"id": "nuoaf7e", "judge": "jev", "model": "jev-1.14.0", "p": 0.12, "query": "NOT", "relevant": false}
+{"id": "nuqhjmy", "judge": "jev", "model": "jev-1.14.0", "p": 0.15, "query": "NOT", "relevant": false}
+{"id": "nv7q4ff", "judge": "jev", "model": "jev-1.14.0", "p": 0.11, "query": "NOT", "relevant": false}
+{"id": "nwzx1hr", "judge": "jev", "model": "jev-1.14.0", "p": 0.11, "query": "NOT", "relevant": false}
+{"id": "nskkqxh", "judge": "jev", "model": "jev-1.14.0", "p": 0.09, "query": "So this happened when I was about nineteen and working nights at a gas station in a small town, a guy came in every single night at 3am and bought one banana and never said a word until the night he finally did", "relevant": false}
+{"id": "nskvf0z", "judge": "jev", "model": "jev-1.14.0", "p": 0.14, "query": "So this happened when I was about nineteen and working nights at a gas station in a small town, a guy came in every single night at 3am and bought one banana and never said a word until the night he finally did", "relevant": false}
+{"id": "ntgpoxu", "judge": "jev", "model": "jev-1.14.0", "p": 0.06, "query": "So this happened when I was about nineteen and working nights at a gas station in a small town, a guy came in every single night at 3am and bought one banana and never said a word until the night he finally did", "relevant": false}
+{"id": "ntvie9i", "judge": "jev", "model": "jev-1.14.0", "p": 0.07, "query": "So this happened when I was about nineteen and working nights at a gas station in a small town, a guy came in every single night at 3am and bought one banana and never said a word until the night he finally did", "relevant": false}
+{"id": "nu35vzz", "judge": "jev", "model": "jev-1.14.0", "p": 0.15, "query": "So this happened when I was about nineteen and working nights at a gas station in a small town, a guy came in every single night at 3am and bought one banana and never said a word until the night he finally did", "relevant": false}
+{"id": "nudkjkb", "judge": "jev", "model": "jev-1.14.0", "p": 0.09, "query": "So this happened when I was about nineteen and working nights at a gas station in a small town, a guy came in every single night at 3am and bought one banana and never said a word until the night he finally did", "relevant": false}
+{"id": "nv7y06f", "judge": "jev", "model": "jev-1.14.0", "p": 0.05, "query": "So this happened when I was about nineteen and working nights at a gas station in a small town, a guy came in every single night at 3am and bought one banana and never said a word until the night he finally did", "relevant": false}
+{"id": "nvjukny", "judge": "jev", "model": "jev-1.14.0", "p": 0.07, "query": "So this happened when I was about nineteen and working nights at a gas station in a small town, a guy came in every single night at 3am and bought one banana and never said a word until the night he finally did", "relevant": false}
+{"id": "nw37jsw", "judge": "jev", "model": "jev-1.14.0", "p": 0.08, "query": "So this happened when I was about nineteen and working nights at a gas station in a small town, a guy came in every single night at 3am and bought one banana and never said a word until the night he finally did", "relevant": false}
+{"id": "nwg3tp1", "judge": "jev", "model": "jev-1.14.0", "p": 0.17, "query": "So this happened when I was about nineteen and working nights at a gas station in a small town, a guy came in every single night at 3am and bought one banana and never said a word until the night he finally did", "relevant": false}
+{"id": "ns7tsuq", "judge": "jev", "model": "jev-1.14.0", "p": 0.27, "query": "a stranger who changed my life", "relevant": false}
+{"id": "nskupr2", "judge": "jev", "model": "jev-1.14.0", "p": 0.51, "query": "a stranger who changed my life", "relevant": true}
+{"id": "nso6myg", "judge": "jev", "model": "jev-1.14.0", "p": 0.24, "query": "a stranger who changed my life", "relevant": false}
+{"id": "nsqw08w", "judge": "jev", "model": "jev-1.14.0", "p": 0.18, "query": "a stranger who changed my life", "relevant": false}
+{"id": "nsrmzyv", "judge": "jev", "model": "jev-1.14.0", "p": 0.08, "query": "a stranger who changed my life", "relevant": false}
+{"id": "ntej4j7", "judge": "jev", "model": "jev-1.14.0", "p": 0.07, "query": "a stranger who changed my life", "relevant": false}
+{"id": "nteq3q8", "judge": "jev", "model": "jev-1.14.0", "p": 0.13, "query": "a stranger who changed my life", "relevant": false}
+{"id": "ntji7jl", "judge": "jev", "model": "jev-1.14.0", "p": 0.13, "query": "a stranger who changed my life", "relevant": false}
+{"id": "ntnl9bv", "judge": "jev", "model": "jev-1.14.0", "p": 0.24, "query": "a stranger who changed my life", "relevant": false}
+{"id": "nv4oi6g", "judge": "jev", "model": "jev-1.14.0", "p": 0.25, "query": "a stranger who changed my life", "relevant": false}
+{"id": "nt3qj4z", "judge": "jev", "model": "jev-1.14.0", "p": 0.17, "query": "a teacher who believed in me", "relevant": false}
+{"id": "ntig6a1", "judge": "jev", "model": "jev-1.14.0", "p": 0.04, "query": "a teacher who believed in me", "relevant": false}
+{"id": "nub0bjk", "judge": "jev", "model": "jev-1.14.0", "p": 0.05, "query": "a teacher who believed in me", "relevant": false}
+{"id": "nv4fp34", "judge": "jev", "model": "jev-1.14.0", "p": 0.08, "query": "a teacher who believed in me", "relevant": false}
+{"id": "nvip055", "judge": "jev", "model": "jev-1.14.0", "p": 0.73, "query": "a teacher who believed in me", "relevant": true}
+{"id": "nvnp0go", "judge": "jev", "model": "jev-1.14.0", "p": 0.05, "query": "a teacher who believed in me", "relevant": false}
+{"id": "nvwlzb5", "judge": "jev", "model": "jev-1.14.0", "p": 0.2, "query": "a teacher who believed in me", "relevant": false}
+{"id": "nwbcy31", "judge": "jev", "model": "jev-1.14.0", "p": 0.17, "query": "a teacher who believed in me", "relevant": false}
+{"id": "nwpj45c", "judge": "jev", "model": "jev-1.14.0", "p": 0.45, "query": "a teacher who believed in me", "relevant": false}
+{"id": "nwxrrsj", "judge": "jev", "model": "jev-1.14.0", "p": 0.93, "query": "a teacher who believed in me", "relevant": true}
+{"id": "ns80nbe", "judge": "jev", "model": "jev-1.14.0", "p": 0.04, "query": "bernie madoff", "relevant": false}
+{"id": "nt8um6n", "judge": "jev", "model": "jev-1.14.0", "p": 0.03, "query": "bernie madoff", "relevant": false}
+{"id": "ntxo9uk", "judge": "jev", "model": "jev-1.14.0", "p": 0.03, "query": "bernie madoff", "relevant": false}
+{"id": "ntymfkj", "judge": "jev", "model": "jev-1.14.0", "p": 0.02, "query": "bernie madoff", "relevant": false}
+{"id": "ntz3ciw", "judge": "jev", "model": "jev-1.14.0", "p": 0.03, "query": "bernie madoff", "relevant": false}
+{"id": "nu7w2lo", "judge": "jev", "model": "jev-1.14.0", "p": 0.01, "query": "bernie madoff", "relevant": false}
+{"id": "nuzg1uz", "judge": "jev", "model": "jev-1.14.0", "p": 0.03, "query": "bernie madoff", "relevant": false}
+{"id": "nv5cx9s", "judge": "jev", "model": "jev-1.14.0", "p": 0.03, "query": "bernie madoff", "relevant": false}
+{"id": "nv6ebu0", "judge": "jev", "model": "jev-1.14.0", "p": 0.02, "query": "bernie madoff", "relevant": false}
+{"id": "nwkjnpp", "judge": "jev", "model": "jev-1.14.0", "p": 0.03, "query": "bernie madoff", "relevant": false}
+{"id": "nrn3fhh", "judge": "jev", "model": "jev-1.14.0", "p": 0.11, "query": "bill gates", "relevant": false}
+{"id": "ns13v5b", "judge": "jev", "model": "jev-1.14.0", "p": 0.11, "query": "bill gates", "relevant": false}
+{"id": "nscn66t", "judge": "jev", "model": "jev-1.14.0", "p": 0.91, "query": "bill gates", "relevant": true}
+{"id": "ntc1htm", "judge": "jev", "model": "jev-1.14.0", "p": 0.17, "query": "bill gates", "relevant": false}
+{"id": "nve578u", "judge": "jev", "model": "jev-1.14.0", "p": 0.14, "query": "bill gates", "relevant": false}
+{"id": "nvhcfey", "judge": "jev", "model": "jev-1.14.0", "p": 0.05, "query": "bill gates", "relevant": false}
+{"id": "nvu0dr0", "judge": "jev", "model": "jev-1.14.0", "p": 0.24, "query": "bill gates", "relevant": false}
+{"id": "nw2w2b0", "judge": "jev", "model": "jev-1.14.0", "p": 0.07, "query": "bill gates", "relevant": false}
+{"id": "nw6fw7v", "judge": "jev", "model": "jev-1.14.0", "p": 0.18, "query": "bill gates", "relevant": false}
+{"id": "nw91o4i", "judge": "jev", "model": "jev-1.14.0", "p": 0.19, "query": "bill gates", "relevant": false}
+{"id": "nv8gtqm", "judge": "jev", "model": "jev-1.14.0", "p": 0.71, "query": "chess \"grandmaster\"", "relevant": true}
+{"id": "nvd8ti8", "judge": "jev", "model": "jev-1.14.0", "p": 0.55, "query": "chess \"grandmaster\"", "relevant": true}
+{"id": "ns52xf8", "judge": "jev", "model": "jev-1.14.0", "p": 0.02, "query": "chess NOT tournament", "relevant": false}
+{"id": "ntb8aaj", "judge": "jev", "model": "jev-1.14.0", "p": 0.15, "query": "chess NOT tournament", "relevant": false}
+{"id": "ntyup1p", "judge": "jev", "model": "jev-1.14.0", "p": 0.42, "query": "chess NOT tournament", "relevant": false}
+{"id": "ntzzno8", "judge": "jev", "model": "jev-1.14.0", "p": 0.7, "query": "chess NOT tournament", "relevant": true}
+{"id": "nua29bc", "judge": "jev", "model": "jev-1.14.0", "p": 0.08, "query": "chess NOT tournament", "relevant": false}
+{"id": "num4p4l", "judge": "jev", "model": "jev-1.14.0", "p": 0.36, "query": "chess NOT tournament", "relevant": false}
+{"id": "nv8gtqm", "judge": "jev", "model": "jev-1.14.0", "p": 0.54, "query": "chess NOT tournament", "relevant": true}
+{"id": "nvd8ti8", "judge": "jev", "model": "jev-1.14.0", "p": 0.64, "query": "chess NOT tournament", "relevant": true}
+{"id": "nwmpzfr", "judge": "jev", "model": "jev-1.14.0", "p": 0.42, "query": "chess NOT tournament", "relevant": false}
+{"id": "nwwmxev", "judge": "jev", "model": "jev-1.14.0", "p": 0.12, "query": "chess NOT tournament", "relevant": false}
+{"id": "nroj36o", "judge": "jev", "model": "jev-1.14.0", "p": 0.32, "query": "coroner", "relevant": false}
+{"id": "nt7yqdl", "judge": "jev", "model": "jev-1.14.0", "p": 0.71, "query": "coroner", "relevant": true}
+{"id": "ntwtoq2", "judge": "jev", "model": "jev-1.14.0", "p": 0.58, "query": "coroner", "relevant": true}
+{"id": "nu4s1gy", "judge": "jev", "model": "jev-1.14.0", "p": 0.1, "query": "coroner", "relevant": false}
+{"id": "nujy884", "judge": "jev", "model": "jev-1.14.0", "p": 0.66, "query": "coroner", "relevant": true}
+{"id": "nurby48", "judge": "jev", "model": "jev-1.14.0", "p": 0.87, "query": "coroner", "relevant": true}
+{"id": "nutrwmu", "judge": "jev", "model": "jev-1.14.0", "p": 0.59, "query": "coroner", "relevant": true}
+{"id": "nvplmjt", "judge": "jev", "model": "jev-1.14.0", "p": 0.48, "query": "coroner", "relevant": false}
+{"id": "nwbfvoo", "judge": "jev", "model": "jev-1.14.0", "p": 0.78, "query": "coroner", "relevant": true}
+{"id": "nwl1912", "judge": "jev", "model": "jev-1.14.0", "p": 0.72, "query": "coroner", "relevant": true}
+{"id": "ns9bczg", "judge": "jev", "model": "jev-1.14.0", "p": 0.08, "query": "cuttlefish", "relevant": false}
+{"id": "ns9tv1a", "judge": "jev", "model": "jev-1.14.0", "p": 0.06, "query": "cuttlefish", "relevant": false}
+{"id": "nsnqwpi", "judge": "jev", "model": "jev-1.14.0", "p": 0.04, "query": "cuttlefish", "relevant": false}
+{"id": "ntzjiam", "judge": "jev", "model": "jev-1.14.0", "p": 0.07, "query": "cuttlefish", "relevant": false}
+{"id": "nukwbuw", "judge": "jev", "model": "jev-1.14.0", "p": 0.05, "query": "cuttlefish", "relevant": false}
+{"id": "nuvuc3x", "judge": "jev", "model": "jev-1.14.0", "p": 0.44, "query": "cuttlefish", "relevant": false}
+{"id": "nv4pexb", "judge": "jev", "model": "jev-1.14.0", "p": 0.03, "query": "cuttlefish", "relevant": false}
+{"id": "nv9hihu", "judge": "jev", "model": "jev-1.14.0", "p": 0.04, "query": "cuttlefish", "relevant": false}
+{"id": "nvlkpyz", "judge": "jev", "model": "jev-1.14.0", "p": 0.05, "query": "cuttlefish", "relevant": false}
+{"id": "nwrn4c0", "judge": "jev", "model": "jev-1.14.0", "p": 0.04, "query": "cuttlefish", "relevant": false}
+{"id": "nt6ozv1", "judge": "jev", "model": "jev-1.14.0", "p": 0.79, "query": "dentist -kids", "relevant": true}
+{"id": "ntcx9hy", "judge": "jev", "model": "jev-1.14.0", "p": 0.47, "query": "dentist -kids", "relevant": false}
+{"id": "nu9pwgp", "judge": "jev", "model": "jev-1.14.0", "p": 0.17, "query": "dentist -kids", "relevant": false}
+{"id": "nvi7gm0", "judge": "jev", "model": "jev-1.14.0", "p": 0.61, "query": "dentist -kids", "relevant": true}
+{"id": "nvtzjoy", "judge": "jev", "model": "jev-1.14.0", "p": 0.34, "query": "dentist -kids", "relevant": false}
+{"id": "nw3n0qc", "judge": "jev", "model": "jev-1.14.0", "p": 0.89, "query": "dentist -kids", "relevant": true}
+{"id": "nw7g874", "judge": "jev", "model": "jev-1.14.0", "p": 0.25, "query": "dentist -kids", "relevant": false}
+{"id": "nwhxp5o", "judge": "jev", "model": "jev-1.14.0", "p": 0.32, "query": "dentist -kids", "relevant": false}
+{"id": "nwobb43", "judge": "jev", "model": "jev-1.14.0", "p": 0.14, "query": "dentist -kids", "relevant": false}
+{"id": "nwvbs0z", "judge": "jev", "model": "jev-1.14.0", "p": 0.17, "query": "dentist -kids", "relevant": false}
+{"id": "ns6gg74", "judge": "jev", "model": "jev-1.14.0", "p": 0.64, "query": "dog OR cat rescue", "relevant": true}
+{"id": "nse2uuy", "judge": "jev", "model": "jev-1.14.0", "p": 0.64, "query": "dog OR cat rescue", "relevant": true}
+{"id": "nsn58qc", "judge": "jev", "model": "jev-1.14.0", "p": 0.68, "query": "dog OR cat rescue", "relevant": true}
+{"id": "ntodnwr", "judge": "jev", "model": "jev-1.14.0", "p": 0.72, "query": "dog OR cat rescue", "relevant": true}
+{"id": "ntqkn1o", "judge": "jev", "model": "jev-1.14.0", "p": 0.83, "query": "dog OR cat rescue", "relevant": true}
+{"id": "nu07mhj", "judge": "jev", "model": "jev-1.14.0", "p": 0.5, "query": "dog OR cat rescue", "relevant": true}
+{"id": "nu8nva6", "judge": "jev", "model": "jev-1.14.0", "p": 0.8, "query": "dog OR cat rescue", "relevant": true}
+{"id": "nv24ymc", "judge": "jev", "model": "jev-1.14.0", "p": 0.81, "query": "dog OR cat rescue", "relevant": true}
+{"id": "nw5eg61", "judge": "jev", "model": "jev-1.14.0", "p": 0.91, "query": "dog OR cat rescue", "relevant": true}
+{"id": "nwsgh2r", "judge": "jev", "model": "jev-1.14.0", "p": 0.47, "query": "dog OR cat rescue", "relevant": false}
+{"id": "nrmpghp", "judge": "jev", "model": "jev-1.14.0", "p": 0.07, "query": "ex-cia", "relevant": false}
+{"id": "nrpge67", "judge": "jev", "model": "jev-1.14.0", "p": 0.21, "query": "ex-cia", "relevant": false}
+{"id": "nsyuira", "judge": "jev", "model": "jev-1.14.0", "p": 0.11, "query": "ex-cia", "relevant": false}
+{"id": "nsyzwuk", "judge": "jev", "model": "jev-1.14.0", "p": 0.29, "query": "ex-cia", "relevant": false}
+{"id": "ntz6r39", "judge": "jev", "model": "jev-1.14.0", "p": 0.08, "query": "ex-cia", "relevant": false}
+{"id": "nuqyuoz", "judge": "jev", "model": "jev-1.14.0", "p": 0.13, "query": "ex-cia", "relevant": false}
+{"id": "nvipdls", "judge": "jev", "model": "jev-1.14.0", "p": 0.23, "query": "ex-cia", "relevant": false}
+{"id": "nwj06mh", "judge": "jev", "model": "jev-1.14.0", "p": 0.1, "query": "ex-cia", "relevant": false}
+{"id": "nwrdwjt", "judge": "jev", "model": "jev-1.14.0", "p": 0.19, "query": "ex-cia", "relevant": false}
+{"id": "nwwioac", "judge": "jev", "model": "jev-1.14.0", "p": 0.27, "query": "ex-cia", "relevant": false}
+{"id": "nrnwfed", "judge": "claude", "query": "frustrating day at the DMV", "relevant": false, "source": "#31"}
+{"id": "nrnwfed", "judge": "jev", "model": "jev-1.14.0", "p": 0.04, "query": "frustrating day at the DMV", "relevant": false}
+{"id": "ns4qmx8", "judge": "claude", "query": "frustrating day at the DMV", "relevant": true, "source": "#31"}
+{"id": "ns4qmx8", "judge": "jev", "model": "jev-1.14.0", "p": 0.85, "query": "frustrating day at the DMV", "relevant": true}
+{"id": "nsi7mh5", "judge": "claude", "query": "frustrating day at the DMV", "relevant": true, "source": "#31"}
+{"id": "nsi7mh5", "judge": "jev", "model": "jev-1.14.0", "p": 0.63, "query": "frustrating day at the DMV", "relevant": true}
+{"id": "ntkv36x", "judge": "claude", "query": "frustrating day at the DMV", "relevant": true, "source": "#31"}
+{"id": "ntkv36x", "judge": "jev", "model": "jev-1.14.0", "p": 0.9, "query": "frustrating day at the DMV", "relevant": true}
+{"id": "ntl7vy9", "judge": "claude", "query": "frustrating day at the DMV", "relevant": false, "source": "#31"}
+{"id": "ntl7vy9", "judge": "jev", "model": "jev-1.14.0", "p": 0.17, "query": "frustrating day at the DMV", "relevant": false}
+{"id": "ntvn7t6", "judge": "claude", "query": "frustrating day at the DMV", "relevant": false, "source": "#31"}
+{"id": "ntvn7t6", "judge": "jev", "model": "jev-1.14.0", "p": 0.03, "query": "frustrating day at the DMV", "relevant": false}
+{"id": "nu7o98y", "judge": "claude", "query": "frustrating day at the DMV", "relevant": false, "source": "#31"}
+{"id": "nu7o98y", "judge": "jev", "model": "jev-1.14.0", "p": 0.09, "query": "frustrating day at the DMV", "relevant": false}
+{"id": "nunka6h", "judge": "claude", "query": "frustrating day at the DMV", "relevant": true, "source": "#31"}
+{"id": "nunka6h", "judge": "jev", "model": "jev-1.14.0", "p": 0.39, "query": "frustrating day at the DMV", "relevant": false}
+{"id": "nupygws", "judge": "claude", "query": "frustrating day at the DMV", "relevant": false, "source": "#31"}
+{"id": "nupygws", "judge": "jev", "model": "jev-1.14.0", "p": 0.31, "query": "frustrating day at the DMV", "relevant": false}
+{"id": "nv2ncyh", "judge": "claude", "query": "frustrating day at the DMV", "relevant": true, "source": "#31"}
+{"id": "nv2ncyh", "judge": "jev", "model": "jev-1.14.0", "p": 0.89, "query": "frustrating day at the DMV", "relevant": true}
+{"id": "nv8na2r", "judge": "claude", "query": "frustrating day at the DMV", "relevant": true, "source": "#31"}
+{"id": "nv8na2r", "judge": "jev", "model": "jev-1.14.0", "p": 0.85, "query": "frustrating day at the DMV", "relevant": true}
+{"id": "nvgh9jy", "judge": "claude", "query": "frustrating day at the DMV", "relevant": true, "source": "#31"}
+{"id": "nvgh9jy", "judge": "jev", "model": "jev-1.14.0", "p": 0.83, "query": "frustrating day at the DMV", "relevant": true}
+{"id": "nvryxt7", "judge": "claude", "query": "frustrating day at the DMV", "relevant": true, "source": "#31"}
+{"id": "nvryxt7", "judge": "jev", "model": "jev-1.14.0", "p": 0.86, "query": "frustrating day at the DMV", "relevant": true}
+{"id": "nvtevpc", "judge": "claude", "query": "frustrating day at the DMV", "relevant": false, "source": "#31"}
+{"id": "nvtevpc", "judge": "jev", "model": "jev-1.14.0", "p": 0.03, "query": "frustrating day at the DMV", "relevant": false}
+{"id": "nvywr2w", "judge": "claude", "query": "frustrating day at the DMV", "relevant": false, "source": "#31"}
+{"id": "nvywr2w", "judge": "jev", "model": "jev-1.14.0", "p": 0.07, "query": "frustrating day at the DMV", "relevant": false}
+{"id": "nw27mmd", "judge": "claude", "query": "frustrating day at the DMV", "relevant": true, "source": "#31"}
+{"id": "nw27mmd", "judge": "jev", "model": "jev-1.14.0", "p": 0.6, "query": "frustrating day at the DMV", "relevant": true}
+{"id": "nw4v4pf", "judge": "claude", "query": "frustrating day at the DMV", "relevant": false, "source": "#31"}
+{"id": "nw4v4pf", "judge": "jev", "model": "jev-1.14.0", "p": 0.17, "query": "frustrating day at the DMV", "relevant": false}
+{"id": "nwodkqz", "judge": "claude", "query": "frustrating day at the DMV", "relevant": true, "source": "#31"}
+{"id": "nwodkqz", "judge": "jev", "model": "jev-1.14.0", "p": 0.93, "query": "frustrating day at the DMV", "relevant": true}
+{"id": "nwymas6", "judge": "claude", "query": "frustrating day at the DMV", "relevant": false, "source": "#31"}
+{"id": "nwymas6", "judge": "jev", "model": "jev-1.14.0", "p": 0.23, "query": "frustrating day at the DMV", "relevant": false}
+{"id": "ns0ds7r", "judge": "jev", "model": "jev-1.14.0", "p": 0.07, "query": "getting caught cheating on a test", "relevant": false}
+{"id": "ns342k0", "judge": "jev", "model": "jev-1.14.0", "p": 0.04, "query": "getting caught cheating on a test", "relevant": false}
+{"id": "ns46nab", "judge": "jev", "model": "jev-1.14.0", "p": 0.73, "query": "getting caught cheating on a test", "relevant": true}
+{"id": "ns5r55o", "judge": "jev", "model": "jev-1.14.0", "p": 0.41, "query": "getting caught cheating on a test", "relevant": false}
+{"id": "nsdjy1u", "judge": "jev", "model": "jev-1.14.0", "p": 0.4, "query": "getting caught cheating on a test", "relevant": false}
+{"id": "nsy7u53", "judge": "jev", "model": "jev-1.14.0", "p": 0.89, "query": "getting caught cheating on a test", "relevant": true}
+{"id": "ntly4ag", "judge": "jev", "model": "jev-1.14.0", "p": 0.08, "query": "getting caught cheating on a test", "relevant": false}
+{"id": "nuldnip", "judge": "jev", "model": "jev-1.14.0", "p": 0.8, "query": "getting caught cheating on a test", "relevant": true}
+{"id": "nvt6nwi", "judge": "jev", "model": "jev-1.14.0", "p": 0.93, "query": "getting caught cheating on a test", "relevant": true}
+{"id": "nw3wrc0", "judge": "jev", "model": "jev-1.14.0", "p": 0.59, "query": "getting caught cheating on a test", "relevant": true}
+{"id": "nrosu7x", "judge": "jev", "model": "jev-1.14.0", "p": 0.75, "query": "getting lost in a foreign country", "relevant": true}
+{"id": "nrtly6i", "judge": "jev", "model": "jev-1.14.0", "p": 0.13, "query": "getting lost in a foreign country", "relevant": false}
+{"id": "nsayd5w", "judge": "jev", "model": "jev-1.14.0", "p": 0.46, "query": "getting lost in a foreign country", "relevant": false}
+{"id": "nsi2cae", "judge": "jev", "model": "jev-1.14.0", "p": 0.12, "query": "getting lost in a foreign country", "relevant": false}
+{"id": "nsxq35d", "judge": "jev", "model": "jev-1.14.0", "p": 0.16, "query": "getting lost in a foreign country", "relevant": false}
+{"id": "nus0pk2", "judge": "jev", "model": "jev-1.14.0", "p": 0.46, "query": "getting lost in a foreign country", "relevant": false}
+{"id": "nv82f7r", "judge": "jev", "model": "jev-1.14.0", "p": 0.31, "query": "getting lost in a foreign country", "relevant": false}
+{"id": "nvhzi9j", "judge": "jev", "model": "jev-1.14.0", "p": 0.07, "query": "getting lost in a foreign country", "relevant": false}
+{"id": "nw27nul", "judge": "jev", "model": "jev-1.14.0", "p": 0.29, "query": "getting lost in a foreign country", "relevant": false}
+{"id": "nwn6mth", "judge": "jev", "model": "jev-1.14.0", "p": 0.19, "query": "getting lost in a foreign country", "relevant": false}
+{"id": "nrsb528", "judge": "jev", "model": "jev-1.14.0", "p": 0.43, "query": "harry potter", "relevant": false}
+{"id": "ntedo6m", "judge": "jev", "model": "jev-1.14.0", "p": 0.21, "query": "harry potter", "relevant": false}
+{"id": "nti199x", "judge": "jev", "model": "jev-1.14.0", "p": 0.6, "query": "harry potter", "relevant": true}
+{"id": "ntizrzr", "judge": "jev", "model": "jev-1.14.0", "p": 0.78, "query": "harry potter", "relevant": true}
+{"id": "ntq6ewv", "judge": "jev", "model": "jev-1.14.0", "p": 0.59, "query": "harry potter", "relevant": true}
+{"id": "nu0v089", "judge": "jev", "model": "jev-1.14.0", "p": 0.32, "query": "harry potter", "relevant": false}
+{"id": "nu1of6r", "judge": "jev", "model": "jev-1.14.0", "p": 0.66, "query": "harry potter", "relevant": true}
+{"id": "nuv9y0m", "judge": "jev", "model": "jev-1.14.0", "p": 0.25, "query": "harry potter", "relevant": false}
+{"id": "nvmlsve", "judge": "jev", "model": "jev-1.14.0", "p": 0.2, "query": "harry potter", "relevant": false}
+{"id": "nw3tvg8", "judge": "jev", "model": "jev-1.14.0", "p": 0.62, "query": "harry potter", "relevant": true}
+{"id": "nsgz75h", "judge": "jev", "model": "jev-1.14.0", "p": 0.05, "query": "kasparov", "relevant": false}
+{"id": "nsizusy", "judge": "jev", "model": "jev-1.14.0", "p": 0.03, "query": "kasparov", "relevant": false}
+{"id": "nt44pe0", "judge": "jev", "model": "jev-1.14.0", "p": 0.08, "query": "kasparov", "relevant": false}
+{"id": "nto0ijc", "judge": "jev", "model": "jev-1.14.0", "p": 0.05, "query": "kasparov", "relevant": false}
+{"id": "ntyhz3d", "judge": "jev", "model": "jev-1.14.0", "p": 0.05, "query": "kasparov", "relevant": false}
+{"id": "nuetd3f", "judge": "jev", "model": "jev-1.14.0", "p": 0.06, "query": "kasparov", "relevant": false}
+{"id": "nuj9r0v", "judge": "jev", "model": "jev-1.14.0", "p": 0.06, "query": "kasparov", "relevant": false}
+{"id": "nujwph4", "judge": "jev", "model": "jev-1.14.0", "p": 0.07, "query": "kasparov", "relevant": false}
+{"id": "nv913mw", "judge": "jev", "model": "jev-1.14.0", "p": 0.05, "query": "kasparov", "relevant": false}
+{"id": "nvztfrf", "judge": "jev", "model": "jev-1.14.0", "p": 0.05, "query": "kasparov", "relevant": false}
+{"id": "nrp8tn4", "judge": "jev", "model": "jev-1.14.0", "p": 0.11, "query": "north korea", "relevant": false}
+{"id": "nrw8oqh", "judge": "jev", "model": "jev-1.14.0", "p": 0.25, "query": "north korea", "relevant": false}
+{"id": "ns4e4jq", "judge": "jev", "model": "jev-1.14.0", "p": 0.13, "query": "north korea", "relevant": false}
+{"id": "ns6xfw2", "judge": "jev", "model": "jev-1.14.0", "p": 0.09, "query": "north korea", "relevant": false}
+{"id": "nt1bvm8", "judge": "jev", "model": "jev-1.14.0", "p": 0.14, "query": "north korea", "relevant": false}
+{"id": "ntjig40", "judge": "jev", "model": "jev-1.14.0", "p": 0.71, "query": "north korea", "relevant": true}
+{"id": "ntk22ag", "judge": "jev", "model": "jev-1.14.0", "p": 0.05, "query": "north korea", "relevant": false}
+{"id": "nucght7", "judge": "jev", "model": "jev-1.14.0", "p": 0.11, "query": "north korea", "relevant": false}
+{"id": "nucmwfg", "judge": "jev", "model": "jev-1.14.0", "p": 0.24, "query": "north korea", "relevant": false}
+{"id": "nuqyuoz", "judge": "jev", "model": "jev-1.14.0", "p": 0.66, "query": "north korea", "relevant": true}
+{"id": "nruh6t0", "judge": "jev", "model": "jev-1.14.0", "p": 0.91, "query": "speeding ticket", "relevant": true}
+{"id": "nrwkxtp", "judge": "jev", "model": "jev-1.14.0", "p": 0.33, "query": "speeding ticket", "relevant": false}
+{"id": "ns41vcm", "judge": "jev", "model": "jev-1.14.0", "p": 0.54, "query": "speeding ticket", "relevant": true}
+{"id": "ns72f8u", "judge": "jev", "model": "jev-1.14.0", "p": 0.21, "query": "speeding ticket", "relevant": false}
+{"id": "nsi6n0d", "judge": "jev", "model": "jev-1.14.0", "p": 0.3, "query": "speeding ticket", "relevant": false}
+{"id": "ntp6d6h", "judge": "jev", "model": "jev-1.14.0", "p": 0.65, "query": "speeding ticket", "relevant": true}
+{"id": "nvcafk4", "judge": "jev", "model": "jev-1.14.0", "p": 0.92, "query": "speeding ticket", "relevant": true}
+{"id": "nvnn92v", "judge": "jev", "model": "jev-1.14.0", "p": 0.73, "query": "speeding ticket", "relevant": true}
+{"id": "nvuq82e", "judge": "jev", "model": "jev-1.14.0", "p": 0.82, "query": "speeding ticket", "relevant": true}
+{"id": "nwtpeui", "judge": "jev", "model": "jev-1.14.0", "p": 0.34, "query": "speeding ticket", "relevant": false}
+{"id": "nrpaepa", "judge": "jev", "model": "jev-1.14.0", "p": 0.88, "query": "sushi", "relevant": true}
+{"id": "nrpuziu", "judge": "jev", "model": "jev-1.14.0", "p": 0.88, "query": "sushi", "relevant": true}
+{"id": "nrs14qf", "judge": "jev", "model": "jev-1.14.0", "p": 0.83, "query": "sushi", "relevant": true}
+{"id": "ns068yi", "judge": "jev", "model": "jev-1.14.0", "p": 0.34, "query": "sushi", "relevant": false}
+{"id": "nt0dlsk", "judge": "jev", "model": "jev-1.14.0", "p": 0.76, "query": "sushi", "relevant": true}
+{"id": "nt9n3xz", "judge": "jev", "model": "jev-1.14.0", "p": 0.22, "query": "sushi", "relevant": false}
+{"id": "ntfrkqn", "judge": "jev", "model": "jev-1.14.0", "p": 0.73, "query": "sushi", "relevant": true}
+{"id": "nw61dsf", "judge": "jev", "model": "jev-1.14.0", "p": 0.59, "query": "sushi", "relevant": true}
+{"id": "nwwbpha", "judge": "jev", "model": "jev-1.14.0", "p": 0.5, "query": "sushi", "relevant": true}
+{"id": "nwwfcse", "judge": "jev", "model": "jev-1.14.0", "p": 0.25, "query": "sushi", "relevant": false}
+{"id": "nrqmi9e", "judge": "claude", "query": "the moment I knew my marriage was over", "relevant": true, "source": "#31"}
+{"id": "nrqmi9e", "judge": "jev", "model": "jev-1.14.0", "p": 0.47, "query": "the moment I knew my marriage was over", "relevant": false}
+{"id": "nry3rq2", "judge": "claude", "query": "the moment I knew my marriage was over", "relevant": true, "source": "#31"}
+{"id": "nry3rq2", "judge": "jev", "model": "jev-1.14.0", "p": 0.8, "query": "the moment I knew my marriage was over", "relevant": true}
+{"id": "nsgmdfp", "judge": "claude", "query": "the moment I knew my marriage was over", "relevant": false, "source": "#31"}
+{"id": "nsgmdfp", "judge": "jev", "model": "jev-1.14.0", "p": 0.37, "query": "the moment I knew my marriage was over", "relevant": false}
+{"id": "nsoxre7", "judge": "claude", "query": "the moment I knew my marriage was over", "relevant": false, "source": "#31"}
+{"id": "nsoxre7", "judge": "jev", "model": "jev-1.14.0", "p": 0.07, "query": "the moment I knew my marriage was over", "relevant": false}
+{"id": "nsv2om2", "judge": "claude", "query": "the moment I knew my marriage was over", "relevant": false, "source": "#31"}
+{"id": "nsv2om2", "judge": "jev", "model": "jev-1.14.0", "p": 0.2, "query": "the moment I knew my marriage was over", "relevant": false}
+{"id": "nsx1mh8", "judge": "claude", "query": "the moment I knew my marriage was over", "relevant": true, "source": "#31"}
+{"id": "nsx1mh8", "judge": "jev", "model": "jev-1.14.0", "p": 0.88, "query": "the moment I knew my marriage was over", "relevant": true}
+{"id": "nt41pnr", "judge": "claude", "query": "the moment I knew my marriage was over", "relevant": true, "source": "#31"}
+{"id": "nt41pnr", "judge": "jev", "model": "jev-1.14.0", "p": 0.93, "query": "the moment I knew my marriage was over", "relevant": true}
+{"id": "nt9rfwe", "judge": "claude", "query": "the moment I knew my marriage was over", "relevant": true, "source": "#31"}
+{"id": "nt9rfwe", "judge": "jev", "model": "jev-1.14.0", "p": 0.57, "query": "the moment I knew my marriage was over", "relevant": true}
+{"id": "ntdesq9", "judge": "claude", "query": "the moment I knew my marriage was over", "relevant": false, "source": "#31"}
+{"id": "ntdesq9", "judge": "jev", "model": "jev-1.14.0", "p": 0.06, "query": "the moment I knew my marriage was over", "relevant": false}
+{"id": "ntfyr1x", "judge": "claude", "query": "the moment I knew my marriage was over", "relevant": false, "source": "#31"}
+{"id": "ntfyr1x", "judge": "jev", "model": "jev-1.14.0", "p": 0.35, "query": "the moment I knew my marriage was over", "relevant": false}
+{"id": "ntgn1aa", "judge": "claude", "query": "the moment I knew my marriage was over", "relevant": false, "source": "#31"}
+{"id": "ntgn1aa", "judge": "jev", "model": "jev-1.14.0", "p": 0.08, "query": "the moment I knew my marriage was over", "relevant": false}
+{"id": "ntoqmpm", "judge": "claude", "query": "the moment I knew my marriage was over", "relevant": true, "source": "#31"}
+{"id": "ntoqmpm", "judge": "jev", "model": "jev-1.14.0", "p": 0.54, "query": "the moment I knew my marriage was over", "relevant": true}
+{"id": "ntovnsq", "judge": "claude", "query": "the moment I knew my marriage was over", "relevant": false, "source": "#31"}
+{"id": "ntovnsq", "judge": "jev", "model": "jev-1.14.0", "p": 0.54, "query": "the moment I knew my marriage was over", "relevant": true}
+{"id": "ntyuxwu", "judge": "claude", "query": "the moment I knew my marriage was over", "relevant": false, "source": "#31"}
+{"id": "ntyuxwu", "judge": "jev", "model": "jev-1.14.0", "p": 0.26, "query": "the moment I knew my marriage was over", "relevant": false}
+{"id": "nuh2z8v", "judge": "claude", "query": "the moment I knew my marriage was over", "relevant": false, "source": "#31"}
+{"id": "nuh2z8v", "judge": "jev", "model": "jev-1.14.0", "p": 0.04, "query": "the moment I knew my marriage was over", "relevant": false}
+{"id": "nuzf4tf", "judge": "claude", "query": "the moment I knew my marriage was over", "relevant": false, "source": "#31"}
+{"id": "nuzf4tf", "judge": "jev", "model": "jev-1.14.0", "p": 0.08, "query": "the moment I knew my marriage was over", "relevant": false}
+{"id": "nv5ikuv", "judge": "claude", "query": "the moment I knew my marriage was over", "relevant": false, "source": "#31"}
+{"id": "nv5ikuv", "judge": "jev", "model": "jev-1.14.0", "p": 0.07, "query": "the moment I knew my marriage was over", "relevant": false}
+{"id": "nvihnad", "judge": "claude", "query": "the moment I knew my marriage was over", "relevant": true, "source": "#31"}
+{"id": "nvihnad", "judge": "jev", "model": "jev-1.14.0", "p": 0.78, "query": "the moment I knew my marriage was over", "relevant": true}
+{"id": "nvv4avq", "judge": "claude", "query": "the moment I knew my marriage was over", "relevant": true, "source": "#31"}
+{"id": "nvv4avq", "judge": "jev", "model": "jev-1.14.0", "p": 0.89, "query": "the moment I knew my marriage was over", "relevant": true}
+{"id": "nvxheby", "judge": "claude", "query": "the moment I knew my marriage was over", "relevant": true, "source": "#31"}
+{"id": "nvxheby", "judge": "jev", "model": "jev-1.14.0", "p": 0.4, "query": "the moment I knew my marriage was over", "relevant": false}
+{"id": "nwmw24o", "judge": "claude", "query": "the moment I knew my marriage was over", "relevant": false, "source": "#31"}
+{"id": "nwmw24o", "judge": "jev", "model": "jev-1.14.0", "p": 0.05, "query": "the moment I knew my marriage was over", "relevant": false}
+{"id": "nwuddxn", "judge": "claude", "query": "the moment I knew my marriage was over", "relevant": false, "source": "#31"}
+{"id": "nwuddxn", "judge": "jev", "model": "jev-1.14.0", "p": 0.38, "query": "the moment I knew my marriage was over", "relevant": false}
+{"id": "nwulbcu", "judge": "claude", "query": "the moment I knew my marriage was over", "relevant": false, "source": "#31"}
+{"id": "nwulbcu", "judge": "jev", "model": "jev-1.14.0", "p": 0.11, "query": "the moment I knew my marriage was over", "relevant": false}
+{"id": "ns7tsuq", "judge": "jev", "model": "jev-1.14.0", "p": 0.24, "query": "the time my dad embarrassed me in public", "relevant": false}
+{"id": "nsxhbuw", "judge": "jev", "model": "jev-1.14.0", "p": 0.87, "query": "the time my dad embarrassed me in public", "relevant": true}
+{"id": "nt2focf", "judge": "jev", "model": "jev-1.14.0", "p": 0.79, "query": "the time my dad embarrassed me in public", "relevant": true}
+{"id": "nt63me0", "judge": "jev", "model": "jev-1.14.0", "p": 0.08, "query": "the time my dad embarrassed me in public", "relevant": false}
+{"id": "ntp7cmi", "judge": "jev", "model": "jev-1.14.0", "p": 0.73, "query": "the time my dad embarrassed me in public", "relevant": true}
+{"id": "nuy9f21", "judge": "jev", "model": "jev-1.14.0", "p": 0.03, "query": "the time my dad embarrassed me in public", "relevant": false}
+{"id": "nv00uwc", "judge": "jev", "model": "jev-1.14.0", "p": 0.04, "query": "the time my dad embarrassed me in public", "relevant": false}
+{"id": "nvi2az0", "judge": "jev", "model": "jev-1.14.0", "p": 0.36, "query": "the time my dad embarrassed me in public", "relevant": false}
+{"id": "nw4r9j2", "judge": "jev", "model": "jev-1.14.0", "p": 0.78, "query": "the time my dad embarrassed me in public", "relevant": true}
+{"id": "nwq9qcz", "judge": "jev", "model": "jev-1.14.0", "p": 0.82, "query": "the time my dad embarrassed me in public", "relevant": true}
+{"id": "ns67jpe", "judge": "jev", "model": "jev-1.14.0", "p": 0.34, "query": "tl;dr", "relevant": false}
+{"id": "ntwt6iq", "judge": "jev", "model": "jev-1.14.0", "p": 0.31, "query": "tl;dr", "relevant": false}
+{"id": "nv0q3ea", "judge": "jev", "model": "jev-1.14.0", "p": 0.51, "query": "tl;dr", "relevant": true}
+{"id": "nv2aews", "judge": "jev", "model": "jev-1.14.0", "p": 0.24, "query": "tl;dr", "relevant": false}
+{"id": "nv7uoub", "judge": "jev", "model": "jev-1.14.0", "p": 0.11, "query": "tl;dr", "relevant": false}
+{"id": "nvkvmby", "judge": "jev", "model": "jev-1.14.0", "p": 0.35, "query": "tl;dr", "relevant": false}
+{"id": "nvkxycl", "judge": "jev", "model": "jev-1.14.0", "p": 0.29, "query": "tl;dr", "relevant": false}
+{"id": "nvxnuat", "judge": "jev", "model": "jev-1.14.0", "p": 0.24, "query": "tl;dr", "relevant": false}
+{"id": "nvz3fn7", "judge": "jev", "model": "jev-1.14.0", "p": 0.28, "query": "tl;dr", "relevant": false}
+{"id": "nw1h0ka", "judge": "jev", "model": "jev-1.14.0", "p": 0.37, "query": "tl;dr", "relevant": false}
+{"id": "nrypyva", "judge": "jev", "model": "jev-1.14.0", "p": 0.37, "query": "wedding DJ", "relevant": false}
+{"id": "ns37lf3", "judge": "jev", "model": "jev-1.14.0", "p": 0.35, "query": "wedding DJ", "relevant": false}
+{"id": "nsrqc1k", "judge": "jev", "model": "jev-1.14.0", "p": 0.12, "query": "wedding DJ", "relevant": false}
+{"id": "nu4hvvi", "judge": "jev", "model": "jev-1.14.0", "p": 0.1, "query": "wedding DJ", "relevant": false}
+{"id": "nujk2gs", "judge": "jev", "model": "jev-1.14.0", "p": 0.12, "query": "wedding DJ", "relevant": false}
+{"id": "nuw09is", "judge": "jev", "model": "jev-1.14.0", "p": 0.09, "query": "wedding DJ", "relevant": false}
+{"id": "nvnu6hx", "judge": "jev", "model": "jev-1.14.0", "p": 0.14, "query": "wedding DJ", "relevant": false}
+{"id": "nwa2dja", "judge": "jev", "model": "jev-1.14.0", "p": 0.5, "query": "wedding DJ", "relevant": true}
+{"id": "nwfvbcv", "judge": "jev", "model": "jev-1.14.0", "p": 0.06, "query": "wedding DJ", "relevant": false}
+{"id": "nwvcv29", "judge": "jev", "model": "jev-1.14.0", "p": 0.33, "query": "wedding DJ", "relevant": false}
+{"id": "nrx3pgl", "judge": "claude", "query": "what a night shift nurse sees", "relevant": false, "source": "#31"}
+{"id": "nrx3pgl", "judge": "jev", "model": "jev-1.14.0", "p": 0.08, "query": "what a night shift nurse sees", "relevant": false}
+{"id": "ns49xof", "judge": "claude", "query": "what a night shift nurse sees", "relevant": false, "source": "#31"}
+{"id": "ns49xof", "judge": "jev", "model": "jev-1.14.0", "p": 0.21, "query": "what a night shift nurse sees", "relevant": false}
+{"id": "nshv7fu", "judge": "claude", "query": "what a night shift nurse sees", "relevant": false, "source": "#31"}
+{"id": "nshv7fu", "judge": "jev", "model": "jev-1.14.0", "p": 0.53, "query": "what a night shift nurse sees", "relevant": true}
+{"id": "nsnpon2", "judge": "claude", "query": "what a night shift nurse sees", "relevant": true, "source": "#31"}
+{"id": "nsnpon2", "judge": "jev", "model": "jev-1.14.0", "p": 0.91, "query": "what a night shift nurse sees", "relevant": true}
+{"id": "nsr5jcs", "judge": "claude", "query": "what a night shift nurse sees", "relevant": false, "source": "#31"}
+{"id": "nsr5jcs", "judge": "jev", "model": "jev-1.14.0", "p": 0.26, "query": "what a night shift nurse sees", "relevant": false}
+{"id": "nsxvko4", "judge": "claude", "query": "what a night shift nurse sees", "relevant": false, "source": "#31"}
+{"id": "nsxvko4", "judge": "jev", "model": "jev-1.14.0", "p": 0.29, "query": "what a night shift nurse sees", "relevant": false}
+{"id": "nt39u8h", "judge": "claude", "query": "what a night shift nurse sees", "relevant": true, "source": "#31"}
+{"id": "nt39u8h", "judge": "jev", "model": "jev-1.14.0", "p": 0.74, "query": "what a night shift nurse sees", "relevant": true}
+{"id": "nt8algy", "judge": "claude", "query": "what a night shift nurse sees", "relevant": false, "source": "#31"}
+{"id": "nt8algy", "judge": "jev", "model": "jev-1.14.0", "p": 0.15, "query": "what a night shift nurse sees", "relevant": false}
+{"id": "nt8sqy8", "judge": "claude", "query": "what a night shift nurse sees", "relevant": true, "source": "#31"}
+{"id": "nt8sqy8", "judge": "jev", "model": "jev-1.14.0", "p": 0.2, "query": "what a night shift nurse sees", "relevant": false}
+{"id": "nt98jdm", "judge": "claude", "query": "what a night shift nurse sees", "relevant": false, "source": "#31"}
+{"id": "nt98jdm", "judge": "jev", "model": "jev-1.14.0", "p": 0.43, "query": "what a night shift nurse sees", "relevant": false}
+{"id": "nt9qt2e", "judge": "claude", "query": "what a night shift nurse sees", "relevant": false, "source": "#31"}
+{"id": "nt9qt2e", "judge": "jev", "model": "jev-1.14.0", "p": 0.11, "query": "what a night shift nurse sees", "relevant": false}
+{"id": "ntbew8h", "judge": "claude", "query": "what a night shift nurse sees", "relevant": true, "source": "#31"}
+{"id": "ntbew8h", "judge": "jev", "model": "jev-1.14.0", "p": 0.66, "query": "what a night shift nurse sees", "relevant": true}
+{"id": "ntc320v", "judge": "claude", "query": "what a night shift nurse sees", "relevant": false, "source": "#31"}
+{"id": "ntc320v", "judge": "jev", "model": "jev-1.14.0", "p": 0.42, "query": "what a night shift nurse sees", "relevant": false}
+{"id": "ntffx01", "judge": "claude", "query": "what a night shift nurse sees", "relevant": true, "source": "#31"}
+{"id": "ntffx01", "judge": "jev", "model": "jev-1.14.0", "p": 0.65, "query": "what a night shift nurse sees", "relevant": true}
+{"id": "ntmuszr", "judge": "claude", "query": "what a night shift nurse sees", "relevant": false, "source": "#31"}
+{"id": "ntmuszr", "judge": "jev", "model": "jev-1.14.0", "p": 0.39, "query": "what a night shift nurse sees", "relevant": false}
+{"id": "nu1fgfv", "judge": "claude", "query": "what a night shift nurse sees", "relevant": true, "source": "#31"}
+{"id": "nu1fgfv", "judge": "jev", "model": "jev-1.14.0", "p": 0.28, "query": "what a night shift nurse sees", "relevant": false}
+{"id": "nue4kqr", "judge": "claude", "query": "what a night shift nurse sees", "relevant": false, "source": "#31"}
+{"id": "nue4kqr", "judge": "jev", "model": "jev-1.14.0", "p": 0.24, "query": "what a night shift nurse sees", "relevant": false}
+{"id": "nuiz1q3", "judge": "claude", "query": "what a night shift nurse sees", "relevant": false, "source": "#31"}
+{"id": "nuiz1q3", "judge": "jev", "model": "jev-1.14.0", "p": 0.13, "query": "what a night shift nurse sees", "relevant": false}
+{"id": "nurohsk", "judge": "claude", "query": "what a night shift nurse sees", "relevant": false, "source": "#31"}
+{"id": "nurohsk", "judge": "jev", "model": "jev-1.14.0", "p": 0.38, "query": "what a night shift nurse sees", "relevant": false}
+{"id": "nv6p4r2", "judge": "claude", "query": "what a night shift nurse sees", "relevant": false, "source": "#31"}
+{"id": "nv6p4r2", "judge": "jev", "model": "jev-1.14.0", "p": 0.42, "query": "what a night shift nurse sees", "relevant": false}
+{"id": "nvb7gw1", "judge": "claude", "query": "what a night shift nurse sees", "relevant": false, "source": "#31"}
+{"id": "nvb7gw1", "judge": "jev", "model": "jev-1.14.0", "p": 0.74, "query": "what a night shift nurse sees", "relevant": true}
+{"id": "nvmantp", "judge": "claude", "query": "what a night shift nurse sees", "relevant": false, "source": "#31"}
+{"id": "nvmantp", "judge": "jev", "model": "jev-1.14.0", "p": 0.05, "query": "what a night shift nurse sees", "relevant": false}
+{"id": "nw18nms", "judge": "claude", "query": "what a night shift nurse sees", "relevant": true, "source": "#31"}
+{"id": "nw18nms", "judge": "jev", "model": "jev-1.14.0", "p": 0.91, "query": "what a night shift nurse sees", "relevant": true}
+{"id": "nw4cwi0", "judge": "claude", "query": "what a night shift nurse sees", "relevant": true, "source": "#31"}
+{"id": "nw4cwi0", "judge": "jev", "model": "jev-1.14.0", "p": 0.75, "query": "what a night shift nurse sees", "relevant": true}
+{"id": "nw8tmep", "judge": "claude", "query": "what a night shift nurse sees", "relevant": true, "source": "#31"}
+{"id": "nw8tmep", "judge": "jev", "model": "jev-1.14.0", "p": 0.56, "query": "what a night shift nurse sees", "relevant": true}
+{"id": "nwf1g8q", "judge": "claude", "query": "what a night shift nurse sees", "relevant": false, "source": "#31"}
+{"id": "nwf1g8q", "judge": "jev", "model": "jev-1.14.0", "p": 0.18, "query": "what a night shift nurse sees", "relevant": false}
+{"id": "nwkd4ry", "judge": "claude", "query": "what a night shift nurse sees", "relevant": true, "source": "#31"}
+{"id": "nwkd4ry", "judge": "jev", "model": "jev-1.14.0", "p": 0.85, "query": "what a night shift nurse sees", "relevant": true}
+{"id": "nwng05r", "judge": "claude", "query": "what a night shift nurse sees", "relevant": true, "source": "#31"}
+{"id": "nwng05r", "judge": "jev", "model": "jev-1.14.0", "p": 0.33, "query": "what a night shift nurse sees", "relevant": false}
+{"id": "ntce5sr", "judge": "jev", "model": "jev-1.14.0", "p": 0.1, "query": "what it feels like to survive a car crash", "relevant": false}
+{"id": "nti98hv", "judge": "jev", "model": "jev-1.14.0", "p": 0.39, "query": "what it feels like to survive a car crash", "relevant": false}
+{"id": "nu02xp2", "judge": "jev", "model": "jev-1.14.0", "p": 0.91, "query": "what it feels like to survive a car crash", "relevant": true}
+{"id": "nur9p61", "judge": "jev", "model": "jev-1.14.0", "p": 0.3, "query": "what it feels like to survive a car crash", "relevant": false}
+{"id": "nvgfogh", "judge": "jev", "model": "jev-1.14.0", "p": 0.6, "query": "what it feels like to survive a car crash", "relevant": true}
+{"id": "nvzli8m", "judge": "jev", "model": "jev-1.14.0", "p": 0.07, "query": "what it feels like to survive a car crash", "relevant": false}
+{"id": "nw32xn0", "judge": "jev", "model": "jev-1.14.0", "p": 0.56, "query": "what it feels like to survive a car crash", "relevant": true}
+{"id": "nwbvd9q", "judge": "jev", "model": "jev-1.14.0", "p": 0.03, "query": "what it feels like to survive a car crash", "relevant": false}
+{"id": "nwf6lgz", "judge": "jev", "model": "jev-1.14.0", "p": 0.67, "query": "what it feels like to survive a car crash", "relevant": true}
+{"id": "nwmj8a7", "judge": "jev", "model": "jev-1.14.0", "p": 0.47, "query": "what it feels like to survive a car crash", "relevant": false}
+{"id": "nrppcxu", "judge": "claude", "query": "worst job interview ever", "relevant": true, "source": "#31"}
+{"id": "nrppcxu", "judge": "jev", "model": "jev-1.14.0", "p": 0.54, "query": "worst job interview ever", "relevant": true}
+{"id": "nrquipl", "judge": "claude", "query": "worst job interview ever", "relevant": false, "source": "#31"}
+{"id": "nrquipl", "judge": "jev", "model": "jev-1.14.0", "p": 0.19, "query": "worst job interview ever", "relevant": false}
+{"id": "nrvmq6c", "judge": "claude", "query": "worst job interview ever", "relevant": false, "source": "#31"}
+{"id": "nrvmq6c", "judge": "jev", "model": "jev-1.14.0", "p": 0.6, "query": "worst job interview ever", "relevant": true}
+{"id": "nrwgmfl", "judge": "claude", "query": "worst job interview ever", "relevant": false, "source": "#31"}
+{"id": "nrwgmfl", "judge": "jev", "model": "jev-1.14.0", "p": 0.88, "query": "worst job interview ever", "relevant": true}
+{"id": "nsf4zpo", "judge": "claude", "query": "worst job interview ever", "relevant": true, "source": "#31"}
+{"id": "nsf4zpo", "judge": "jev", "model": "jev-1.14.0", "p": 0.89, "query": "worst job interview ever", "relevant": true}
+{"id": "nszz8ks", "judge": "claude", "query": "worst job interview ever", "relevant": true, "source": "#31"}
+{"id": "nszz8ks", "judge": "jev", "model": "jev-1.14.0", "p": 0.87, "query": "worst job interview ever", "relevant": true}
+{"id": "ntbpcvr", "judge": "claude", "query": "worst job interview ever", "relevant": false, "source": "#31"}
+{"id": "ntbpcvr", "judge": "jev", "model": "jev-1.14.0", "p": 0.2, "query": "worst job interview ever", "relevant": false}
+{"id": "ntgv1ww", "judge": "claude", "query": "worst job interview ever", "relevant": true, "source": "#31"}
+{"id": "ntgv1ww", "judge": "jev", "model": "jev-1.14.0", "p": 0.93, "query": "worst job interview ever", "relevant": true}
+{"id": "nthlkge", "judge": "claude", "query": "worst job interview ever", "relevant": false, "source": "#31"}
+{"id": "nthlkge", "judge": "jev", "model": "jev-1.14.0", "p": 0.22, "query": "worst job interview ever", "relevant": false}
+{"id": "nu5eke6", "judge": "claude", "query": "worst job interview ever", "relevant": true, "source": "#31"}
+{"id": "nu5eke6", "judge": "jev", "model": "jev-1.14.0", "p": 0.9, "query": "worst job interview ever", "relevant": true}
+{"id": "nu8b92x", "judge": "claude", "query": "worst job interview ever", "relevant": true, "source": "#31"}
+{"id": "nu8b92x", "judge": "jev", "model": "jev-1.14.0", "p": 0.78, "query": "worst job interview ever", "relevant": true}
+{"id": "nultiy6", "judge": "claude", "query": "worst job interview ever", "relevant": true, "source": "#31"}
+{"id": "nultiy6", "judge": "jev", "model": "jev-1.14.0", "p": 0.58, "query": "worst job interview ever", "relevant": true}
+{"id": "nupwphh", "judge": "claude", "query": "worst job interview ever", "relevant": true, "source": "#31"}
+{"id": "nupwphh", "judge": "jev", "model": "jev-1.14.0", "p": 0.92, "query": "worst job interview ever", "relevant": true}
+{"id": "nursyes", "judge": "claude", "query": "worst job interview ever", "relevant": true, "source": "#31"}
+{"id": "nursyes", "judge": "jev", "model": "jev-1.14.0", "p": 0.91, "query": "worst job interview ever", "relevant": true}
+{"id": "nv4vvvv", "judge": "claude", "query": "worst job interview ever", "relevant": false, "source": "#31"}
+{"id": "nv4vvvv", "judge": "jev", "model": "jev-1.14.0", "p": 0.24, "query": "worst job interview ever", "relevant": false}
+{"id": "nv5b04r", "judge": "claude", "query": "worst job interview ever", "relevant": false, "source": "#31"}
+{"id": "nv5b04r", "judge": "jev", "model": "jev-1.14.0", "p": 0.83, "query": "worst job interview ever", "relevant": true}
+{"id": "nv85ll1", "judge": "claude", "query": "worst job interview ever", "relevant": false, "source": "#31"}
+{"id": "nv85ll1", "judge": "jev", "model": "jev-1.14.0", "p": 0.45, "query": "worst job interview ever", "relevant": false}
+{"id": "nvyda9n", "judge": "claude", "query": "worst job interview ever", "relevant": true, "source": "#31"}
+{"id": "nvyda9n", "judge": "jev", "model": "jev-1.14.0", "p": 0.91, "query": "worst job interview ever", "relevant": true}
+{"id": "nwg2a0o", "judge": "claude", "query": "worst job interview ever", "relevant": false, "source": "#31"}
+{"id": "nwg2a0o", "judge": "jev", "model": "jev-1.14.0", "p": 0.33, "query": "worst job interview ever", "relevant": false}
+{"id": "nwgtqi4", "judge": "claude", "query": "worst job interview ever", "relevant": false, "source": "#31"}
+{"id": "nwgtqi4", "judge": "jev", "model": "jev-1.14.0", "p": 0.13, "query": "worst job interview ever", "relevant": false}
+{"id": "nwmhipn", "judge": "claude", "query": "worst job interview ever", "relevant": false, "source": "#31"}
+{"id": "nwmhipn", "judge": "jev", "model": "jev-1.14.0", "p": 0.49, "query": "worst job interview ever", "relevant": false}
+{"id": "nrpf99w", "judge": "jev", "model": "jev-1.14.0", "p": 0.21, "query": "🐶 my dog saved me", "relevant": false}
+{"id": "nrqmi9e", "judge": "jev", "model": "jev-1.14.0", "p": 0.84, "query": "🐶 my dog saved me", "relevant": true}
+{"id": "ns5n3nw", "judge": "jev", "model": "jev-1.14.0", "p": 0.79, "query": "🐶 my dog saved me", "relevant": true}
+{"id": "nti2hze", "judge": "jev", "model": "jev-1.14.0", "p": 0.09, "query": "🐶 my dog saved me", "relevant": false}
+{"id": "nux99c4", "judge": "jev", "model": "jev-1.14.0", "p": 0.08, "query": "🐶 my dog saved me", "relevant": false}
+{"id": "nuzhayy", "judge": "jev", "model": "jev-1.14.0", "p": 0.78, "query": "🐶 my dog saved me", "relevant": true}
+{"id": "nv441no", "judge": "jev", "model": "jev-1.14.0", "p": 0.91, "query": "🐶 my dog saved me", "relevant": true}
+{"id": "nwc2wsj", "judge": "jev", "model": "jev-1.14.0", "p": 0.31, "query": "🐶 my dog saved me", "relevant": false}
+{"id": "nwhw4ko", "judge": "jev", "model": "jev-1.14.0", "p": 0.59, "query": "🐶 my dog saved me", "relevant": true}
+{"id": "nwi9cop", "judge": "jev", "model": "jev-1.14.0", "p": 0.93, "query": "🐶 my dog saved me", "relevant": true}

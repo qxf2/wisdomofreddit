@@ -116,6 +116,15 @@ Testers can ask for `sample_comments.db` and `sample_scored.db` on Drive (see [#
 
    For December 2025 (34,608 stories) on the 2015 MacBook Air, with vectors already computed: the keyword index takes about 7 s per 23k stories and the Jammi import about 52 s for all 34,608.
 
+10. Check search quality before and after a change to search ([#45](https://github.com/qxf2/wisdomofreddit/issues/45)):
+   ```bash
+   python eval_search.py data/search --compare tests/search_eval/baseline_2025-12.json
+   ```
+   It runs the 50 queries in `tests/search_eval/queries.txt` (keyword, phrase, writer-style, mixed, awkward) and prints, per type, the relevant results in the top 10, queries with no results, errors, results missing a quoted phrase or containing an excluded word, and median and p95 latency.
+   Relevance comes from `tests/search_eval/labels.jsonl`. A human label wins over a Jev label. The Claude labels from #31 are only used to report how often Jev agrees with them.
+   New results that nobody has labelled are listed and not counted as wrong. Add `--label-jev` to have Jev label them (needs `TYPESAFE_API_KEY`, costs a fraction of a cent), and commit the updated labels file.
+   Use `--save after.json` to keep a report, and `--per-query` to see each query.
+
 ## 4. Appendix: rebuilding the old 2007 to 2015 index
 
 The live site's original index came from a BigQuery copy of reddit, which has since stopped updating.
