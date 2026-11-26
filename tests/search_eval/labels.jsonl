@@ -6,6 +6,14 @@
 {"id": "nu5j39m", "judge": "jev", "model": "jev-1.14.0", "p": 0.57, "query": "\"I'm a lawyer\"", "relevant": true}
 {"id": "nvkjet0", "judge": "jev", "model": "jev-1.14.0", "p": 0.54, "query": "\"I'm a lawyer\"", "relevant": true}
 {"id": "nwaf5sy", "judge": "jev", "model": "jev-1.14.0", "p": 0.19, "query": "\"I'm a lawyer\"", "relevant": false}
+{"id": "nsf7tdy", "judge": "jev", "model": "jev-1.14.0", "p": 0.07, "query": "\"I'm a lawyer\" divorce", "relevant": false}
+{"id": "nsgzjrh", "judge": "jev", "model": "jev-1.14.0", "p": 0.09, "query": "\"I'm a lawyer\" divorce", "relevant": false}
+{"id": "nsteh44", "judge": "jev", "model": "jev-1.14.0", "p": 0.11, "query": "\"I'm a lawyer\" divorce", "relevant": false}
+{"id": "nt82hvo", "judge": "jev", "model": "jev-1.14.0", "p": 0.15, "query": "\"I'm a lawyer\" divorce", "relevant": false}
+{"id": "ntxnnku", "judge": "jev", "model": "jev-1.14.0", "p": 0.1, "query": "\"I'm a lawyer\" divorce", "relevant": false}
+{"id": "nu5j39m", "judge": "jev", "model": "jev-1.14.0", "p": 0.1, "query": "\"I'm a lawyer\" divorce", "relevant": false}
+{"id": "nvkjet0", "judge": "jev", "model": "jev-1.14.0", "p": 0.25, "query": "\"I'm a lawyer\" divorce", "relevant": false}
+{"id": "nwaf5sy", "judge": "jev", "model": "jev-1.14.0", "p": 0.05, "query": "\"I'm a lawyer\" divorce", "relevant": false}
 {"id": "nrn6sql", "judge": "claude", "query": "\"best prank\"", "relevant": false, "source": "#31"}
 {"id": "nrn6sql", "judge": "jev", "model": "jev-1.14.0", "p": 0.48, "query": "\"best prank\"", "relevant": false}
 {"id": "ns986q3", "judge": "claude", "query": "\"best prank\"", "relevant": false, "source": "#31"}
@@ -82,6 +90,18 @@
 {"id": "nwhxp5o", "judge": "jev", "model": "jev-1.14.0", "p": 0.53, "query": "\"dentist here\"", "relevant": true}
 {"id": "nwvbs0z", "judge": "claude", "query": "\"dentist here\"", "relevant": false, "source": "#31"}
 {"id": "nwvbs0z", "judge": "jev", "model": "jev-1.14.0", "p": 0.42, "query": "\"dentist here\"", "relevant": false}
+{"id": "ns79il0", "judge": "jev", "model": "jev-1.14.0", "p": 0.46, "query": "\"dentist here\" kids", "relevant": false}
+{"id": "nsjzlki", "judge": "jev", "model": "jev-1.14.0", "p": 0.48, "query": "\"dentist here\" kids", "relevant": false}
+{"id": "nscrq52", "judge": "jev", "model": "jev-1.14.0", "p": 0.4, "query": "\"first job\" boss -retail", "relevant": false}
+{"id": "nsj6p76", "judge": "jev", "model": "jev-1.14.0", "p": 0.57, "query": "\"first job\" boss -retail", "relevant": true}
+{"id": "nsyn0nt", "judge": "jev", "model": "jev-1.14.0", "p": 0.26, "query": "\"first job\" boss -retail", "relevant": false}
+{"id": "nt4gjkq", "judge": "jev", "model": "jev-1.14.0", "p": 0.34, "query": "\"first job\" boss -retail", "relevant": false}
+{"id": "ntbwjcl", "judge": "jev", "model": "jev-1.14.0", "p": 0.7, "query": "\"first job\" boss -retail", "relevant": true}
+{"id": "ntqalay", "judge": "jev", "model": "jev-1.14.0", "p": 0.42, "query": "\"first job\" boss -retail", "relevant": false}
+{"id": "nul3ddb", "judge": "jev", "model": "jev-1.14.0", "p": 0.33, "query": "\"first job\" boss -retail", "relevant": false}
+{"id": "nuvubq6", "judge": "jev", "model": "jev-1.14.0", "p": 0.12, "query": "\"first job\" boss -retail", "relevant": false}
+{"id": "nv1hwzi", "judge": "jev", "model": "jev-1.14.0", "p": 0.89, "query": "\"first job\" boss -retail", "relevant": true}
+{"id": "nvlocns", "judge": "jev", "model": "jev-1.14.0", "p": 0.12, "query": "\"first job\" boss -retail", "relevant": false}
 {"id": "nrsb528", "judge": "claude", "query": "\"harry potter\"", "relevant": true, "source": "#31"}
 {"id": "nrsb528", "judge": "jev", "model": "jev-1.14.0", "p": 0.57, "query": "\"harry potter\"", "relevant": true}
 {"id": "ntedo6m", "judge": "claude", "query": "\"harry potter\"", "relevant": false, "source": "#31"}
@@ -112,7 +132,16 @@
 {"id": "nw3tvg8", "judge": "jev", "model": "jev-1.14.0", "p": 0.71, "query": "\"harry potter\"", "relevant": true}
 {"id": "nwt56s9", "judge": "claude", "query": "\"harry potter\"", "relevant": true, "source": "#31"}
 {"id": "nwt56s9", "judge": "jev", "model": "jev-1.14.0", "p": 0.84, "query": "\"harry potter\"", "relevant": true}
+{"id": "nrsb528", "judge": "jev", "model": "jev-1.14.0", "p": 0.07, "query": "\"harry potter\" wand", "relevant": false}
+{"id": "ntedo6m", "judge": "jev", "model": "jev-1.14.0", "p": 0.07, "query": "\"harry potter\" wand", "relevant": false}
 {"id": "ntizrzr", "judge": "jev", "model": "jev-1.14.0", "p": 0.68, "query": "\"harry potter\" wand", "relevant": true}
+{"id": "ntq6ewv", "judge": "jev", "model": "jev-1.14.0", "p": 0.14, "query": "\"harry potter\" wand", "relevant": false}
+{"id": "nu0v089", "judge": "jev", "model": "jev-1.14.0", "p": 0.11, "query": "\"harry potter\" wand", "relevant": false}
+{"id": "nu1of6r", "judge": "jev", "model": "jev-1.14.0", "p": 0.14, "query": "\"harry potter\" wand", "relevant": false}
+{"id": "nuv9y0m", "judge": "jev", "model": "jev-1.14.0", "p": 0.08, "query": "\"harry potter\" wand", "relevant": false}
+{"id": "nvmlsve", "judge": "jev", "model": "jev-1.14.0", "p": 0.05, "query": "\"harry potter\" wand", "relevant": false}
+{"id": "nvz9vad", "judge": "jev", "model": "jev-1.14.0", "p": 0.04, "query": "\"harry potter\" wand", "relevant": false}
+{"id": "nw3tvg8", "judge": "jev", "model": "jev-1.14.0", "p": 0.14, "query": "\"harry potter\" wand", "relevant": false}
 {"id": "nrui2t0", "judge": "claude", "query": "\"holocaust survivor\"", "relevant": true, "source": "#31"}
 {"id": "nrui2t0", "judge": "jev", "model": "jev-1.14.0", "p": 0.4, "query": "\"holocaust survivor\"", "relevant": false}
 {"id": "ns388rz", "judge": "claude", "query": "\"holocaust survivor\"", "relevant": false, "source": "#31"}
@@ -216,13 +245,53 @@
 {"id": "nvartlj", "judge": "jev", "model": "jev-1.14.0", "p": 0.75, "query": "\"nearly died\"", "relevant": true}
 {"id": "nw40j7a", "judge": "jev", "model": "jev-1.14.0", "p": 0.81, "query": "\"nearly died\"", "relevant": true}
 {"id": "nwtqjn5", "judge": "jev", "model": "jev-1.14.0", "p": 0.84, "query": "\"nearly died\"", "relevant": true}
+{"id": "ns27y3m", "judge": "jev", "model": "jev-1.14.0", "p": 0.11, "query": "\"nearly died\" hiking", "relevant": false}
+{"id": "nsfexwh", "judge": "jev", "model": "jev-1.14.0", "p": 0.11, "query": "\"nearly died\" hiking", "relevant": false}
+{"id": "nsosb1f", "judge": "jev", "model": "jev-1.14.0", "p": 0.04, "query": "\"nearly died\" hiking", "relevant": false}
+{"id": "nt7ubvg", "judge": "jev", "model": "jev-1.14.0", "p": 0.08, "query": "\"nearly died\" hiking", "relevant": false}
+{"id": "nt8jjce", "judge": "jev", "model": "jev-1.14.0", "p": 0.11, "query": "\"nearly died\" hiking", "relevant": false}
+{"id": "nttl3v0", "judge": "jev", "model": "jev-1.14.0", "p": 0.03, "query": "\"nearly died\" hiking", "relevant": false}
+{"id": "nty2h4z", "judge": "jev", "model": "jev-1.14.0", "p": 0.16, "query": "\"nearly died\" hiking", "relevant": false}
+{"id": "nvartlj", "judge": "jev", "model": "jev-1.14.0", "p": 0.07, "query": "\"nearly died\" hiking", "relevant": false}
+{"id": "nw40j7a", "judge": "jev", "model": "jev-1.14.0", "p": 0.23, "query": "\"nearly died\" hiking", "relevant": false}
+{"id": "nwtqjn5", "judge": "jev", "model": "jev-1.14.0", "p": 0.15, "query": "\"nearly died\" hiking", "relevant": false}
 {"id": "ns1hr6m", "judge": "jev", "model": "jev-1.14.0", "p": 0.56, "query": "\"night shift\" nurse", "relevant": true}
+{"id": "nsawk9b", "judge": "jev", "model": "jev-1.14.0", "p": 0.12, "query": "\"night shift\" nurse", "relevant": false}
 {"id": "nshv7fu", "judge": "jev", "model": "jev-1.14.0", "p": 0.59, "query": "\"night shift\" nurse", "relevant": true}
 {"id": "nsxpfq5", "judge": "jev", "model": "jev-1.14.0", "p": 0.38, "query": "\"night shift\" nurse", "relevant": false}
+{"id": "nsxvko4", "judge": "jev", "model": "jev-1.14.0", "p": 0.79, "query": "\"night shift\" nurse", "relevant": true}
 {"id": "nt1844t", "judge": "jev", "model": "jev-1.14.0", "p": 0.73, "query": "\"night shift\" nurse", "relevant": true}
+{"id": "nt8algy", "judge": "jev", "model": "jev-1.14.0", "p": 0.55, "query": "\"night shift\" nurse", "relevant": true}
+{"id": "ntaaro7", "judge": "jev", "model": "jev-1.14.0", "p": 0.17, "query": "\"night shift\" nurse", "relevant": false}
+{"id": "ntffx01", "judge": "jev", "model": "jev-1.14.0", "p": 0.85, "query": "\"night shift\" nurse", "relevant": true}
 {"id": "nuhdmde", "judge": "jev", "model": "jev-1.14.0", "p": 0.79, "query": "\"night shift\" nurse", "relevant": true}
+{"id": "nuiz1q3", "judge": "jev", "model": "jev-1.14.0", "p": 0.36, "query": "\"night shift\" nurse", "relevant": false}
+{"id": "nw9onc8", "judge": "jev", "model": "jev-1.14.0", "p": 0.87, "query": "\"night shift\" nurse", "relevant": true}
 {"id": "nwf1g8q", "judge": "jev", "model": "jev-1.14.0", "p": 0.66, "query": "\"night shift\" nurse", "relevant": true}
+{"id": "nry70je", "judge": "jev", "model": "jev-1.14.0", "p": 0.24, "query": "\"unbalanced quote", "relevant": false}
+{"id": "ns5xqrv", "judge": "jev", "model": "jev-1.14.0", "p": 0.31, "query": "\"unbalanced quote", "relevant": false}
+{"id": "ns8de42", "judge": "jev", "model": "jev-1.14.0", "p": 0.08, "query": "\"unbalanced quote", "relevant": false}
+{"id": "nsg3wbn", "judge": "jev", "model": "jev-1.14.0", "p": 0.24, "query": "\"unbalanced quote", "relevant": false}
+{"id": "nsgyvg1", "judge": "jev", "model": "jev-1.14.0", "p": 0.24, "query": "\"unbalanced quote", "relevant": false}
 {"id": "nsstzlr", "judge": "jev", "model": "jev-1.14.0", "p": 0.24, "query": "\"unbalanced quote", "relevant": false}
+{"id": "nszm2gl", "judge": "jev", "model": "jev-1.14.0", "p": 0.35, "query": "\"unbalanced quote", "relevant": false}
+{"id": "nt8y9to", "judge": "jev", "model": "jev-1.14.0", "p": 0.33, "query": "\"unbalanced quote", "relevant": false}
+{"id": "ntr3au9", "judge": "jev", "model": "jev-1.14.0", "p": 0.33, "query": "\"unbalanced quote", "relevant": false}
+{"id": "ntswa5t", "judge": "jev", "model": "jev-1.14.0", "p": 0.2, "query": "\"unbalanced quote", "relevant": false}
+{"id": "nu458o8", "judge": "jev", "model": "jev-1.14.0", "p": 0.13, "query": "\"unbalanced quote", "relevant": false}
+{"id": "nujdio2", "judge": "jev", "model": "jev-1.14.0", "p": 0.24, "query": "\"unbalanced quote", "relevant": false}
+{"id": "nvy8xnx", "judge": "jev", "model": "jev-1.14.0", "p": 0.19, "query": "\"unbalanced quote", "relevant": false}
+{"id": "nweoyar", "judge": "jev", "model": "jev-1.14.0", "p": 0.19, "query": "\"unbalanced quote", "relevant": false}
+{"id": "nry0bp0", "judge": "jev", "model": "jev-1.14.0", "p": 0.08, "query": "\"worked at an auction house\"", "relevant": false}
+{"id": "ntkuyz8", "judge": "jev", "model": "jev-1.14.0", "p": 0.06, "query": "\"worked at an auction house\"", "relevant": false}
+{"id": "ntl5l4h", "judge": "jev", "model": "jev-1.14.0", "p": 0.18, "query": "\"worked at an auction house\"", "relevant": false}
+{"id": "ntqujao", "judge": "jev", "model": "jev-1.14.0", "p": 0.03, "query": "\"worked at an auction house\"", "relevant": false}
+{"id": "nultiy6", "judge": "jev", "model": "jev-1.14.0", "p": 0.03, "query": "\"worked at an auction house\"", "relevant": false}
+{"id": "nutgucb", "judge": "jev", "model": "jev-1.14.0", "p": 0.08, "query": "\"worked at an auction house\"", "relevant": false}
+{"id": "nva9pev", "judge": "jev", "model": "jev-1.14.0", "p": 0.02, "query": "\"worked at an auction house\"", "relevant": false}
+{"id": "nve578u", "judge": "jev", "model": "jev-1.14.0", "p": 0.07, "query": "\"worked at an auction house\"", "relevant": false}
+{"id": "nvivl39", "judge": "jev", "model": "jev-1.14.0", "p": 0.12, "query": "\"worked at an auction house\"", "relevant": false}
+{"id": "nwk1nz5", "judge": "jev", "model": "jev-1.14.0", "p": 0.41, "query": "\"worked at an auction house\"", "relevant": false}
 {"id": "nrxbfce", "judge": "jev", "model": "jev-1.14.0", "p": 0.1, "query": "AND OR", "relevant": false}
 {"id": "nrya5n9", "judge": "jev", "model": "jev-1.14.0", "p": 0.4, "query": "AND OR", "relevant": false}
 {"id": "nsb244y", "judge": "jev", "model": "jev-1.14.0", "p": 0.15, "query": "AND OR", "relevant": false}
@@ -255,14 +324,19 @@
 {"id": "nwzx1hr", "judge": "jev", "model": "jev-1.14.0", "p": 0.11, "query": "NOT", "relevant": false}
 {"id": "nskkqxh", "judge": "jev", "model": "jev-1.14.0", "p": 0.09, "query": "So this happened when I was about nineteen and working nights at a gas station in a small town, a guy came in every single night at 3am and bought one banana and never said a word until the night he finally did", "relevant": false}
 {"id": "nskvf0z", "judge": "jev", "model": "jev-1.14.0", "p": 0.14, "query": "So this happened when I was about nineteen and working nights at a gas station in a small town, a guy came in every single night at 3am and bought one banana and never said a word until the night he finally did", "relevant": false}
+{"id": "nt83q0a", "judge": "jev", "model": "jev-1.14.0", "p": 0.07, "query": "So this happened when I was about nineteen and working nights at a gas station in a small town, a guy came in every single night at 3am and bought one banana and never said a word until the night he finally did", "relevant": false}
 {"id": "ntgpoxu", "judge": "jev", "model": "jev-1.14.0", "p": 0.06, "query": "So this happened when I was about nineteen and working nights at a gas station in a small town, a guy came in every single night at 3am and bought one banana and never said a word until the night he finally did", "relevant": false}
 {"id": "ntvie9i", "judge": "jev", "model": "jev-1.14.0", "p": 0.07, "query": "So this happened when I was about nineteen and working nights at a gas station in a small town, a guy came in every single night at 3am and bought one banana and never said a word until the night he finally did", "relevant": false}
 {"id": "nu35vzz", "judge": "jev", "model": "jev-1.14.0", "p": 0.15, "query": "So this happened when I was about nineteen and working nights at a gas station in a small town, a guy came in every single night at 3am and bought one banana and never said a word until the night he finally did", "relevant": false}
 {"id": "nudkjkb", "judge": "jev", "model": "jev-1.14.0", "p": 0.09, "query": "So this happened when I was about nineteen and working nights at a gas station in a small town, a guy came in every single night at 3am and bought one banana and never said a word until the night he finally did", "relevant": false}
+{"id": "nv72put", "judge": "jev", "model": "jev-1.14.0", "p": 0.07, "query": "So this happened when I was about nineteen and working nights at a gas station in a small town, a guy came in every single night at 3am and bought one banana and never said a word until the night he finally did", "relevant": false}
 {"id": "nv7y06f", "judge": "jev", "model": "jev-1.14.0", "p": 0.05, "query": "So this happened when I was about nineteen and working nights at a gas station in a small town, a guy came in every single night at 3am and bought one banana and never said a word until the night he finally did", "relevant": false}
+{"id": "nv8ykrx", "judge": "jev", "model": "jev-1.14.0", "p": 0.07, "query": "So this happened when I was about nineteen and working nights at a gas station in a small town, a guy came in every single night at 3am and bought one banana and never said a word until the night he finally did", "relevant": false}
 {"id": "nvjukny", "judge": "jev", "model": "jev-1.14.0", "p": 0.07, "query": "So this happened when I was about nineteen and working nights at a gas station in a small town, a guy came in every single night at 3am and bought one banana and never said a word until the night he finally did", "relevant": false}
 {"id": "nw37jsw", "judge": "jev", "model": "jev-1.14.0", "p": 0.08, "query": "So this happened when I was about nineteen and working nights at a gas station in a small town, a guy came in every single night at 3am and bought one banana and never said a word until the night he finally did", "relevant": false}
+{"id": "nwfauxd", "judge": "jev", "model": "jev-1.14.0", "p": 0.08, "query": "So this happened when I was about nineteen and working nights at a gas station in a small town, a guy came in every single night at 3am and bought one banana and never said a word until the night he finally did", "relevant": false}
 {"id": "nwg3tp1", "judge": "jev", "model": "jev-1.14.0", "p": 0.17, "query": "So this happened when I was about nineteen and working nights at a gas station in a small town, a guy came in every single night at 3am and bought one banana and never said a word until the night he finally did", "relevant": false}
+{"id": "nwtzpu7", "judge": "jev", "model": "jev-1.14.0", "p": 0.12, "query": "So this happened when I was about nineteen and working nights at a gas station in a small town, a guy came in every single night at 3am and bought one banana and never said a word until the night he finally did", "relevant": false}
 {"id": "ns7tsuq", "judge": "jev", "model": "jev-1.14.0", "p": 0.27, "query": "a stranger who changed my life", "relevant": false}
 {"id": "nskupr2", "judge": "jev", "model": "jev-1.14.0", "p": 0.51, "query": "a stranger who changed my life", "relevant": true}
 {"id": "nso6myg", "judge": "jev", "model": "jev-1.14.0", "p": 0.24, "query": "a stranger who changed my life", "relevant": false}
@@ -303,17 +377,25 @@
 {"id": "nw2w2b0", "judge": "jev", "model": "jev-1.14.0", "p": 0.07, "query": "bill gates", "relevant": false}
 {"id": "nw6fw7v", "judge": "jev", "model": "jev-1.14.0", "p": 0.18, "query": "bill gates", "relevant": false}
 {"id": "nw91o4i", "judge": "jev", "model": "jev-1.14.0", "p": 0.19, "query": "bill gates", "relevant": false}
+{"id": "nshhm8e", "judge": "jev", "model": "jev-1.14.0", "p": 0.14, "query": "chess \"grandmaster\"", "relevant": false}
+{"id": "nu96fd8", "judge": "jev", "model": "jev-1.14.0", "p": 0.09, "query": "chess \"grandmaster\"", "relevant": false}
 {"id": "nv8gtqm", "judge": "jev", "model": "jev-1.14.0", "p": 0.71, "query": "chess \"grandmaster\"", "relevant": true}
 {"id": "nvd8ti8", "judge": "jev", "model": "jev-1.14.0", "p": 0.55, "query": "chess \"grandmaster\"", "relevant": true}
+{"id": "nw23shx", "judge": "jev", "model": "jev-1.14.0", "p": 0.16, "query": "chess \"grandmaster\"", "relevant": false}
+{"id": "nwdghur", "judge": "jev", "model": "jev-1.14.0", "p": 0.08, "query": "chess \"grandmaster\"", "relevant": false}
 {"id": "ns52xf8", "judge": "jev", "model": "jev-1.14.0", "p": 0.02, "query": "chess NOT tournament", "relevant": false}
+{"id": "nsc1j58", "judge": "jev", "model": "jev-1.14.0", "p": 0.07, "query": "chess NOT tournament", "relevant": false}
 {"id": "ntb8aaj", "judge": "jev", "model": "jev-1.14.0", "p": 0.15, "query": "chess NOT tournament", "relevant": false}
+{"id": "ntjhftv", "judge": "jev", "model": "jev-1.14.0", "p": 0.54, "query": "chess NOT tournament", "relevant": true}
 {"id": "ntyup1p", "judge": "jev", "model": "jev-1.14.0", "p": 0.42, "query": "chess NOT tournament", "relevant": false}
 {"id": "ntzzno8", "judge": "jev", "model": "jev-1.14.0", "p": 0.7, "query": "chess NOT tournament", "relevant": true}
 {"id": "nua29bc", "judge": "jev", "model": "jev-1.14.0", "p": 0.08, "query": "chess NOT tournament", "relevant": false}
 {"id": "num4p4l", "judge": "jev", "model": "jev-1.14.0", "p": 0.36, "query": "chess NOT tournament", "relevant": false}
 {"id": "nv8gtqm", "judge": "jev", "model": "jev-1.14.0", "p": 0.54, "query": "chess NOT tournament", "relevant": true}
 {"id": "nvd8ti8", "judge": "jev", "model": "jev-1.14.0", "p": 0.64, "query": "chess NOT tournament", "relevant": true}
+{"id": "nveru8p", "judge": "jev", "model": "jev-1.14.0", "p": 0.2, "query": "chess NOT tournament", "relevant": false}
 {"id": "nwmpzfr", "judge": "jev", "model": "jev-1.14.0", "p": 0.42, "query": "chess NOT tournament", "relevant": false}
+{"id": "nwvo6dy", "judge": "jev", "model": "jev-1.14.0", "p": 0.26, "query": "chess NOT tournament", "relevant": false}
 {"id": "nwwmxev", "judge": "jev", "model": "jev-1.14.0", "p": 0.12, "query": "chess NOT tournament", "relevant": false}
 {"id": "nroj36o", "judge": "jev", "model": "jev-1.14.0", "p": 0.32, "query": "coroner", "relevant": false}
 {"id": "nt7yqdl", "judge": "jev", "model": "jev-1.14.0", "p": 0.71, "query": "coroner", "relevant": true}
@@ -335,24 +417,37 @@
 {"id": "nv9hihu", "judge": "jev", "model": "jev-1.14.0", "p": 0.04, "query": "cuttlefish", "relevant": false}
 {"id": "nvlkpyz", "judge": "jev", "model": "jev-1.14.0", "p": 0.05, "query": "cuttlefish", "relevant": false}
 {"id": "nwrn4c0", "judge": "jev", "model": "jev-1.14.0", "p": 0.04, "query": "cuttlefish", "relevant": false}
+{"id": "ns05xv4", "judge": "jev", "model": "jev-1.14.0", "p": 0.28, "query": "dentist -kids", "relevant": false}
+{"id": "ns0vtmf", "judge": "jev", "model": "jev-1.14.0", "p": 0.21, "query": "dentist -kids", "relevant": false}
+{"id": "nsr2k1h", "judge": "jev", "model": "jev-1.14.0", "p": 0.18, "query": "dentist -kids", "relevant": false}
+{"id": "nsrbzk2", "judge": "jev", "model": "jev-1.14.0", "p": 0.13, "query": "dentist -kids", "relevant": false}
 {"id": "nt6ozv1", "judge": "jev", "model": "jev-1.14.0", "p": 0.79, "query": "dentist -kids", "relevant": true}
 {"id": "ntcx9hy", "judge": "jev", "model": "jev-1.14.0", "p": 0.47, "query": "dentist -kids", "relevant": false}
+{"id": "ntximcz", "judge": "jev", "model": "jev-1.14.0", "p": 0.13, "query": "dentist -kids", "relevant": false}
 {"id": "nu9pwgp", "judge": "jev", "model": "jev-1.14.0", "p": 0.17, "query": "dentist -kids", "relevant": false}
 {"id": "nvi7gm0", "judge": "jev", "model": "jev-1.14.0", "p": 0.61, "query": "dentist -kids", "relevant": true}
 {"id": "nvtzjoy", "judge": "jev", "model": "jev-1.14.0", "p": 0.34, "query": "dentist -kids", "relevant": false}
+{"id": "nvwufa5", "judge": "jev", "model": "jev-1.14.0", "p": 0.15, "query": "dentist -kids", "relevant": false}
 {"id": "nw3n0qc", "judge": "jev", "model": "jev-1.14.0", "p": 0.89, "query": "dentist -kids", "relevant": true}
 {"id": "nw7g874", "judge": "jev", "model": "jev-1.14.0", "p": 0.25, "query": "dentist -kids", "relevant": false}
+{"id": "nwb0hoa", "judge": "jev", "model": "jev-1.14.0", "p": 0.2, "query": "dentist -kids", "relevant": false}
 {"id": "nwhxp5o", "judge": "jev", "model": "jev-1.14.0", "p": 0.32, "query": "dentist -kids", "relevant": false}
 {"id": "nwobb43", "judge": "jev", "model": "jev-1.14.0", "p": 0.14, "query": "dentist -kids", "relevant": false}
+{"id": "nwt4tph", "judge": "jev", "model": "jev-1.14.0", "p": 0.12, "query": "dentist -kids", "relevant": false}
 {"id": "nwvbs0z", "judge": "jev", "model": "jev-1.14.0", "p": 0.17, "query": "dentist -kids", "relevant": false}
 {"id": "ns6gg74", "judge": "jev", "model": "jev-1.14.0", "p": 0.64, "query": "dog OR cat rescue", "relevant": true}
 {"id": "nse2uuy", "judge": "jev", "model": "jev-1.14.0", "p": 0.64, "query": "dog OR cat rescue", "relevant": true}
+{"id": "nsehedl", "judge": "jev", "model": "jev-1.14.0", "p": 0.75, "query": "dog OR cat rescue", "relevant": true}
 {"id": "nsn58qc", "judge": "jev", "model": "jev-1.14.0", "p": 0.68, "query": "dog OR cat rescue", "relevant": true}
 {"id": "ntodnwr", "judge": "jev", "model": "jev-1.14.0", "p": 0.72, "query": "dog OR cat rescue", "relevant": true}
 {"id": "ntqkn1o", "judge": "jev", "model": "jev-1.14.0", "p": 0.83, "query": "dog OR cat rescue", "relevant": true}
 {"id": "nu07mhj", "judge": "jev", "model": "jev-1.14.0", "p": 0.5, "query": "dog OR cat rescue", "relevant": true}
+{"id": "nu6qj60", "judge": "jev", "model": "jev-1.14.0", "p": 0.73, "query": "dog OR cat rescue", "relevant": true}
 {"id": "nu8nva6", "judge": "jev", "model": "jev-1.14.0", "p": 0.8, "query": "dog OR cat rescue", "relevant": true}
+{"id": "nuqwdrw", "judge": "jev", "model": "jev-1.14.0", "p": 0.79, "query": "dog OR cat rescue", "relevant": true}
+{"id": "nusr9td", "judge": "jev", "model": "jev-1.14.0", "p": 0.7, "query": "dog OR cat rescue", "relevant": true}
 {"id": "nv24ymc", "judge": "jev", "model": "jev-1.14.0", "p": 0.81, "query": "dog OR cat rescue", "relevant": true}
+{"id": "nvfncip", "judge": "jev", "model": "jev-1.14.0", "p": 0.62, "query": "dog OR cat rescue", "relevant": true}
 {"id": "nw5eg61", "judge": "jev", "model": "jev-1.14.0", "p": 0.91, "query": "dog OR cat rescue", "relevant": true}
 {"id": "nwsgh2r", "judge": "jev", "model": "jev-1.14.0", "p": 0.47, "query": "dog OR cat rescue", "relevant": false}
 {"id": "nrmpghp", "judge": "jev", "model": "jev-1.14.0", "p": 0.07, "query": "ex-cia", "relevant": false}
@@ -664,6 +759,8 @@
 {"id": "nux99c4", "judge": "jev", "model": "jev-1.14.0", "p": 0.08, "query": "🐶 my dog saved me", "relevant": false}
 {"id": "nuzhayy", "judge": "jev", "model": "jev-1.14.0", "p": 0.78, "query": "🐶 my dog saved me", "relevant": true}
 {"id": "nv441no", "judge": "jev", "model": "jev-1.14.0", "p": 0.91, "query": "🐶 my dog saved me", "relevant": true}
+{"id": "nv6x9o2", "judge": "jev", "model": "jev-1.14.0", "p": 0.3, "query": "🐶 my dog saved me", "relevant": false}
+{"id": "nvfw7xp", "judge": "jev", "model": "jev-1.14.0", "p": 0.1, "query": "🐶 my dog saved me", "relevant": false}
 {"id": "nwc2wsj", "judge": "jev", "model": "jev-1.14.0", "p": 0.31, "query": "🐶 my dog saved me", "relevant": false}
 {"id": "nwhw4ko", "judge": "jev", "model": "jev-1.14.0", "p": 0.59, "query": "🐶 my dog saved me", "relevant": true}
 {"id": "nwi9cop", "judge": "jev", "model": "jev-1.14.0", "p": 0.93, "query": "🐶 my dog saved me", "relevant": true}
