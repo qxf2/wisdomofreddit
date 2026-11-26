@@ -1,0 +1,63 @@
+# Search eval queries (#45). One query per line: <type><TAB><query>
+# Types: keyword, phrase, writer, mixed, awkward. Lines starting with # are comments.
+# The 10 queries from the #31 spike are marked with "#31" after the query.
+#
+# keyword: names and exact terms, unquoted
+keyword	kasparov
+keyword	harry potter
+keyword	bill gates
+keyword	north korea
+keyword	bernie madoff
+keyword	cuttlefish
+keyword	coroner
+keyword	sushi
+keyword	wedding DJ
+keyword	speeding ticket
+#
+# phrase: one quoted phrase, results must contain it exactly
+phrase	"dentist here"	#31
+phrase	"best prank"	#31
+phrase	"harry potter"	#31
+phrase	"holocaust survivor"	#31
+phrase	"in soviet russia"	#31
+phrase	"I'm a lawyer"
+phrase	"nearly died"
+phrase	"my first kiss"
+phrase	"missing person"
+phrase	"worked at an auction house"
+#
+# writer: how an author would describe the story they want
+writer	frustrating day at the DMV	#31
+writer	what a night shift nurse sees	#31
+writer	worst job interview ever	#31
+writer	getting lost in a foreign country	#31
+writer	the moment I knew my marriage was over	#31
+writer	a stranger who changed my life
+writer	the time my dad embarrassed me in public
+writer	getting caught cheating on a test
+writer	a teacher who believed in me
+writer	what it feels like to survive a car crash
+#
+# mixed: phrases plus words, OR, exclusions
+mixed	"night shift" nurse
+mixed	"harry potter" wand
+mixed	"dentist here" kids
+mixed	"I'm a lawyer" divorce
+mixed	"nearly died" hiking
+mixed	chess "grandmaster"
+mixed	dog OR cat rescue
+mixed	dentist -kids
+mixed	chess NOT tournament
+mixed	"first job" boss -retail
+#
+# awkward: input that must not break anything
+awkward	ex-cia
+awkward	tl;dr
+awkward	"
+awkward	NOT
+awkward	AND OR
+awkward	"unbalanced quote
+awkward	C++ programmer
+awkward	🐶 my dog saved me
+awkward	*
+awkward	So this happened when I was about nineteen and working nights at a gas station in a small town, a guy came in every single night at 3am and bought one banana and never said a word until the night he finally did
