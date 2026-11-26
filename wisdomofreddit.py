@@ -2,9 +2,6 @@
 wisdomofreddit is a search app for high quality reddit comments
 """
 
-from whoosh import index
-from whoosh import scoring
-from whoosh.qparser import QueryParser
 from flask import Flask
 from flask import render_template
 from flask import request
@@ -13,6 +10,7 @@ import os,csv,re,random,sqlite3
 import logging
 from logging.handlers import RotatingFileHandler
 from ast import literal_eval
+import story_search
 
 DEFAULT_LOG_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)),'logs','wisdomofreddit.log')
 LOG_FORMAT = '%(asctime)s %(levelname)s %(name)s: %(message)s'
@@ -45,13 +43,7 @@ def setup_logging(log_file=None):
 
 setup_logging()
 app = Flask(__name__)
-
-
-def open_index(index_dir,index_name):
-    "Open a given index"
-    ix = index.open_dir(index_dir,indexname=index_name)
-
-    return ix
+SEARCH_DIR = os.environ.get('WOR_SEARCH_DIR', story_search.DEFAULT_DIR)
 
 
 def get_random_query():
@@ -67,16 +59,10 @@ def get_random_query():
 
 
 def search_comments(query):
-    "Ask whoosh to return the top 20 matches"
+    "Return the top 25 stories: FTS5 keyword search fused with Jammi vector search"
     all_results = []
     try:
-        index_dir = os.path.join(os.path.dirname(__file__),'indexdir')
-        ix = open_index(index_dir,index_name='wor')
-        with ix.searcher() as searcher:
-            parser = QueryParser("comment",ix.schema)
-            results = searcher.search(parser.parse(query),limit=25)
-            for result in results:
-                all_results.append(result.fields())
+        all_results = story_search.search(query, limit=25, search_dir=SEARCH_DIR)
         logger.info("Search query=%r results=%d",query,len(all_results))
     except Exception:
         logger.exception("Search failed for query=%r",query)

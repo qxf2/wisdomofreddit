@@ -1,7 +1,8 @@
 # Wisdom of Reddit
 
 A search engine for long, high quality reddit comments that tell a story.
-The site is a Flask app (`wisdomofreddit.py`) that searches a [Whoosh](https://pypi.org/project/Whoosh/) index of comments.
+The site is a Flask app (`wisdomofreddit.py`). It searches stories with SQLite FTS5 (keywords and "quoted phrases") plus [Jammi](https://pypi.org/project/jammi-ai/) vector search (plain-English queries), fused with reciprocal rank fusion.
+The design comes from the search spike in [#31](https://github.com/qxf2/wisdomofreddit/issues/31); the code is in `story_search.py`.
 
 ## 1. Setup
 
@@ -30,15 +31,23 @@ They are chosen so that most of the queries in `random_queries.txt` find somethi
 You don't need to download anything.
 
 ```bash
-python index_comments.py -f sample_data/sample_comments.csv -n wor -c True
+python build_search_index.py -c sample_data/sample_comments.csv
 python wisdomofreddit.py
 ```
 
-The first command builds the index in `./indexdir` (it takes a few seconds).
-The second starts the site at http://localhost:6464. Try searching for `dad`, `"my mom"` or `time travel`, or click Random.
+The first command builds the index in `./data/search`. The keyword index takes a second.
+Then it encodes each story for semantic search on your CPU, which takes about a minute for the 200 stories. The model (about 90 MB) is downloaded the first time.
+The second command starts the site at http://localhost:6464. Try `dad`, `"my mom"`, `worst job interview ever`, or click Random.
 
-`-c True` creates a new index and replaces any index already in `./indexdir`.
-Leave it out to add comments to the existing index.
+To try the larger tester sample instead, get `sample_scored.db` from Drive ([#15](https://github.com/qxf2/wisdomofreddit/issues/15)) and put it in `./data`.
+It has 2,000 comments, of which 602 are stories (about 4 minutes to encode):
+
+```bash
+python build_search_index.py -c data/sample_scored.db -o data/sample_search
+WOR_SEARCH_DIR=data/sample_search python wisdomofreddit.py
+```
+
+Use `--no-encode` to skip encoding. Search then works on keywords only, and running the command again later encodes what is missing.
 
 Each search is logged (query and number of results) to `logs/wisdomofreddit.log`, and search errors are logged with a stack trace.
 To log somewhere else, set `WOR_LOG_FILE`, for example `WOR_LOG_FILE=/var/log/wor/app.log python wisdomofreddit.py`.
@@ -88,7 +97,24 @@ Testers can ask for `sample_comments.db` and `sample_scored.db` on Drive (see [#
    ```
    The model's labels go into the `model_scores` table.
 
-The site doesn't search `comments.db` directly yet. Building the index from it is [#29](https://github.com/qxf2/wisdomofreddit/issues/29).
+9. Build or update the search index ([#29](https://github.com/qxf2/wisdomofreddit/issues/29)). Only stories (`p_story >= 0.5` and `vividness >= 2`) are indexed:
+   ```bash
+   python build_search_index.py
+   ```
+   Run it again after each new month. It only adds stories that are not indexed yet.
+   - `data/search/search.db` holds the stories and the FTS5 keyword index.
+   - `data/search/vectors.parquet` holds one `all-MiniLM-L6-v2` vector (512 tokens) per story. Vectors are only computed once.
+   - `data/search/jammi/` is the Jammi vector store over the story ids. It is rebuilt from `vectors.parquet` when vectors are added, because Jammi's `import_embeddings` replaces the table instead of appending.
+
+   Encoding is slow on a laptop CPU (about 0.5 s a story), so encode a full month on the GPU box.
+   Install `sentence-transformers` there and run the same command; the script uses it when it is installed.
+   Then copy `data/search/vectors.parquet` back and pass it in (only vectors for indexed stories are taken):
+   ```bash
+   python build_search_index.py --vectors /path/to/vectors.parquet
+   ```
+   Restart the app after the vector store changes.
+
+   For December 2025 (34,608 stories) on the 2015 MacBook Air, with vectors already computed: the keyword index takes about 7 s per 23k stories and the Jammi import about 52 s for all 34,608.
 
 ## 4. Appendix: rebuilding the old 2007 to 2015 index
 
@@ -124,6 +150,9 @@ These steps are kept for reference. The query processes about 450 GB.
    python index_comments.py -d ./data -n wor -c True
    ```
    When it finishes, `./indexdir` has a set of `wor_*.seg` files.
+
+The app no longer reads this Whoosh index; it searches `data/search` (section 3, step 9).
+`index_comments.py` is kept so the old data can be moved over later.
 
 ## Questions?
 
